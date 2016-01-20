@@ -1,0 +1,25 @@
+div.container {
+	position: absolute;
+    height: 200px;
+	width: 200px;
+	top: calc(50% - 300px/2);
+	left: calc(50% - 250px/2);
+	bottom: calc(50% - 200px/2);
+	right: calc (50%- 250px/2);
+	}
+body	{
+		background-color: white;
+			}
+fieldset {background-color:lightblue;
+}
+h2 { font-family: Copper Black;
+}
+@media print
+		{
+			body  {background-color: black;}
+			h1	  {color: black;
+				  text-shadow: 8px 5px 7px black;}
+			p	  {color: black;
+				  font-family: candara, times new roman, serif;}
+		}
+			
