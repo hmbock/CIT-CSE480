@@ -73,6 +73,7 @@ CREATE TABLE Appointments
 	,`Student_ID` INT NOT NULL 
 	,`Staff_ID` INT NOT NULL 
 	,`Reason` VARCHAR(250)  NULL 
+    ,`Location` VARCHAR(250) NULL
 	,`Start_Time` DATETIME  NULL 
 	,`End_Time` DATETIME  NULL 
 	,`Date_Scheduled` DATETIME  NULL 
