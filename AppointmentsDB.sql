@@ -28,12 +28,10 @@ CREATE TABLE Staff
 	`Staff_ID` INT NOT NULL AUTO_INCREMENT
 	,PRIMARY KEY (Staff_ID)
 	,`F_Name` VARCHAR(250)  NULL 
-	,PRIMARY KEY (F_Name)
 	,`L_Name` VARCHAR(250)  NULL 
 	,`Title` VARCHAR(250)  NULL 
 	,`Department` VARCHAR(250)  NULL 
 	,`Email` VARCHAR(250)  NULL 
-	,PRIMARY KEY (Email)
 	,`Password` VARCHAR(250)  NULL 
 	,`Phone` VARCHAR(250)  NULL 
 	,`Address 1` VARCHAR(250)  NULL 
@@ -69,7 +67,6 @@ CREATE TABLE Appointments
 	`Appointment_ID` INT NOT NULL AUTO_INCREMENT
 	,PRIMARY KEY (Appointment_ID)
 	,`Appointment_Title` VARCHAR(250)  NULL 
-	,PRIMARY KEY (Appointment_Title)
 	,`Student_ID` INT NOT NULL 
 	,`Staff_ID` INT NOT NULL 
 	,`Reason` VARCHAR(250)  NULL 
