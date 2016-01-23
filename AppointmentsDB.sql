@@ -51,9 +51,9 @@ CREATE TABLE Notes
 (
 	`Note_ID` INT NOT NULL AUTO_INCREMENT
 	,PRIMARY KEY (Note_ID)
-	,`Staff_ID` INT  NULL AUTO_INCREMENT
-	,`Student_ID` INT  NULL AUTO_INCREMENT
-	,`Appointment_ID` INT  NULL AUTO_INCREMENT
+	,`Staff_ID` INT  NULL
+	,`Student_ID` INT  NULL
+	,`Appointment_ID` INT  NULL
 	,`Notes` VARCHAR(10000)  NULL 
 )
 ENGINE=INNODB
@@ -81,7 +81,7 @@ ENGINE=INNODB
 
 
 -- Create Foreign Key: Staff.Staff_ID -> Appointments.Staff_ID
-ALTER TABLE Staff ADD FOREIGN KEY (Staff_ID) REFERENCES Appointments(Staff_ID);
+ALTER TABLE Appointments ADD FOREIGN KEY (Staff_ID) REFERENCES Staff(Staff_ID);
 
 
 -- Create Foreign Key: Notes.Staff_ID -> Staff.Staff_ID
@@ -89,7 +89,7 @@ ALTER TABLE Notes ADD FOREIGN KEY (Staff_ID) REFERENCES Staff(Staff_ID);
 
 
 -- Create Foreign Key: Appointments.Appointment_ID -> Notes.Appointment_ID
-ALTER TABLE Appointments ADD FOREIGN KEY (Appointment_ID) REFERENCES Notes(Appointment_ID);
+ALTER TABLE Notes ADD FOREIGN KEY (Appointment_ID) REFERENCES Appointments(Appointment_ID);
 
 
 -- Create Foreign Key: Notes.Student_ID -> Student.Student_ID
@@ -97,4 +97,4 @@ ALTER TABLE Notes ADD FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID);
 
 
 -- Create Foreign Key: Student.Student_ID -> Appointments.Student_ID
-ALTER TABLE Student ADD FOREIGN KEY (Student_ID) REFERENCES Appointments(Student_ID);
+ALTER TABLE Appointments ADD FOREIGN KEY (Student_ID) REFERENCES Student(Student_ID);
