@@ -18,8 +18,8 @@
         <!-- start PHP code -->
         <?php
          
-            mysql_connect("localhost", "prdaram", "Pranusha123") or die(mysql_error()); // Connect to database server(localhost) with username and password.
-            mysql_select_db("prdaram") or die(mysql_error()); // Select prdaram database.
+            mysql_connect("localhost", "hmbock", "team@480") or die(mysql_error()); // Connect to database server(localhost) with username and password.
+            mysql_select_db("hmbock") or die(mysql_error()); // Select prdaram database.
             
             if(isset($_POST['name']) && !empty($_POST['name']) AND isset($_POST['password']) && !empty($_POST['password'])){
                 // Both fields are being posted and there not empty

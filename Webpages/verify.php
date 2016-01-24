@@ -1,8 +1,8 @@
 <!-- start PHP code -->
         <?php
          
-            mysql_connect("localhost", "prdaram", "Pranusha123") or die(mysql_error()); // Connect to database server(localhost) with username and password.
-            mysql_select_db("prdaram") or die(mysql_error()); // Select database_name database.
+            mysql_connect("localhost", "hmbock", "team@480") or die(mysql_error()); // Connect to database server(localhost) with username and password.
+            mysql_select_db("hmbock") or die(mysql_error()); // Select database_name database.
 
             if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
                 // Verify data
