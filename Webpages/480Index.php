@@ -27,7 +27,7 @@
 			<main role ="main">
 				<nav>
 					<ul>
-					  <li><a href="http://secs.oakland.edu/~hmbock/login_submit.php">Login/My Account</a></li>
+					  <li><a href="login.php">Login/Sign Up</a></li>
 					  <li><a href="#home"><i class="fa fa-home"></i>&nbsp;Home</a></li>
 					  <li><a href="#news"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
 					  <li><a href="#contact"><i class="fa fa-arrow-up"></i>&nbsp;Upcoming Appointments</a></li>
