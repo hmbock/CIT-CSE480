@@ -5,9 +5,8 @@ body {
 }
 
 h2 {
-	text-align: left;
+	text-align: center;
 	background-color: #FFFFFF;
-	text-transform: ;
 	font-family: Arial;
 	font-weight: bolder;
 	font-style: normal;
@@ -17,6 +16,58 @@ h2 {
 	top: -4px;
 	margin-left: 50px;
 	margin-right: 71px;
+}
+
+.dropbtn {
+	background-color: #4C331A;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	/*+placement: 140px -10px;*/
+	position: relative;
+	left: 140px;
+	top: -10px;
+}
+
+.dropdown {
+	position: absolute;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #F9F9F9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	padding-right: 0;
+	/*+placement: 125px -8px;*/
+	position: relative;
+	left: 125px;
+	top: -8px;
+	font-size: 17px;
+	text-align;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #CCFFDD;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: #3E8E41;
 }
 
 nav {
@@ -59,32 +110,33 @@ nav a:hover {
 	border-bottom: 1px solid black;
 	border-left: 1px solid black;
 	border-top: 1px solid black;
-	margin-right: -72px;
-	margin-bottom: 10px;
-	margin-top: 42px;
-	margin-left: 425px;
+	margin-right: 150px;
+	margin-bottom: 6px;
+	margin-top: -300px;
+	margin-left: 950px;
 	height: 66px;
 	width: 178px;
 	/*+placement: 618px -264px;*/
-	position: relative;
 	left: 618px;
 	top: -264px;
 	background-color: gray;
 	color: white;
-	text-align: center; 
+	text-align: center;
+	padding: 0;
+	float: right;
 }
 
 #announcements p {
-	text-align: center; 
-	
+	text-align: center;
+	float: right;
 }
 
 #content {
 	font-family: candara, century gothic;
 	padding: 1px 20px 20px;
 	background-color: #FFFFFF;
-	margin-left: 258px;
-	margin-right: 215px;
+	margin-left: 260px;
+	margin-right: 350px;
 	margin-top: 0;
 	margin-bottom: 0;
 	border-top: 1px solid #000000;
@@ -94,7 +146,7 @@ nav a:hover {
 }
 
 #content p {
-	text-align: center;
+	text-align: left;
 }
 
 #content ul {
@@ -130,22 +182,20 @@ nav a:hover {
 	background-color: #FFFFFF;
 	margin-left: auto;
 	margin-right: auto;
-	min-width: 996px;
+	min-width: 900px;
 	box-shadow: ;
 }
 
 h1 {
-	color: black;
-	text-align: center;
-	font-family: Arial Black, Gadget, sans-serif;
-	vertical-align: text-middle;
 	background-color: #D2B48C;
 	background-image: url(logos-ou.png);
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 125px;
+	height: 150px;
+	text-indent: -9999px;
 	margin-bottom: 0;
-	}
+	color: #FFFFFF;
+}
 
 ul {
 	list-style-type: none;
@@ -187,10 +237,3 @@ li a:hover:not(.active) {
 header, hgroup, nav, footer, figure, figcaption, aside, section, article {
 	display: block;
 }
-
-div.title {
-	
-	}
-	
-
-	
