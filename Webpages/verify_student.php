@@ -9,12 +9,12 @@
                 $email = mysql_escape_string($_GET['email']); // Set email variable
                 $hash = mysql_escape_string($_GET['hash']); // Set hash variable
 
-                $search = mysql_query("SELECT email, hash, active FROM users WHERE email='".$email."' AND hash='".$hash."' AND active='0'") or die(mysql_error()); 
+                $search = mysql_query("SELECT stu_email, stu_hash, stu_active FROM Student WHERE stu_email='".$email."' AND stu_hash='".$hash."' AND stu_active='0'") or die(mysql_error()); 
                 $match  = mysql_num_rows($search); //records the number of rows that have matched the search
 
                 if($match > 0){
                     // We have a match, activate the account
-                    mysql_query("UPDATE users SET active='1' WHERE email='".$email."' AND hash='".$hash."' AND active='0'") or die(mysql_error()); //change active to 1 where the email, hash and field active = 0 match up
+                    mysql_query("UPDATE Student SET stu_active='1' WHERE stu_email='".$email."' AND stu_hash='".$hash."' AND stu_active='0'") or die(mysql_error()); //change active to 1 where the email, hash and field active = 0 match up
 
                     echo '<div class="statusmsg">Your account has been activated, you can now login.</div>';
                     
@@ -37,7 +37,7 @@
     </head>
 
     <body>
-    <a href="http://www.secs.oakland.edu/~prdaram/appointment/login.php"> Log In </a>
+    <a href="http://www.secs.oakland.edu/~prdaram/login.php"> Log In </a>
     </body>
 </html>
 
