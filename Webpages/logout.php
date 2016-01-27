@@ -22,7 +22,7 @@ session_destroy();
 		<div class="container" id="Logout">
 			<h3>Successfully logged out.</h3>
 			<p>
-				<a href="adduser.php"> Register </a> | <a href="login_submit.php"> Login </a>
+				<a href="signup.php"> Sign Up </a> | <a href="login.php"> Login </a>
 			</p>
 		</div>
  

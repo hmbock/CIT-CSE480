@@ -25,7 +25,7 @@
     
         <nav>
             <ul>
-                <li><a href="480Index.php">Home</a></li>
+                <li><a href="index.html">Home</a></li>
             </ul>
         </nav>
 

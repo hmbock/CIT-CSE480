@@ -12,6 +12,7 @@
 
  <body>
  <a href="http://www.secs.oakland.edu/~prdaram/signup.php"> Sign Up </a>
+ <a href="http://www.secs.oakland.edu/~prdaram/forgotPassword.php"> Forgot Password </a>
 
  <h3>Betwixt > Log In </h3> 
 
