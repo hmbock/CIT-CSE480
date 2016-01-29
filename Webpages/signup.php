@@ -3,7 +3,7 @@
 <html>
 
     <head>
-        <title>Betwixt > Sign Up</title> 
+        <title>Betwixt Booking Create Account</title> 
         <meta charset="utf-8">
         <meta name= "viewport" content= "width= device-width, initial-scale=1.0">
         <link href="betwixt.css" rel="stylesheet">
@@ -18,17 +18,25 @@
 <body>
     <header>
         <div class="title">
-            <h1> Betwixt > SIGN UP </h1>
+            <h1> Betwixt Booking Create Account </h1>
         </div>
     </header>
     <div id="wrapper">
     
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-            </ul>
-        </nav>
-
+        <main role ="main">
+				<nav>
+					<ul>
+					  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-plus-circle"></i>&nbsp;About</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-arrow-up"></i>&nbsp;Sign Up</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-ban"></i> &nbsp; Login</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-calendar"></i> &nbsp;Help</a></li>
+            <li><a href="#blank"></a></li>
+					  <li><a href="blank"></a></li>
+            <li><a href="#blank"></a></li>
+					  <li><a href="blank"></a></li>
+					</ul>
+				</nav>	
         
         <!-- start php code -->
          
@@ -83,7 +91,7 @@
                     ------------------------
                      
                     Please click this link to activate your account:
-                    http://www.secs.oakland.edu/~prdaram/verify_student.php?email='.$email.'&hash='.$hash.' 
+                    http://www.secs.oakland.edu/~hmbock/verify_student.php?email='.$email.'&hash='.$hash.' 
                      
                     '; // Our message above including the link //*** CHANGE THE URL ***
                                          
@@ -129,7 +137,7 @@
                     ------------------------
                      
                     Please click this link to activate your account:
-                    http://www.secs.oakland.edu/~prdaram/verify_staff.php?email='.$email.'&hash='.$hash.' 
+                    http://www.secs.oakland.edu/~hmbock/verify_staff.php?email='.$email.'&hash='.$hash.' 
                      
                     '; // Our message above including the link //*** CHANGE THE URL ***
                                          
@@ -143,29 +151,38 @@
         <!-- stop php code -->
 
         <div id = "content" >
-            <p>Please choose and enter in the correct information to create your account:</p>
+            <h3>Please choose and enter in the correct information to create your account:</h3>
 
-            <?php 
-            if(isset($msg)){  // Check if $msg is not empty
-                echo '<div class="statusmsg">'.$msg.'</div>'; // Display our message and wrap it with a div with the class "statusmsg".
-            } 
-            ?>
+            
 
             <!-- start sign up form -->  
             <form action="" method="post">
+              <fieldset>
+                <div class="form-group">
                 <input type="radio" name="chooseone" value="student" checked> Student<br> 
                 <input type="radio" name="chooseone" value="staff"> Staff<br> 
-                <br>
+                </div>
+                <div class = "form-group">
                 <label for="name">Name:</label>
                 <input type="text" name="name" value="" />
+                </div>
+                <div class = "form-group">
                 <label for="email">Email:</label>
                 <input type="text" name="email" value="" />
-                 
+                </div>
+                
+                <p>
                 <input type="submit" class="submit_button" value="Sign up" />
+                </p>
+                </fieldset>
+                <p>
+            <?php echo $msg; ?> 
+                </p>
+                </div>
             </form>
             <!-- end sign up form -->
-        </div>
-
+          
+    </div>
     </div>
     </body>
 </html>

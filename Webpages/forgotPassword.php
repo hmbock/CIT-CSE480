@@ -13,7 +13,7 @@
 {
 					// insert into database
 					$email = ($_POST['email']);
-					$newPassword = ($_POST['password']);
+          $newPassword = ($_POST['password']);
 
 
 					//connect to database ***/
@@ -23,100 +23,96 @@
 					$dbname = 'hmbock';
 
 
-					try
-						{
-							mysql_connect("localhost", "hmbock", "team@480") or die(mysql_error()); // Connect to database server(localhost) with username and password.
-							mysql_select_db("hmbock") or die(mysql_error()); // Select prdaram database.
+			try
+				{
+					mysql_connect("localhost", "hmbock", "team@480") or die(mysql_error()); // Connect to database server(localhost) with username and password.
+            mysql_select_db("hmbock") or die(mysql_error()); // Select prdaram database.
             
-							if(isset($_POST['email']))//make sure email is input
-							{ 
+            if(isset($_POST['email'])){ //make sure email is input
              
-								$username = mysql_escape_string($_POST['email']); // Set variable for the username
-									if($search = mysql_query("SELECT staff_email FROM Staff WHERE staff_email='".$email."'")) //search for user entered email address in Staff table
-									{
-										$match  = mysql_num_rows($search); //records the number of rows that have matched the search
-											if($match > 0)
-											{
-												$newPassword = rand(1000,5000); // Generate random number between 1000 and 5000 and assign it to a local variable. 
+                $email = mysql_escape_string($_POST['email']); // Set variable for the username
+                if($search = mysql_query("SELECT staff_email FROM Staff WHERE staff_email='".$email."'")) //search for user entered email address in Staff table
+                {
+                $match  = mysql_num_rows($search); //records the number of rows that have matched the search
+                    if($match > 0){
+                    $newPassword = rand(1000,5000); // Generate random number between 1000 and 5000 and assign it to a local variable. 
                                              // Example output: 4568 
-												mysql_query("UPDATE Staff SET staff_password= '". mysql_escape_string(($newPassword)) ."' WHERE staff_email='$email'"); //update the Staff table with randomly generated password where the email matches
-												$message = 'SUCCESS!!! Temorary password has been sent to email'; //let user know password reset has been successful
+                    mysql_query("UPDATE Staff SET staff_password= '". mysql_escape_string(md5($newPassword)) ."' WHERE staff_email='$email'"); //update the Staff table with randomly generated password where the email matches
+                    $username = mysql_query("SELECT staff_username FROM Staff WHERE staff_email='".$email."'");
                     
-												$to      = $email; // Send email to our user
-												$subject = 'BETWIXT BOOKING FORGOT PASSWORD'; // Give the email a subject
-												$emailMessage = '
-												Please find below a temporary password for your account. Please login with password listed below and change password
-												once logged in. 
+                     $message = 'SUCCESS!!! Temorary password has been sent to email'; //let user know password reset has been successful
+                    
+                     $to      = $email; // Send email to our user
+                     $subject = 'BETWIXT BOOKING FORGOT PASSWORD'; // Give the email a subject
+                     $emailMessage = '
+                     Please find below a temporary password for your account. Please login with password listed below and change password
+                     once logged in. 
             
-												Thank you! 
+                      Thank you! 
              
-												------------------------
-												Username: '.$username.'
-												Password: '.$newPassword.'
-												------------------------
+                          ------------------------
+                          Username: '.$email.'
+                          Password: '.$newPassword.'
+                          ------------------------
              
            
              
-												'; // Our message above including the link //*** CHANGE THE URL ***
+            '; // Our message above including the link //*** CHANGE THE URL ***
                                  
-												$headers = 'From:noreply@secs.oakland.edu' . "\r\n"; // Set from headers //*** CHANGE THE URL ***
-												mail($to, $subject, $emailMessage, $headers); // Send our email                     
+            $headers = 'From:noreply@secs.oakland.edu' . "\r\n"; // Set from headers //*** CHANGE THE URL ***
+            mail($to, $subject, $emailMessage, $headers); // Send our email                     
                                             
-											} 
-											elseif($search = mysql_query("SELECT stu_email FROM Student WHERE stu_email='".$email."'")) //Search for email match in Student table since no match found in staff
-											{
-											$match  = mysql_num_rows($search); //records the number of rows that have matched the search
-												if($match > 0)
-												{
-												$newPassword = rand(1000,5000); // Generate random number between 1000 and 5000 and assign it to a local variable. 
+                      } 
+                      elseif($search = mysql_query("SELECT stu_email FROM Student WHERE stu_email='".$email."'")) //Search for email match in Student table since no match found in staff
+                      {
+                      $match  = mysql_num_rows($search); //records the number of rows that have matched the search
+                      if($match > 0){
+                      $newPassword = rand(1000,5000); // Generate random number between 1000 and 5000 and assign it to a local variable. 
                                              // Example output: 4568 
-												mysql_query("UPDATE Student SET stu_password= '". mysql_escape_string(($newPassword)) ."' WHERE stu_email='$email'"); //update the Student table with randomly generated password where the email matches 
+                      mysql_query("UPDATE Student SET stu_password= '". mysql_escape_string(md5($newPassword)) ."' WHERE stu_email='$email'"); //update the Student table with randomly generated password where the email matches 
+                      $username = mysql_query("SELECT stu_username FROM Student WHERE stu_email='".$email."'");
+                      $message = 'SUCCESS!!! Temorary password has been sent to email'; //let user know password reset has been successful
                       
-												$message = 'SUCCESS!!! Temorary password has been sent to email'; //let user know password reset has been successful
-                      
-												$to      = $email; // Send email to our user
-												$subject = 'BETWIXT BOOKING FORGOT PASSWORD'; // Give the email a subject
-												$emailMessage = 'Please find below a temporary password for your account. Please login with password listed below and change password
-												once logged in. 
+                      $to      = $email; // Send email to our user
+                     $subject = 'BETWIXT BOOKING FORGOT PASSWORD'; // Give the email a subject
+                     $emailMessage = 'Please find below a temporary password for your account. Please login with password listed below and change password
+            once logged in. 
             
-												Thank you! 
+            Thank you! 
              
-												------------------------
-												Username: '.$username.'
-												Password: '.$newPassword.'
-												------------------------
+            ------------------------
+            Username: $username
+            Password: '.$newPassword.'
+            ------------------------
              
            
              
-												'; // Our message above including the link //*** CHANGE THE URL ***
+            '; // Our message above including the link //*** CHANGE THE URL ***
                                  
-												$headers = 'From:noreply@secs.oakland.edu' . "\r\n"; // Set from headers //*** CHANGE THE URL ***
-												mail($to, $subject, $emailMessage, $headers); // Send our email         
+            $headers = 'From:noreply@secs.oakland.edu' . "\r\n"; // Set from headers //*** CHANGE THE URL ***
+            mail($to, $subject, $emailMessage, $headers); // Send our email         
             
-												}
-											else
-											{
-											$message = 'No such Email exists in our system. Please try another email or register for new account'; //returns if no match found
-											}
-											}  
-									}    
-									else
-									{
-									$message = 'No such Email exists in our system. Please try another email or register for new account'; //returns if no match found
-									}
-							}
-							else
-							{
-							$message = 'Enter valid username'; //returns if field is left blank
-							} 
+                      }
+                      else{
+                      $message = 'No such Email exists in our system. Please try another email or register for new account'; //returns if no match found
+                      }
+                      }  
+                }    
+                   else{
+                      $message = 'No such Email exists in our system. Please try another email or register for new account'; //returns if no match found
+                      }
+                }
+                else{
+                $message = 'Enter valid username'; //returns if field is left blank
+                  } 
           
-						}
+				}
     
-						catch(Exception $e)
-						{
-							//Couldn't connect to database
-							$message = 'Unable to connect. Please try again later';
-						}
+			catch(Exception $e)
+				{
+				//Couldn't connect to database
+				$message = 'Unable to connect. Please try again later';
+				}
 }
 ?>
 
@@ -142,11 +138,20 @@
 	</header>
 	<div id="wrapper">
 	
+				<main role ="main">
 				<nav>
 					<ul>
-					  <li><a href="480Index.php">Home</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/about.php"><i class="fa fa-plus-circle"></i>&nbsp;About</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-arrow-up"></i>&nbsp;Sign Up</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-ban"></i> &nbsp; Login</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-calendar"></i> &nbsp;Help</a></li>
+            <li><a href="#blank"></a></li>
+					  <li><a href="blank"></a></li>
+            <li><a href="#blank"></a></li>
+					  <li><a href="blank"></a></li>
 					</ul>
-				</nav>
+				</nav>	
 				<div id = "content">
 					<h2>Forgot Password</h2>
 						<fieldset>

@@ -1,20 +1,42 @@
 <html>
  <head>
- <title>Betwixt > LOGIN</title> 
+ <title>Betwixt > Betwixt Booking Login</title> 
     <meta charset = "UTF-8">
-    <link rel= "stylesheet" type="text/css"
-    
-    <link href='http://fonts.googleapis.com/css?family=Vast+Shadow' rel='stylesheet' type='text/css'>
-    <link href="betwixt.css" rel="stylesheet">
-
-    
+    <meta charset="utf-8">
+		<meta name= "viewport" content= "width= device-width, initial-scale=1.0">
+		<link href="betwixt.css" rel="stylesheet">
+		<link rel="stylesheet" href="C:\Users\lkwal_000\Google Drive\CIT_CSE 480\Production\css\font-awesome-4.5.0\css\font-awesome.min.css">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+		<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
  </head>
 
  <body>
- <a href="http://www.secs.oakland.edu/~prdaram/signup.php"> Sign Up </a>
- <a href="http://www.secs.oakland.edu/~prdaram/forgotPassword.php"> Forgot Password </a>
+ 
+ 
+<header>
+    <div class ="title">
+       <h1>Betwixt Booking Log In </h1> 
+    </div>
+</header>
+<div id="wrapper">	
+			
+			<main role ="main">
+				<nav>
+					<ul>
+					  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-plus-circle"></i>&nbsp;About</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-arrow-up"></i>&nbsp;Sign Up</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-ban"></i> &nbsp; Login</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-calendar"></i> &nbsp;Help</a></li>
+            <li><a href="#blank"></a></li>
+					  <li><a href="blank"></a></li>
+            <li><a href="#blank"></a></li>
+					  <li><a href="blank"></a></li>
+					</ul>
+				</nav>	
 
- <h3>Betwixt > Log In </h3> 
 
         <!-- start PHP code -->
         <?php
@@ -36,8 +58,8 @@
                     $match  = mysql_num_rows($search); //records the number of rows that have matched the search
 
                     if($match > 0){
-                        $msg = 'Login Complete! Thanks';
-                        // Set cookie / Start Session / Start Download etc...
+                        session_start();
+							          header("Location:http://www.secs.oakland.edu/~hmbock/betwixtBooking.php");
                     }else{
                         $msg = 'Login Failed! Please make sure that you enter the correct details and that you have activated your account.';
                     }
@@ -52,7 +74,8 @@
                     $match  = mysql_num_rows($search); //records the number of rows that have matched the search
 
                     if($match > 0){
-                        $msg = 'Login Complete! Thanks';
+                      session_start();
+							          header("Location:http://www.secs.oakland.edu/~hmbock/betwixtBooking.php");
                         // Set cookie / Start Session / Start Download etc...
                     }else{
                         $msg = 'Login Failed! Please make sure that you enter the correct details and that you have activated your account.';
@@ -63,29 +86,42 @@
              
         ?>
         <!-- stop PHP Code -->
-     
-        <!-- title and description -->    
-        <p>Please choose and enter in the correct information to login:</p>
-         
-        <?php 
-            if(isset($msg)){ // Check if $msg is not empty
-                echo '<div class="statusmsg">'.$msg.'</div>'; // Display our message and add a div around it with the class statusmsg
-            } 
-        ?>
 
-        <!-- start sign in form -->   
-        <form class="form-inline" method="post">
+        <div id ="content">
+        
+         
+        <h3>Please choose and enter in the correct information to login:</h3>
+         
+                <!-- start sign in form --> 
+        
+        <form action="" form method="post">
+        <fieldset>  
+          <div class = "form-group">
             <input type="radio" name="chooseone" value="student" checked> Student<br>
             <input type="radio" name="chooseone" value="staff"> Staff<br>
-            <br>
+          </div>
+          <div class ="form-group">
             <label for="name">Username:</label>
             <input type="text" name="name" value="" />
+          </div>
+          <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" name="password" value="" />
+          </div>
              
+             <p>
             <input type="submit" class="submit_button" value="Sign In" />
+            </p>
+            
+  <p>          
+ <a href="http://www.secs.oakland.edu/~hmbock/forgotPassword.php"> Forgot Password </a>
+ </p>
+        </fieldset>
+        </div>
         </form>
         <!-- end sign in form --> 
+</div>
+</div>
 
  </body>
  </html>

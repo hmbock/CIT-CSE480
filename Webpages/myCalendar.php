@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	
 	<head>
@@ -17,11 +17,13 @@
 	
 	<body>
 			<header>
-				<h1> Schedule an Appointment</h1>
+				<h1> My Calendar</h1>
 			</header>
 	
 		<div id="wrapper">
 	
+			
+			
 			<main role ="main">
 				<nav>
 					<ul>
@@ -34,36 +36,15 @@
 					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
 					</ul>
 				</nav>	
-
 				
 				<div id="content">
-					<h2> Schedule an Appointment </h2>
-					<p><b><u>To make a New appointment, fill the form below:</u></b></p>
-					
-						<div class="dropdown">
-						  <button class="dropbtn">Where would you like to make an Appointment?</button>
-						  <div class="dropdown-content">
-							<a href="#">Academic Advising</a>
-							<a href="#">Professors</a>
-							<a href="#">Tutor Center</a>
-							<a href="#">Health Center</a>
-						  </div>
-						</div>
-					
-					</br>
-					
-					<p> Summer, Fall, Winter Registration starts March 1st!</p> 
-					 <p>	Walk-in's ONLY First Week of March. </p>
+					<iframe src="https://calendar.google.com/calendar/embed?src=betwixtbooking%40gmail.com&ctz=America/New_York" style="border:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 				</div>
 				
 				
 			</main>
+	
 			
-			
-			
-			<iframe id='cv_if1' src='http://cdn.instantcal.com/cvir.html?id=cv_nav1&theme=RE&ntype=cv_datepickerm&file=http%3A%2F%2Fwww.instantcal.com%2Ftest.ics&border_radius=5' allowTransparency='true' scrolling='no' frameborder=0 height=250 width=250></iframe>
-		</div>
+
 		<footer role = "contentinfo"></footer>
 	</body>
-	
-</html>

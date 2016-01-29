@@ -1,4 +1,9 @@
-<<!DOCTYPE html>
+<?php
+session_start();
+$username = $_SESSION["username"]
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 	
 	<head>
@@ -10,18 +15,24 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</head>
 	
 	<body>
 			<header>
-				<h1> Schedule an Appointment</h1>
+				<h1> Welcome to Betwixt Booking</h1>
+				
 			</header>
+	
+	
 	
 		<div id="wrapper">
 	
+			
+			
+			<div id="wrapper">
+	
+			
+			
 			<main role ="main">
 				<nav>
 					<ul>
@@ -33,37 +44,36 @@
              <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
 					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
 					</ul>
-				</nav>	
-
+				</nav>		
 				
 				<div id="content">
-					<h2> Schedule an Appointment </h2>
-					<p><b><u>To make a New appointment, fill the form below:</u></b></p>
-					
-						<div class="dropdown">
-						  <button class="dropbtn">Where would you like to make an Appointment?</button>
-						  <div class="dropdown-content">
-							<a href="#">Academic Advising</a>
-							<a href="#">Professors</a>
-							<a href="#">Tutor Center</a>
-							<a href="#">Health Center</a>
-						  </div>
-						</div>
-					
+					<h2> News Feed </h2>
+					<p><b><u> Your Upcoming Appointments:</u></b></p>
+					<p> Febuary 1st at 3PM with you Academic Advisor Sarah Shelden </p>
 					</br>
-					
-					<p> Summer, Fall, Winter Registration starts March 1st!</p> 
-					 <p>	Walk-in's ONLY First Week of March. </p>
+					<p><b> Schedule your Semesterly appointment with your advisor! </b> </p>
+					<p> Summer, Fall, Winter Registration starts March 1st! </p>
+					<!-- <ul>
+						<li> You have appointments this week!</li>
+						<li> We recommend you schedule an Appointment with your advisior this week</li>
+						<li> Vaction next week!</li>
+					</ul> -->
 				</div>
-				
+			
+				<div id="annoucements">
+				 <p> <b><u>Annoucements</u></b></p>
+				 <p> 1 Appointment Today! </P>
+				</div>
 				
 			</main>
 			
-			
-			
-			<iframe id='cv_if1' src='http://cdn.instantcal.com/cvir.html?id=cv_nav1&theme=RE&ntype=cv_datepickerm&file=http%3A%2F%2Fwww.instantcal.com%2Ftest.ics&border_radius=5' allowTransparency='true' scrolling='no' frameborder=0 height=250 width=250></iframe>
+			<footer role = "contentinfo"></footer>
 		</div>
-		<footer role = "contentinfo"></footer>
+		
 	</body>
 	
 </html>
+
+
+
+
