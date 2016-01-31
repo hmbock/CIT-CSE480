@@ -58,9 +58,9 @@
 				<nav>
 					<ul>
 					  <li><a href="#home"><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></a></li>
-					  <li><a href="#news"><a href ="http://secs.oakland.edu/~hmbock/about.php"><i class="fa fa-circle"></i>&nbsp;About</a></li>
-					  <li><a href="#contact"><a href= "http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-plus-circle"></i>&nbsp;Sign Up</a></li>
-					  <li><a href="#contact"><a href= "http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-arrow-up"></i> &nbsp; Login</a></li>
+					  <li><a href="#news"><a href ="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-circle"></i>&nbsp;About</a></li>
+					  <li><a href="#contact"><a href= "http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
+					  <li><a href="#contact"><a href= "http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
 					</ul>
 				</nav>
     

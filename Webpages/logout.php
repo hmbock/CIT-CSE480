@@ -1,11 +1,3 @@
-<?php
-
-session_start();
-
-session_unset();
-
-session_destroy();
-?>
 <html>
 	<head>
 		<meta charset = "UTF-8">
@@ -30,10 +22,10 @@ session_destroy();
 	<nav>
 					<ul>
 					  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-plus-circle"></i>&nbsp;About</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-arrow-up"></i>&nbsp;Sign Up</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-ban"></i> &nbsp; Login</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-calendar"></i> &nbsp;Help</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-circle"></i>&nbsp;About</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/signup.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
             <li><a href="#blank"></a></li>
 					  <li><a href="blank"></a></li>
             <li><a href="#blank"></a></li>

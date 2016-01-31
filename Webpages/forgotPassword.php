@@ -35,9 +35,9 @@
                 {
                 $match  = mysql_num_rows($search); //records the number of rows that have matched the search
                     if($match > 0){
-                    $newPassword = rand(1000,5000); // Generate random number between 1000 and 5000 and assign it to a local variable. 
-                                             // Example output: 4568 
-                    mysql_query("UPDATE Staff SET staff_password= '". mysql_escape_string(md5($newPassword)) ."' WHERE staff_email='$email'"); //update the Staff table with randomly generated password where the email matches
+                    $verificationCode= (rand(1000,5000));
+                      $newPassword = md5($verificationCode);
+                    mysql_query("UPDATE Staff SET forgotPassVerification= '$newPassword' WHERE staff_email='".$email."'"); //update the Staff table with randomly generated password where the email matches
                     $username = mysql_query("SELECT staff_username FROM Staff WHERE staff_email='".$email."'");
                     
                      $message = 'SUCCESS!!! Temorary password has been sent to email'; //let user know password reset has been successful
@@ -45,52 +45,58 @@
                      $to      = $email; // Send email to our user
                      $subject = 'BETWIXT BOOKING FORGOT PASSWORD'; // Give the email a subject
                      $emailMessage = '
-                     Please find below a temporary password for your account. Please login with password listed below and change password
-                     once logged in. 
+                     Please find below a verification code for your account. Please login with verification code listed below and change password
+            once logged in. Do not share verification code. 
             
                       Thank you! 
              
                           ------------------------
-                          Username: '.$email.'
-                          Password: '.$newPassword.'
+                          Password: '.$verificationCode.'
                           ------------------------
-             
+                     
+                     Please click this link to get password verification code:
+                    http://www.secs.oakland.edu/~hmbock/verify_staffForgotPassword.php?email='.$email.'&hash='.$hash.'      
+                    '; // Our message above including the link //*** CHANGE THE URL ***                       
+                    $headers = 'From:noreply@secs.oakland.edu' . "\r\n"; // Set from headers //*** CHANGE THE URL ***
+                    mail($to, $subject, $emailMessage, $headers); // Send our email
            
              
-            '; // Our message above including the link //*** CHANGE THE URL ***
-                                 
-            $headers = 'From:noreply@secs.oakland.edu' . "\r\n"; // Set from headers //*** CHANGE THE URL ***
-            mail($to, $subject, $emailMessage, $headers); // Send our email                     
+                      
                                             
                       } 
                       elseif($search = mysql_query("SELECT stu_email FROM Student WHERE stu_email='".$email."'")) //Search for email match in Student table since no match found in staff
                       {
+                      $username = mysql_query("SELECT stu_username FROM Student WHERE stu_email='.$email.");
                       $match  = mysql_num_rows($search); //records the number of rows that have matched the search
                       if($match > 0){
-                      $newPassword = rand(1000,5000); // Generate random number between 1000 and 5000 and assign it to a local variable. 
+                      
+                      $verificationCode= (rand(1000,5000));
+                      $newPassword = md5($verificationCode); // Generate random number between 1000 and 5000 and assign it to a local variable. 
                                              // Example output: 4568 
-                      mysql_query("UPDATE Student SET stu_password= '". mysql_escape_string(md5($newPassword)) ."' WHERE stu_email='$email'"); //update the Student table with randomly generated password where the email matches 
-                      $username = mysql_query("SELECT stu_username FROM Student WHERE stu_email='".$email."'");
-                      $message = 'SUCCESS!!! Temorary password has been sent to email'; //let user know password reset has been successful
+                                             
+                      mysql_query("UPDATE Student SET forgotPassVerification= '$newPassword' WHERE stu_email='".$email."'"); //update the Student table with randomly generated password where the email matches 
+            
+                      $message = 'SUCCESS!!! Temporary password has been sent to email'; //let user know password reset has been successful
                       
                       $to      = $email; // Send email to our user
                      $subject = 'BETWIXT BOOKING FORGOT PASSWORD'; // Give the email a subject
-                     $emailMessage = 'Please find below a temporary password for your account. Please login with password listed below and change password
-            once logged in. 
+                     $emailMessage = 'Please find below a verification code for your account. Please login with verification code listed below and change password
+once logged in. Do not share verification code. 
             
             Thank you! 
              
             ------------------------
-            Username: $username
-            Password: '.$newPassword.'
+            Password: '.$verificationCode.'
             ------------------------
              
+             Please click this link to get password verification code:
+                    http://www.secs.oakland.edu/~hmbock/verify_stuForgotPassword.php?email='.$email.'&hash='.$hash.'      
+                    '; // Our message above including the link //*** CHANGE THE URL ***                       
+                    $headers = 'From:noreply@secs.oakland.edu' . "\r\n"; // Set from headers //*** CHANGE THE URL ***
+                    mail($to, $subject, $emailMessage, $headers); // Send our email
            
              
-            '; // Our message above including the link //*** CHANGE THE URL ***
-                                 
-            $headers = 'From:noreply@secs.oakland.edu' . "\r\n"; // Set from headers //*** CHANGE THE URL ***
-            mail($to, $subject, $emailMessage, $headers); // Send our email         
+            
             
                       }
                       else{
@@ -142,10 +148,10 @@
 				<nav>
 					<ul>
 					  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/about.php"><i class="fa fa-plus-circle"></i>&nbsp;About</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-arrow-up"></i>&nbsp;Sign Up</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-ban"></i> &nbsp; Login</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-calendar"></i> &nbsp;Help</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/about.php"><i class="fa fa-circle"></i>&nbsp;About</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/signup.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
             <li><a href="#blank"></a></li>
 					  <li><a href="blank"></a></li>
             <li><a href="#blank"></a></li>
@@ -159,7 +165,7 @@
 								<div class = "form-group"> 
  
 									<label for="email">Email:</label>
-									<input type="email" class="form-control" id="email" name="email" placeholder="Email" value="" maxlength="20" />
+									<input type="email" class="form-control" id="email" name="email" placeholder="Email" value="" maxlength="40" />
 								</div>
 							 
 								<button type="submit" "btn btn-default">Reset Password</button>
