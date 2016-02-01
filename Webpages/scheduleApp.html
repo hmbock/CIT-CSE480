@@ -1,6 +1,5 @@
 <<!DOCTYPE html>
 <html lang="en">
-	
 	<head>
 		<title>Betwixt Booking</title>
 		<meta charset="utf-8">
@@ -34,22 +33,118 @@
 					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
 					</ul>
 				</nav>	
-
-				
+                
 				<div id="content">
 					<h2> Schedule an Appointment </h2>
 					<p><b><u>To make a New appointment, fill the form below:</u></b></p>
 					
-						<div class="dropdown">
-						  <button class="dropbtn">Where would you like to make an Appointment?</button>
-						  <div class="dropdown-content">
-							<a href="#">Academic Advising</a>
-							<a href="#">Professors</a>
-							<a href="#">Tutor Center</a>
-							<a href="#">Health Center</a>
-						  </div>
+                    <h2>Where would you like to make an appointment?</h2>
+						<div class="dropdown" id="app" onchange="show_pcdd()">
+						  <select class="dropbtn">
+                            <option value="0">Please Choose</option>
+                            <option value="aa">Academic Advising</option>
+							<option value="pf">Professors</option>
+							<option value="tc">Tutor Center</option>
+							<option value="hc">Health Center</option>
+                          </select>
 						</div>
+                        
+                        <script type="text/javascript">
+                           function show_pcdd() {
+                                
+                                //initialize variables
+                                var app = document.getElementById("app");
+                                var pcdd = document.getElementById("pcdd");
+                                
+                                if(app.val() === "hc")
+                                {
+                                    pcdd.data("");
+                                }
+                           }
+                        </script>
 					
+                    <div class="dropdown" id="pcdd" style="display: none">
+                        <h2>Would you like to sort by person, class or date?</h2>
+                        <select class="dropbtn">
+                            <option value="">Please Select</option>
+                            <option value="dp">Person</option>
+                            <option value="cl">Class</option>
+                            <option value="dt">Date</option>
+                        </select>
+                        </div>
+                        
+                        <!-- if class is chosen: --->
+                    <div class="dropdown" id="department">
+                        <h2>Select a department</h2>
+                        <select class="dropbtn">
+                            <option value="">Please Select</option>
+	                       <?php
+                                       mysqli_connect("petty.secs.oakland.edu", "hmbock", "team@480") or die(mysql_error()); // Connect to database server(localhost) with username and password.
+                                       // mysql_select_db("hmbock") or die(mysql_error()); // Select prdaram database.
+                               
+                                $depSql = "SELECT Department, Department_ID FROM Department";
+                                while ($row = mysql_fetch_array($depSql)){
+                                    echo "<option value=\"" . $row['Department_ID'] . "\">" . $row['Department'] . "</option>";
+                                }
+                           ?>
+                        </select>
+                    </div>
+                    
+                        
+                        
+                    <div class="dropdown" id="class">
+                        <h2>Select a class</h2>
+                        <select class="dropbtn">
+                            <option value="">Please Select</option>
+	                       <?php
+                                $classSql = "SELECT Title FROM CRN, Class, Class_ID WHERE Class.Department_ID = ";
+                                while ($row = mysql_fetch_array($classSql)){
+                                    echo "<option value=\"" . $orw['Class_ID'] . "\">" . $row['Class'] . "</option>";
+                                }
+                           ?>
+                        </select>
+                    </div>
+                    <!-- if class is chosen: --->
+                    
+                    <!-- if PERSON is chosen: --->
+                    <div class="dropdown" id="person">
+                        <h2>Select a person</h2>
+                        <select class="dropbtn">
+                            <option value="">Please Select</option>
+	                       <?php
+                                $pSql = "SELECT L_Name, F_Name, staff_id FROM Staff";
+                                while ($row = mysql_fetch_array($pSql)){
+                                    echo "<option value=\"" . $row['staff_ID'] . "\">" . $row['L_Name'] . " " . $row['L_Name'] . "</option>";
+                                }
+                           ?>
+                        </select>
+                    </div>
+                    
+                    
+                    <!-- if PERSON is chosen: --->
+                    
+                    <!--- if DATE is chosen --->
+                    <div class="dropdown" id="month">
+                        <h2>Select a date</h2>
+                        <select class="dropbtn">
+                            <option value="">Please Select</option>
+                            <option value="jan">January</option>
+                            <option value="feb">February</option>
+                            <option value="mar">March</option>
+                            <option value="apr">April</option>
+                            <option value="may">May</option>
+                            <option value="jun">June</option>
+                            <option value="jul">July</option>
+                            <option value="aug">August</option>
+                            <option value="sep">September</option>
+                            <option value="oct">October</option>
+                            <option value="nov">November</option>
+                            <option value="dec">December</option>
+                        </select>
+                        
+                        <input type="number"/>.
+                    </div>
+                    <!--- if DATE is chosen --->
 					</br>
 					
 					<p> Summer, Fall, Winter Registration starts March 1st!</p> 
