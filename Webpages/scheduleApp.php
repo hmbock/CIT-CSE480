@@ -164,6 +164,7 @@
                                     } else {
                                       //Make AJAX request, using the selected value as the GET
                                       $.ajax({url: 'getClasses.php'+selectvalue,
+                                      data: { sel_dep : selectvalue },
                                              success: function(output) {
                                                 //alert(output);
                                                 $('#'+list_target_id).html(output);
