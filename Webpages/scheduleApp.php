@@ -127,19 +127,11 @@
                         <select id="sel_dep" name="sel_dep" class="dropbtn" onchange="">
                             <option value="">Please Select</option>
 	                       <?php
-                                //$depSql = "SELECT Department, Department_ID FROM Department";
-                                //$depResult = $conn->query($depSql, MYSQL_ASSOC);
-                                //while ($row = $depResult->fetch_array()) {
-                                //   echo "<option value='".$row['Department_ID']."'>".$row['Department']."</option>";
-                                //}
                                 
                                 $deps = getDepartments();
                                 
                                 foreach($deps as $item => $value)
                                 {
-                                    //echo "<option value='". $item ."'>". $deps[$item] ."</option>";
-                                    /*//<option <?php if ($_GET['name'] == 'a') { ?>selected="true" <?php }; ?>value="a">a</option> */
-                                    
                                     if ((isset($_POST['sel_dep']) && $_POST['sel_dep'] == $deps[$item])) {
                                         echo '<option type="submit" value="' . $item . '" selected="true">' . $deps[$item] . "</option>";
                                     } else {
