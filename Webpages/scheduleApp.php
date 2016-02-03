@@ -163,7 +163,10 @@
                                        $('#'+list_target_id).html(loading);
                                     } else {
                                       //Make AJAX request, using the selected value as the GET
-                                      $.ajax({url: 'getClasses.php'+selectvalue,
+                                      $.ajax({url: 'getClasses.php',
+                                      //TEST
+                                      //dataType: "html",
+                                      //contentType: "application/json; charset=utf-8",
                                       data: { sel_dep : selectvalue },
                                              success: function(output) {
                                                 //alert(output);
