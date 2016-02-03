@@ -153,7 +153,7 @@
                            
                             
                                 $(document).ready(function($) {
-                                    var list_target_id = 'department'; //first select list ID
+                                    var list_target_id = 'class'; //first select list ID
                                     var list_select_id = 'department'; //second select list ID
                                     var loading = '<option value="">Loading...</option>'; //Initial prompt for target select
  
