@@ -21,7 +21,7 @@
                     
                     function getDepartments() {
                         
-                                $conn = new mysqli("localhost", "root", "M1ch@3l90", "hmbock");
+                                $conn = new mysqli("localhost", "hmbock", "team@480", "hmbock");
                                 $depArray = array();
                         
                                 $depSql = "SELECT Department, Department_ID FROM Department";
