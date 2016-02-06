@@ -20,27 +20,27 @@
 	<body>
 
         <?php
-    function submitApptReq() {
-
-        $title = $_POST['title'];
-        //$start = $_POST['start'];
-        //$end = $_POST['end'];
-        $staff = $_POST['person'];
-
-        $conn = new mysqli("localhost", "hmbock", "team@480", "hmbock");
-
-        $sql = "INSERT INTO Appointments (Appointment_Title, stu_id, Staff_ID, Confirmed) values ({$title}, 41, {$staff}, 0)";
-        $apptResult = $conn->query($sql);
-
-        $conn->close();
-
-
-    }
-
-        if(isset($_POST['submit']))
-        {
-            submitApptReq();
-        }
+//    function submitApptReq() {
+//
+//        $title = $_POST['title'];
+//        //$start = $_POST['start'];
+//        //$end = $_POST['end'];
+//        $staff = $_POST['person'];
+//
+//        $conn = new mysqli("localhost", "root", "M1ch@3l90", "hmbock");
+//
+//        $sql = "INSERT INTO Appointments (Appointment_Title, stu_id, Staff_ID, Confirmed) values ({$title}, 41, {$staff}, 0)";
+//        $conn->query($sql);
+//
+//        $conn->close();
+//
+//
+//    }
+//
+//        if(isset($_POST['submit']))
+//        {
+//            submitApptReq();
+//        }
         ?>
 
 
@@ -80,7 +80,7 @@
                     <div class="dropdown" id="pcd" style="display: block">
                         <h2>Would you like to sort by person, class or date?</h2>
                         <select id="pcddd" name="sel_pcd" class="dropbtn">
-                            <option value="">Please Select</option>
+                            <option value="ps">Please Select</option>
                             <option value="pn">Person</option>
                             <option value="cl">Class/Department</option>
                             <option value="dt">Date</option>
@@ -104,7 +104,9 @@
 
                                 $('#'+dd).empty();
                                 $('#'+dd).append('<option value=\"0\">Please select</option>');
-                            }$('#pcd').change(function(e) {
+                            }
+
+                            $('#pcd').change(function(e) {
                                 var pcd = $('#pcd option:selected').attr('value');
 
                                 switch (pcd) {
@@ -131,11 +133,30 @@
                             var list_select_id = 'departmentdd'; //second select list ID
                             var loading = '<option value="">Loading...</option>'; //Initial prompt for target select
 
+                            $('#app').change(function(e) {
+                                $('#pcddd').val('ps');
+                                emptyDD("persondd");
+                                emptyDD("departmentdd");
+                                emptyDD("classdd");
+
+                                if ($('#app option:selected').attr('value') == 'ps') {
+                                    document.getElementById('person').style.display = 'none';
+                                    document.getElementById('class').style.display = 'none';
+                                    document.getElementById('department').style.display = 'none';
+                                } else if ($('#app option:selected').attr('value') == 'hc') {
+                                    document.getElementById('class').style.display = 'none';
+                                    document.getElementById('department').style.display = 'none';
+                                    document.getElementById('person').style.display = 'block';
+                                }
+                            });
+
+
                             $('#pcd').change(function(e) {
                                 //Get chosen value from appointment type select list
                                var sel =  $('#app option:selected').attr('value');
                                 //alert(sel);
                                 var pcd = $('#pcd option:selected').attr('value');
+                                var id = $('#')
 
                                 emptyDD('departmentdd');
                                 emptyDD('classdd');
@@ -172,7 +193,7 @@
                                            document.getElementById('class').style.display = 'none';
 
                                            $.ajax({url: 'getStaff.php',
-                                               data: { ID : sel, type : "adv" },
+                                               data: { ID: sel, type : "adv" },
                                                method: "GET",
                                                dataType: "json",
                                                contentType: "application/json; charset=utf-8",
@@ -469,6 +490,27 @@
                                     default:
                                 }
                             });
+
+                            $('#submit').click(function(e) {
+
+                                var staffID = $('#persondd option:selected').attr('value');
+                                var stuID = 41; //change to real val
+                                var title = $('#title').val();
+
+                                $.ajax({
+                                    url: 'submitApp.php',
+                                    data: { staffID : staffID, stuID : stuID, title: title },
+                                    method: "GET",
+                                    dataType: "json",
+                                    contentType: "application/json; charset=utf-8",
+                                    success: function () {
+                                        $('#success').append("<p>Appointment scheduled successfully!</p>");
+                                    },
+                                    error: function (xhr, ajaxOptions, thrownError) {
+                                        alert(xhr.status + " " + thrownError);
+                                    }
+                                });
+                            });
                         });
 
                     </script>
@@ -522,6 +564,8 @@
 					 <p>	Walk-in's ONLY First Week of March. </p>
 
                     <input type="submit" id="submit" />
+
+                    <div id="success" name="success"></div>
 				</div>
 				
                 </form>
