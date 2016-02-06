@@ -27,7 +27,7 @@
 //        //$end = $_POST['end'];
 //        $staff = $_POST['person'];
 //
-//        $conn = new mysqli("localhost", "root", "M1ch@3l90", "hmbock");
+//        $conn = new mysqli("localhost", "hmbock", "team@480", "hmbock");
 //
 //        $sql = "INSERT INTO Appointments (Appointment_Title, stu_id, Staff_ID, Confirmed) values ({$title}, 41, {$staff}, 0)";
 //        $conn->query($sql);
