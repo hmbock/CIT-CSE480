@@ -6,7 +6,7 @@
     * @author
     * @copyright 2016
     */
-    $conn = new mysqli("localhost", "root", "M1ch@3l90", "hmbock");
+    $conn = new mysqli("localhost", "hmbock", "team@480", "hmbock");
 
     $classArray = array();
 
@@ -30,4 +30,3 @@
     }
     echo json_encode($data);
 ?>
-
