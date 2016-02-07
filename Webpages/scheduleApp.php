@@ -451,26 +451,7 @@
 
                     <div class="dropdown" id="date" style="display: none;" >
                         <h2>Select a date</h2>
-                        <!---                <select class="dropbtn">
-                                           <option value="">Please Select</option>
-                                           <option value="jan">January</option>
-                                           <option value="feb">February</option>
-                                           <option value="mar">March</option>
-                                           <option value="apr">April</option>
-                                           <option value="may">May</option>
-                                           <option value="jun">June</option>
-                                           <option value="jul">July</option>
-                                           <option value="aug">August</option>
-                                           <option value="sep">September</option>
-                                           <option value="oct">October</option>
-                                           <option value="nov">November</option>
-                                           <option value="dec">December</option>
-                                       </select>
-
-                                      <input type="number" style="display: block"/>.
-                                       Start Time: <input id="start" name="start" type="datetime-local" />
-                                       End Time: <input id="end" name="end" type="datetime-local" /> --->
-                        Give you appointment a Title: <input name="title" id="title" type="text" />
+                        Title: <input name="title" id="title" type="text" />
 
                     </div>
 					</br>
