@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Betwixt Booking</title>
@@ -12,13 +12,15 @@
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <?php
+                    $conn = new mysqli("localhost", "root", "M1ch@3l90", "hmbock");
+        ?>
 	</head>
 	
 	<body>
 			<header>
 				<h1> Schedule an Appointment</h1>
 			</header>
-	
 		<div id="wrapper">
 	
 			<main role ="main">
@@ -48,6 +50,7 @@
 							<option value="hc">Health Center</option>
                           </select>
 						</div>
+                        
                         
                         <script type="text/javascript">
                            function show_pcdd() {
@@ -79,27 +82,24 @@
                         <select class="dropbtn">
                             <option value="">Please Select</option>
 	                       <?php
-                                       mysqli_connect("petty.secs.oakland.edu", "hmbock", "team@480") or die(mysql_error()); // Connect to database server(localhost) with username and password.
-                                       // mysql_select_db("hmbock") or die(mysql_error()); // Select prdaram database.
-                               
                                 $depSql = "SELECT Department, Department_ID FROM Department";
-                                while ($row = mysql_fetch_array($depSql)){
-                                    echo "<option value=\"" . $row['Department_ID'] . "\">" . $row['Department'] . "</option>";
+                                $depResult = $conn->query($depSql, MYSQL_ASSOC);
+                                while ($row = $depResult->fetch_array()) {
+                                   echo "<option value='".$row['Department_ID']."'>".$row['Department']."</option>";
                                 }
+ 
                            ?>
                         </select>
                     </div>
-                    
-                        
                         
                     <div class="dropdown" id="class">
                         <h2>Select a class</h2>
                         <select class="dropbtn">
                             <option value="">Please Select</option>
 	                       <?php
-                                $classSql = "SELECT Title FROM CRN, Class, Class_ID WHERE Class.Department_ID = ";
-                                while ($row = mysql_fetch_array($classSql)){
-                                    echo "<option value=\"" . $orw['Class_ID'] . "\">" . $row['Class'] . "</option>";
+                                $classSql = "SELECT Title FROM CRN, Class, Class_ID WHERE Class.Department_ID = " . $_POST['Department_ID'];
+                                while ($row = mysqli_fetch_array($classSql)){
+                                    echo "<option value=\"" . $row['Class_ID'] . "\">" . $row['Class'] . "</option>";
                                 }
                            ?>
                         </select>
@@ -114,7 +114,7 @@
 	                       <?php
                                 $pSql = "SELECT L_Name, F_Name, staff_id FROM Staff";
                                 while ($row = mysql_fetch_array($pSql)){
-                                    echo "<option value=\"" . $row['staff_ID'] . "\">" . $row['L_Name'] . " " . $row['L_Name'] . "</option>";
+                                    echo "<option value=\"" . $row['staff_ID'] . "\">" . $row['F_Name'] . " " . $row['L_Name'] . "</option>";
                                 }
                            ?>
                         </select>
