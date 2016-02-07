@@ -14,44 +14,13 @@
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<<<<<<< HEAD
 
 
-=======
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
 
 	</head>
 	
 	<body>
 
-<<<<<<< HEAD
-=======
-        <?php
-//    function submitApptReq() {
-//
-//        $title = $_POST['title'];
-//        //$start = $_POST['start'];
-//        //$end = $_POST['end'];
-//        $staff = $_POST['person'];
-//
-//        $conn = new mysqli("localhost", "hmbock", "team@480", "hmbock");
-//
-//        $sql = "INSERT INTO Appointments (Appointment_Title, stu_id, Staff_ID, Confirmed) values ({$title}, 41, {$staff}, 0)";
-//        $conn->query($sql);
-//
-//        $conn->close();
-//
-//
-//    }
-//
-//        if(isset($_POST['submit']))
-//        {
-//            submitApptReq();
-//        }
-        ?>
-
-
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
 			<header>
 				<h1> Schedule an Appointment</h1>
 			</header>
@@ -88,11 +57,7 @@
                     <div class="dropdown" id="pcd" style="display: block">
                         <h2>Would you like to sort by person, class or date?</h2>
                         <select id="pcddd" name="sel_pcd" class="dropbtn">
-<<<<<<< HEAD
                             <option value="ps">Please select</option>
-=======
-                            <option value="ps">Please Select</option>
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
                             <option value="pn">Person</option>
                             <option value="cl">Class/Department</option>
                             <option value="dt">Date</option>
@@ -112,18 +77,13 @@
 
                         $(document).ready(function($) {
 
-<<<<<<< HEAD
                             //Empties a select list and sets initial option
                             function resetDD(dd) {
-=======
-                            function emptyDD(dd) {
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
 
                                 $('#'+dd).empty();
                                 $('#'+dd).append('<option value=\"0\">Please select</option>');
                             }
 
-<<<<<<< HEAD
                             //Fills a select list with the appropriate values
                             function fillDD(url, list, sID, type) {
 
@@ -202,49 +162,11 @@
                                 resetDD("classdd");
 
                                 //If "Please Select" is selected, hide all other select lists
-=======
-                            $('#pcd').change(function(e) {
-                                var pcd = $('#pcd option:selected').attr('value');
-
-                                switch (pcd) {
-                                    case "pn":
-                                        document.getElementById('department').style.display = 'none';
-                                        document.getElementById('class').style.display = 'none';
-                                        document.getElementById('person').style.display = 'block';
-                                        break;
-                                    case "cl":
-                                        document.getElementById('department').style.display = 'block';
-                                        document.getElementById('class').style.display = 'block';
-                                        document.getElementById('person').style.display = 'block';
-                                        break;
-                                    case "date":
-                                        document.getElementById('department').style.display = 'none';
-                                        document.getElementById('class').style.display = 'none';
-                                        document.getElementById('person').style.display = 'none';
-                                }
-
-                                document.getElementById('date').style.display = 'block';
-                            });
-
-                            var list_target_id = 'classdd'; //first select list ID
-                            var list_select_id = 'departmentdd'; //second select list ID
-                            var loading = '<option value="">Loading...</option>'; //Initial prompt for target select
-
-                            $('#app').change(function(e) {
-                                $('#pcddd').val('ps');
-                                emptyDD("persondd");
-                                emptyDD("departmentdd");
-                                emptyDD("classdd");
-
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
                                 if ($('#app option:selected').attr('value') == 'ps') {
                                     document.getElementById('person').style.display = 'none';
                                     document.getElementById('class').style.display = 'none';
                                     document.getElementById('department').style.display = 'none';
-<<<<<<< HEAD
                                     //If health center appointment, display only "Person" select list
-=======
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
                                 } else if ($('#app option:selected').attr('value') == 'hc') {
                                     document.getElementById('class').style.display = 'none';
                                     document.getElementById('department').style.display = 'none';
@@ -252,7 +174,6 @@
                                 }
                             });
 
-<<<<<<< HEAD
                             //On change event for person/class/date select list
                             $('#pcd').change(function(e) {
 
@@ -344,215 +265,27 @@
 
                                            fillDD('getDepartments.php', 'departmentdd', 0, 'department');
 
-=======
-
-                            $('#pcd').change(function(e) {
-                                //Get chosen value from appointment type select list
-                               var sel =  $('#app option:selected').attr('value');
-                                //alert(sel);
-                                var pcd = $('#pcd option:selected').attr('value');
-                                var id = $('#')
-
-                                emptyDD('departmentdd');
-                                emptyDD('classdd');
-                                emptyDD('persondd');
-
-                                document.getElementById('pcd').style.display = 'block';
-
-                               switch (sel) {
-                                   case "aa":
-                                       if (pcd == 'cl') {
-
-                                           document.getElementById('class').style.display = 'none';
-                                           document.getElementById('date').style.display = 'block';
-
-                                           $.ajax({
-                                               url: 'getDepartments.php',
-                                               method: "GET",
-                                               dataType: "json",
-                                               contentType: "application/json; charset=utf-8",
-                                               success: function (data) {
-                                                   //alert(data);
-                                                   $('#departmentdd').empty();
-                                                   $('#departmentdd').append('<option value=\"0\">Please select</option>');
-                                                   $.each(data, function (i, item) {
-                                                       $('#departmentdd').append('<option value="' + data[i].id + '">' + data[i].department + '</option>');
-                                                   });
-                                               },
-                                               error: function (xhr, ajaxOptions, thrownError) {
-                                                   alert(xhr.status + " " + thrownError);
-                                               }
-                                           });
-                                       } else if (pcd == 'pn') {
-                                           document.getElementById('department').style.display = 'none';
-                                           document.getElementById('class').style.display = 'none';
-
-                                           $.ajax({url: 'getStaff.php',
-                                               data: { ID: sel, type : "adv" },
-                                               method: "GET",
-                                               dataType: "json",
-                                               contentType: "application/json; charset=utf-8",
-                                               success: function(data) {
-                                                   //alert(data);
-                                                   $('#persondd').empty();
-                                                   $('#persondd').append('<option value=\"0\">Please select</option>');
-                                                   $.each(data, function(i, item) {
-                                                       $('#persondd').append('<option value="' + data[i].id + '">' + data[i].fname + ' ' + data[i].lname + '</option>');
-                                                   });
-                                               },
-                                               error: function (xhr, ajaxOptions, thrownError) {
-                                                   alert(xhr.status + " " + thrownError);
-                                               }});
-                                       }
-                                       //emptyDD("classdd");
-                                       //emptyDD("persondd");
-                                       //document.getElementById('department').style.display = 'block';
-                                       //document.getElementById('class').style.display = 'none';
-                                       //document.getElementById('date').style.display = 'none';
-                                       document.getElementById('person').style.display = 'block';
-                                       break;
-                                   case "pf":
-                                       if(pcd == 'cl') {
-                                           $.ajax({
-                                               url: 'getDepartments.php',
-                                               method: "GET",
-                                               dataType: "json",
-                                               contentType: "application/json; charset=utf-8",
-                                               success: function (data) {
-                                                   //alert(data);
-                                                   $('#departmentdd').empty();
-                                                   $('#departmentdd').append('<option value=\"0\">Please select</option>');
-                                                   $.each(data, function (i, item) {
-                                                       $('#departmentdd').append('<option value="' + data[i].id + '">' + data[i].department + '</option>');
-                                                   });
-                                               },
-                                               error: function (xhr, ajaxOptions, thrownError) {
-                                                   alert(xhr.status + " " + thrownError);
-                                               }
-                                           });
-                                       } else if (pcd == 'pn') {
-                                           document.getElementById('department').style.display = 'none';
-                                           document.getElementById('class').style.display = 'none';
-
-                                           $.ajax({url: 'getStaff.php',
-                                               data: { ID : sel, type : "prof" },
-                                               method: "GET",
-                                               dataType: "json",
-                                               contentType: "application/json; charset=utf-8",
-                                               success: function(data) {
-                                                   //alert(data);
-                                                   $('#persondd').empty();
-                                                   $('#persondd').append('<option value=\"0\">Please select</option>');
-                                                   $.each(data, function(i, item) {
-                                                       $('#persondd').append('<option value="' + data[i].id + '">' + data[i].fname + ' ' + data[i].lname + '</option>');
-                                                   });
-                                               },
-                                               error: function (xhr, ajaxOptions, thrownError) {
-                                                   alert(xhr.status + " " + thrownError);
-                                               }});
-                                       }
-                                       emptyDD("classdd");
-                                       emptyDD("persondd");
-                                       //document.getElementById('department').style.display = 'block';
-                                       //document.getElementById('class').style.display = 'block';
-                                       document.getElementById('person').style.display = 'block';
-                                       //document.getElementById('date').style.display = 'none';
-                                       break;
-                                   case "tc":
-                                       if (pcd == 'cl') {
-
-                                           document.getElementById('department').style.display = 'block';
-                                           document.getElementById('class').style.display = 'block';
-                                           document.getElementById('person').style.display = 'block';
-
-                                           $.ajax({
-                                               url: 'getDepartments.php',
-                                               method: "GET",
-                                               dataType: "json",
-                                               contentType: "application/json; charset=utf-8",
-                                               success: function (data) {
-                                                   //alert(data);
-                                                   $('#departmentdd').empty();
-                                                   $('#departmentdd').append('<option value=\"0\">Please select</option>');
-                                                   $.each(data, function (i, item) {
-                                                       $('#departmentdd').append('<option value="' + data[i].id + '">' + data[i].department + '</option>');
-                                                   });
-                                               },
-                                               error: function (xhr, ajaxOptions, thrownError) {
-                                                   alert(xhr.status + " " + thrownError);
-                                               }
-                                           });
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
                                        } else if (pcd == 'pn') {
 
                                            document.getElementById('department').style.display = 'none';
                                            document.getElementById('class').style.display = 'none';
                                            document.getElementById('person').style.display = 'block';
 
-<<<<<<< HEAD
                                            fillDD('getStaff.php', 'persondd', sel, 'tutorpn');
 
                                        }
                                        resetDD("classdd");
                                        resetDD("persondd");
-=======
-                                           $.ajax({url: 'getStaff.php',
-                                               data: { ID : sel, type : "tutorpn" },
-                                               method: "GET",
-                                               dataType: "json",
-                                               contentType: "application/json; charset=utf-8",
-                                               success: function(data) {
-                                                   //alert(data);
-                                                   $('#persondd').empty();
-                                                   $('#persondd').append('<option value=\"0\">Please select</option>');
-                                                   $.each(data, function(i, item) {
-                                                       $('#persondd').append('<option value="' + data[i].id + '">' + data[i].fname + ' ' + data[i].lname + '</option>');
-                                                   });
-                                               },
-                                               error: function (xhr, ajaxOptions, thrownError) {
-                                                   alert(xhr.status + " " + thrownError);
-                                               }});
-                                       }
-                                       emptyDD("classdd");
-                                       emptyDD("persondd");
-//                                       document.getElementById('department').style.display = 'block';
-//                                       document.getElementById('class').style.display = 'block';
-//                                       document.getElementById('person').style.display = 'block';
-                                       //document.getElementById('date').style.display = 'none';
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
                                        break;
                                    case "hc":
                                        $('#classdd').empty();
                                        $('#persondd').empty();
-<<<<<<< HEAD
 
                                        fillDD('getStaff.php', 'persondd', sel, 'hc');
 
                                        document.getElementById('person').style.display = 'block';
                                        document.getElementById('department').style.display = 'none';
                                        document.getElementById('class').style.display = 'none';
-=======
-                                       $.ajax({url: 'getStaff.php',
-                                           data: { ID : sel, type : "hc" },
-                                           method: "GET",
-                                           dataType: "json",
-                                           contentType: "application/json; charset=utf-8",
-                                           success: function(data) {
-                                               //alert(data);
-                                               $('#persondd').empty();
-                                               $('#persondd').append('<option value=\"0\">Please select</option>');
-                                               $.each(data, function(i, item) {
-                                                   $('#persondd').append('<option value="' + data[i].id + '">' + data[i].fname + ' ' + data[i].lname + '</option>');
-                                               });
-                                           },
-                                           error: function (xhr, ajaxOptions, thrownError) {
-                                               alert(xhr.status + " " + thrownError);
-                                           }});
-                                       document.getElementById('person').style.display = 'block';
-                                       document.getElementById('department').style.display = 'none';
-                                       document.getElementById('class').style.display = 'none';
-                                       //document.getElementById('date').style.display = 'none';
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
                                        break;
                                    default:
 
@@ -562,19 +295,13 @@
 
                             $('#department').change(function(e) {
 
-<<<<<<< HEAD
                                 resetDD("persondd");
                                 resetDD("classdd");
-=======
-                                emptyDD("persondd");
-                                emptyDD("classdd");
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
 
                                 var type = $('#app option:selected').attr('value');
 
                                 var pcd = $('#pcd option:selected').attr('value');
 
-<<<<<<< HEAD
                                 var selID = $('#department option:selected').attr('value');
 
                                 switch (type) {
@@ -597,46 +324,6 @@
 
                                             $.ajax({url: 'getClasses.php',
                                                 data: { ID : selID },
-=======
-                                switch (type) {
-
-                                    case "aa":
-                                        var sel = $('#department option:selected').attr('value');
-
-                                        if (sel == "") {
-                                            emptyDD("persondd");
-                                            emptyDD("classdd");
-                                        } else {
-                                            $.ajax({url: 'getStaff.php',
-                                                data: { ID : sel, type : "department" },
-                                                method: "GET",
-                                                dataType: "json",
-                                                contentType: "application/json; charset=utf-8",
-                                                success: function(data) {
-                                                    //alert(data);
-                                                    $('#persondd').empty();
-                                                    $('#persondd').append('<option value=\"0\">Please select</option>');
-                                                    $.each(data, function(i, item) {
-                                                        $('#persondd').append('<option value="' + data[i].id + '">' + data[i].fname + ' ' + data[i].lname + '</option>');
-                                                    });
-                                                },
-                                                error: function (xhr, ajaxOptions, thrownError) {
-                                                    alert(xhr.status + " " + thrownError);
-                                                }});
-                                        }
-                                        break;
-
-                                    case "pf":
-                                        //Get the chosen value on first select list change
-                                        var sel = $('#department option:selected').attr('value');
-
-                                        if (sel == "") {
-                                            emptyDD("persondd");
-                                            emptyDD("classdd");
-                                        } else {
-                                            //Make AJAX request, using the selected value as the GET
-                                            $.ajax({url: 'getClasses.php',
-                                                data: { ID : sel },
                                                 method: "GET",
                                                 dataType: "json",
                                                 contentType: "application/json; charset=utf-8",
@@ -644,35 +331,6 @@
                                                     //alert(data);
                                                     $('#classdd').empty();
                                                     $('#classdd').append('<option value=\"0\">Please select</option>');
-                                                    $.each(data, function(i, item) {
-                                                        $('#classdd').append('<option value="' + data[i].id + '">' + data[i].crn + ': ' + data[i].title + '</option>');
-                                                    });
-                                                },
-                                                error: function (xhr, ajaxOptions, thrownError) {
-                                                    alert(xhr.status + " " + thrownError);
-                                                }});
-                                            }
-                                        break;
-
-                                    case "tc":
-
-                                        var sel = $('#department option:selected').attr('value');
-
-                                        if (sel == "") {
-                                            emptyDD("persondd");
-                                            emptyDD("classdd");
-                                        } else {
-                                            $.ajax({url: 'getClasses.php',
-                                                data: { ID : sel },
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
-                                                method: "GET",
-                                                dataType: "json",
-                                                contentType: "application/json; charset=utf-8",
-                                                success: function(data) {
-                                                    //alert(data);
-                                                    $('#classdd').empty();
-                                                    $('#classdd').append('<option value=\"0\">Please select</option>');
-<<<<<<< HEAD
 
                                                     if (data.length == 0) {
 
@@ -683,19 +341,10 @@
                                                             $('#classdd').append('<option value="' + data[i].id + '">' + data[i].crn + ': ' + data[i].title + '</option>');
                                                         });
                                                     }
-=======
-                                                    $.each(data, function(i, item) {
-                                                        $('#classdd').append('<option value="' + data[i].id + '">' + data[i].crn + ': ' + data[i].title + '</option>');
-                                                    });
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
                                                 },
                                                 error: function (xhr, ajaxOptions, thrownError) {
                                                     alert(xhr.status + " " + thrownError);
                                                 }});
-<<<<<<< HEAD
-=======
-                                        }
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
                                         break;
 
                                     default:
@@ -704,7 +353,6 @@
 
                             $('#classdd').change(function(e) {
                                var sel = $('#class option:selected').attr('value');
-<<<<<<< HEAD
                                 var dep = $('#department option:selected').attr('value');
 
                                 var type =  $('#app option:selected').attr('value');
@@ -753,49 +401,6 @@
 //                                                alert(xhr.status + " " + thrownError);
 //                                            }
 //                                        });
-=======
-                                var type = $('#app option:selected').attr('value');
-
-                                switch (type) {
-                                    case "pf":
-                                        //Ajax request
-                                        $.ajax({
-                                            url: 'getStaff.php',
-                                            data: {ID: sel, type: "class"},
-                                            method: "GET",
-                                            dataType: "json",
-                                            contentType: "application/json; charset=utf-8",
-                                            success: function (data) {
-                                                $('#persondd').empty();
-                                                $('#persondd').append('<option value=\"0\">Please select</option>');
-                                                $.each(data, function (i, item) {
-                                                    $('#persondd').append('<option value="' + data[i].id + '">' + data[i].fname + ' ' + data[i].lname + '</option>');
-                                                });
-                                            },
-                                            error: function (xhr, ajaxOptions, thrownError) {
-                                                alert(xhr.status + " " + thrownError);
-                                            }
-                                        });
-                                        break;
-                                    case "tc":
-                                        $.ajax({
-                                            url: 'getStaff.php',
-                                            data: {ID: sel, type: "tutor"},
-                                            method: "GET",
-                                            dataType: "json",
-                                            contentType: "application/json; charset=utf-8",
-                                            success: function (data) {
-                                                $('#persondd').empty();
-                                                $('#persondd').append('<option value=\"0\">Please select</option>');
-                                                $.each(data, function (i, item) {
-                                                    $('#persondd').append('<option value="' + data[i].id + '">' + data[i].fname + ' ' + data[i].lname + '</option>');
-                                                });
-                                            },
-                                            error: function (xhr, ajaxOptions, thrownError) {
-                                                alert(xhr.status + " " + thrownError);
-                                            }
-                                        });
->>>>>>> fab3198e3c1bd6a22cdcaaf259dcd2b29fc9c14d
                                         break;
                                     default:
                                 }
