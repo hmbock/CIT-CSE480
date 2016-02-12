@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+session_unset();
+
+session_destroy();
+?>
 <html>
 	<head>
 		<meta charset = "UTF-8">

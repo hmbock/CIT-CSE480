@@ -27,7 +27,7 @@
 					<ul>
 					  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-circle"></i>&nbsp;About</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/signup.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
             <li><a href="#blank"></a></li>
@@ -58,8 +58,11 @@
                     $match  = mysql_num_rows($search); //records the number of rows that have matched the search
 
                     if($match > 0){
-                        session_start();
-							          header("Location:http://www.secs.oakland.edu/~hmbock/betwixtBooking.php");
+                        session_start();                                                                                                                           
+                      $_SESSION['username'] = $_POST['username'];
+                      header("Location:http://www.secs.oakland.edu/~hmbock/betwixtBooking.php");
+                      
+
                     }else{
                         $msg = 'Login Failed! Please make sure that you enter the correct details and that you have activated your account.';
                     }
@@ -75,8 +78,14 @@
 
                     if($match > 0){
                       session_start();
-							          header("Location:http://www.secs.oakland.edu/~hmbock/betwixtBooking.php");
-                        // Set cookie / Start Session / Start Download etc...
+                     // $_SESSION['username'] = 'hello';
+                      //header("Location:http://www.secs.oakland.edu/~hmbock/betwixtBooking.php");
+                      
+// Works if session cookie was accepted
+echo '<br /><a href="betwixtBooking.php">page 2</a>';
+
+// Or maybe pass along the session id, if needed
+echo '<br /><a href="betwixtBooking.php?' . SID . '">page 2</a>';  
                     }else{
                         $msg = 'Login Failed! Please make sure that you enter the correct details and that you have activated your account.';
                     }

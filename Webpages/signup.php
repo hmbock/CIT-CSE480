@@ -28,7 +28,7 @@
 					<ul>
 					  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-circle"></i>&nbsp;About</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/signup.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
             <li><a href="#blank"></a></li>
@@ -157,21 +157,21 @@
                 <fieldset>
             <div class="form-group">
 						  <label for="firstName">First Name:</label>
-						  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" value="" maxlength="20" />
+						  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" value="" maxlength="50" />
             <div class="form-group">
 				      <label for="lastName">Last Name:</label>
-		          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" value="" maxlength="20" />
+		          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" value="" maxlength="50" />
 					  <div class="form-group">
 						  <label for="email">Email:</label>
-						  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="email" maxlength="20" />
+						  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="email" maxlength="50" />
 					  </div>
             <div class="form-group">
 			        <label for="username">Username:</label>
-						  <input type="text" class="form-control" id="username" name="username" placeholder="username" value="" maxlength="20" />
+						  <input type="text" class="form-control" id="username" name="username" placeholder="username" value="" maxlength="50" />
 					  </div>
 					  <div class="form-group">
 						  <label  for="password">Password:</label>
-						  <input type="password" class="form-control" id="password" placeholder ="Password" name="password" value="" maxlength="20" />
+						  <input type="password" class="form-control" id="password" placeholder ="Password" name="password" value="" maxlength="50" />
 					  </div>
              <div class="form-group">
                 

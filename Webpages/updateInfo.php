@@ -66,7 +66,7 @@ $data2 = mysql_fetch_array($query);
                                 $updatedEmail = ($newEmail);
                                
                                 mysql_query("UPDATE Staff SET F_Name = '$updatedFirstName', L_Name = '$updatedLastName', staff_email = '$updatedEmail' WHERE staff_username='$username'");
-                                header("location:http://www.secs.oakland.edu/~hmbock/updateInfo.php");    
+                                header("location:http://www.secs.oakland.edu/~hmbock/accountSettings.php");    
                               } 
                     
                               elseif($search = mysql_query("SELECT F_Name, L_Name,stu_email FROM Student WHERE stu_username='$username'")) 
@@ -82,7 +82,7 @@ $data2 = mysql_fetch_array($query);
                                              
                                          mysql_query("UPDATE Student SET F_Name = '$updatedFirstName', L_Name = '$updatedLastName', stu_email = '$updatedEmail' WHERE stu_username='$username'"); 
                                 
-                                  header("location:http://www.secs.oakland.edu/~hmbock/updateInfo.php");
+                                  header("location:http://www.secs.oakland.edu/~hmbock/accountSettings.php");
 
                                     }
                                     else
@@ -103,7 +103,7 @@ $data2 = mysql_fetch_array($query);
                   
               
                   else{
-                $msg = ''; 
+                $msg = 'Account information has been updated!'; 
                  } 
 				}
      

@@ -27,7 +27,7 @@
 					<ul>
 					  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-circle"></i>&nbsp;About</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/signup.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
             <li><a href="#blank"></a></li>
@@ -55,12 +55,14 @@
                             //selects the fields username, password, and active from the table where username field matches the $username given, password field matches the $password givenm and active field is set to 1 (active = 1 makes sure you can only login if your account has been activated)
 
                     $match  = mysql_num_rows($search); //records the number of rows that have matched the search
-
+                    $searchUsername = mysql_query("SELECT stu_username FROM Student WHERE forgotPassVerification='".$passCode."'");
+                    $username = mysql_result("$searchUsername");
                     if($match > 0){
-                        session_start();
-			header("Location:http://www.secs.oakland.edu/~hmbock/betwixtBooking.php");
+                         session_start();                                                                                                                          
+                      $_SESSION['username'] = "$username";
+                      header("Location:http://www.secs.oakland.edu/~hmbock/betwixtBooking.php");
                     }else{
-                        $msg = 'Login Failed! Please make sure that you enter the correct details and that you have activated your account.';
+                        $msg = 'Incorrect verification code. Please enter code that was emailed';
                     }
                 }
                 else{
