@@ -22,63 +22,61 @@ session_start();
 
 	</head>
 	
-	<body>
-
-			<header>
-				<h1> Schedule an Appointment</h1>
-			</header>
+	<body>	
 		<div id="wrapper">
-	
+       		 <header>
+				<h1> Schedule an Appointment</h1>
+			 </header>
+
 			<main role ="main">
 				<nav>
 					<ul>
-            <li>Username:<?php echo $_SESSION['username']; ?> </li> 
+            		  <li>Username:<?php echo $_SESSION['username']; ?> </li> 
 					  <li><a href="http://secs.oakland.edu/~hmbock/betwixtBooking.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/upcomingApp.php"><i class="fa fa-arrow-up"></i>&nbsp;Upcoming Appointments</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/cancelApp.php"><i class="fa fa-ban"></i> &nbsp; Cancel Appointment</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i> &nbsp;My Calendar</a></li>
-             <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
+            		  <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
 					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
 					</ul>
 				</nav>	
                 <form action="" method="POST" >
-				<div id="content">
-					<h2> Schedule an Appointment </h2>
-					<p><b><u>To make a New appointment, fill the form below:</u></b></p>
-					
-						<div class="dropdown" id="app">
-                        <h2>Where would you like to make an appointment?</h2>
-						  <select name="sel_type"class="dropbtn">
-                            <option value="0">Please select</option>
-                            <option value="aa">Academic Advising</option>
-							<option value="pf">Professors</option>
-							<option value="tc">Tutor Center</option>
-							<option value="hc">Health Center</option>
-                          </select>
-						</div>
-
-                    <div class="dropdown" id="pcd" style="display: block">
-                        <h2>Would you like to sort by person, class or date?</h2>
-                        <select id="pcddd" name="sel_pcd" class="dropbtn">
-                            <option value="ps">Please select</option>
-                            <option value="pn">Person</option>
-                            <option value="cl">Class/Department</option>
-                            <option value="dt">Date</option>
-                        </select>
-                        </div>
+                    <div id="content">
+                        <h2> Schedule an Appointment </h2>
+                        <p><b><u>To make a New appointment, fill the form below:</u></b></p>
                         
-                        <!-- if class is chosen: --->
-                    <div class="dropdown" id="department" style="display: none">
-                        <h2>Select a department</h2>
-                        <select title="sel_dep" id="departmentdd" name="sel_dep" class="dropbtn">
-                            <option value="">Please Select</option>
-                        </select>
-                    </div>
+                            <div class="dropdown" id="app">
+                                <h2>Where would you like to make an appointment?</h2>
+                                  <select name="sel_type"class="dropbtn">
+                                    <option value="0">Please select</option>
+                                    <option value="aa">Academic Advising</option>
+                                    <option value="pf">Professors</option>
+                                    <option value="tc">Tutor Center</option>
+                                    <option value="hc">Health Center</option>
+                                  </select>
+                            </div>
+    
+                        <div class="dropdown" id="pcd" style="display: block">
+                                <h2>Would you like to sort by person, class or date?</h2>
+                                <select id="pcddd" name="sel_pcd" class="dropbtn">
+                                    <option value="ps">Please select</option>
+                                    <option value="pn">Person</option>
+                                    <option value="cl">Class/Department</option>
+                                    <option value="dt">Date</option>
+                                </select>
+                            </div>
+                            
+                            <!-- if class is chosen: --->
+                        <div class="dropdown" id="department" style="display: none">
+                            <h2>Select a department</h2>
+                            <select title="sel_dep" id="departmentdd" name="sel_dep" class="dropbtn">
+                                <option value="">Please Select</option>
+                            </select>
+                        </div>
 
-<<<<<<< HEAD
-=======
-                    <script>
+
+                  <script>
 
 
                         $(document).ready(function($) {
@@ -433,7 +431,7 @@ session_start();
                                 });
                             });
                         });
->>>>>>> 1bcf89f0519f6cc191d88e35c9fd27513ab9372d
+
 
 
                     <div class="dropdown" id="class" style="display: none">
@@ -474,9 +472,14 @@ session_start();
 				
 			</main>
 							
-			
+			<footer role="contentinfo">
+				Copyright &copy; 2016 Betwixt Booking<br>
+				<a href="mailto:betwixtbooking@gmail.com">
+					<address>BetwixtBooking@gmail.com</address>
+				</a>
+			</footer>
 		</div>
-		<footer role = "contentinfo"></footer>
+		
 
 
             <script>
