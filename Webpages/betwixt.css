@@ -178,11 +178,13 @@ nav a:hover {
 }
 
 #wrapper {
-	width:100;
-	background-color: #FFFFFF;
+	width: 100;
+	background-color: #DCDCDC;
 	margin-left: auto;
 	margin-right: auto;
 	min-width: 900px;
+
+
 	box-shadow: ;
 }
 
