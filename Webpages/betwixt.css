@@ -186,6 +186,10 @@ nav a:hover {
 	box-shadow: ;
 }
 
+#showMe {
+    display:  none;
+}
+
 h1 {
 	background-color: #D2B48C;
 	background-image: url(logos-ou.png);
