@@ -17,8 +17,8 @@ $id = $_GET['ID'];
 $type = $_GET['type'];
 // }
 
-if ($type == 'class') {
-    $sql .= " WHERE Class_ID=" . $id;
+if ($type == 'classpf') {
+    $sql .= " WHERE Type='Professor' AND staff_id=" . $id;
     $result = $conn->query($sql);
 
     while ($row = $result->fetch_array()) {
@@ -29,9 +29,9 @@ if ($type == 'class') {
         );
     }
 
-} else if ($type == 'department') {
+} else if ($type == 'dept') {
 
-    $sql .= " WHERE Department_ID=" . $id;
+    $sql .= " WHERE Type='Advisor' AND Department_ID=" . $id;
     $result = $conn->query($sql);
 
     while ($row = $result->fetch_array()) {
@@ -43,7 +43,7 @@ if ($type == 'class') {
     }
 } else if ($type == "tutor") {
 
-    $sql .= " WHERE Type='Tutor' AND Department_ID=" . $id;
+    $sql .= " WHERE Type='Tutor' AND Class_ID=" . $id;
     $result = $conn->query($sql);
 
     while ($row = $result->fetch_array()) {
@@ -90,6 +90,17 @@ if ($type == 'class') {
     }
 } else if ($type = 'tutorpn') {
     $sql .= " WHERE Type='Tutor'";
+    $result = $conn->query($sql);
+
+    while ($row = $result->fetch_array()) {
+        $data[] = array(
+            'id' => $row['staff_id'],
+            'fname' => $row['F_Name'],
+            'lname' => $row['L_Name']
+        );
+    }
+} else if ($type = 'tutordept') {
+    $sql .= " WHERE Type='Tutor' AND Department_ID=" . $id;
     $result = $conn->query($sql);
 
     while ($row = $result->fetch_array()) {

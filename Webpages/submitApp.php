@@ -12,11 +12,16 @@ $staffID = $_GET['staffID'];
 $stuID = $_GET['stuID'];
 $title = $_GET['title'];
 
-$sql = "INSERT INTO Appointments (Staff_ID, stu_id, Appointment_Title, Confirmed) VALUES ('". $staffID . "', '" . $stuID . "', '" . $title . "', 0)";
+$sql = "INSERT INTO Appointments (Staff_ID, stu_id, Appointment_Title, Confirmed) VALUES (". $staffID . ", " . $stuID . ", '" . $title . "', 0);";
 
 $conn->query($sql);
 
+    $return = "<p>Appointment scheduled successfully!</p>";
+
 $conn->close();
+
+
+echo json_encode($return);
 
 
 ?>

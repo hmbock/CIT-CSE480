@@ -16,7 +16,7 @@
         $deptid = $_GET['ID'];
     //}
 
-    $sql = "SELECT Title, CRN, Class_ID FROM Class WHERE Department_ID=" . $deptid;
+    $sql = "SELECT Title, CRN, Class_ID, staff_id FROM Class WHERE Department_ID=" . $deptid;
     $classResult = $conn->query($sql) ;
 
     $data = array();
@@ -24,8 +24,10 @@
         $data[] = array(
             'id' => $row['Class_ID'],
             'crn' => $row['CRN'],
-            'title' => $row['Title']
+            'title' => $row['Title'],
+            'staff_id' => $row['staff_id']
         );
     }
     echo json_encode($data);
 ?>
+

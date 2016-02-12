@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 	
@@ -13,6 +16,122 @@
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+   <script src="../scheduler/dhtmlxscheduler.js" type="text/javascript"></script>
+   <link rel="stylesheet" href="../scheduler/dhtmlxscheduler.css" type="text/css">
+   <!--<link href='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.css' rel='stylesheet' />
+<link href='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js'></script>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.js'></script>
+-->
+<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+<script src='lib/jquery.min.js'></script>
+<script src='lib/moment.min.js'></script>
+<script src='fullcalendar/fullcalendar.js'></script>
+
+<!-- the code from the JavaScript tab will go here -->
+<script>
+$(function() { // document ready
+  
+  $('#calendar').fullCalendar({
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay'
+    },
+    
+    defaultDate: new Date().toJSON().slice(0,10),//'2015-01-31',
+    editable: true,
+    eventLimit: true, // allow "more" link when too many events
+    events: [
+      {
+        title: 'All Day Event',
+        start: '2016-02-01'
+      },
+      {
+        title: 'Long Event',
+        start: '2016-02-07',
+        end: '2016-02-10'
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2016-02-09T16:00:00' 
+      },
+	  {
+		title: "Weekly Meeting",
+		start: '13:00',
+		end: '07:00',
+		dow: [1, 3]
+	  },
+	  //{
+	  // 	id:1000, start: "10:00", end: "12:00", dow:[1,4],
+	 //	ranges[{start: "2016/02/01", end: "2016/04/01"}]
+		
+	 // },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2014-11-16T16:00:00'
+      },
+      {
+        title: 'Conference',
+        start: '2014-11-11',
+        end: '2014-11-13'
+      },
+      {
+        title: 'Meeting',
+        start: '2014-11-12T10:30:00',
+        end: '2014-11-12T12:30:00'
+      },
+      {
+        title: 'Lunch',
+        start: '2014-11-12T12:00:00'
+      },
+      {
+        title: 'Meeting',
+        start: '2014-11-12T14:30:00'
+      },
+      {
+        title: 'Happy Hour',
+        start: '2014-11-12T17:30:00'
+      },
+      {
+        title: 'Dinner',
+        start: '2014-11-12T20:00:00'
+      },
+      {
+        title: 'Birthday Party',
+        start: '2014-11-13T07:00:00'
+      },
+      {
+        title: 'Click for Google',
+        url: 'http://google.com/',
+        start: '2014-11-28'
+      }
+    ]
+  });
+  
+});
+</script>
+<!-- the code from the CSS tab will go here -->
+
+<style> 
+<!--media ="screen" type="text/css">-->
+body {
+  margin: 40px 10px;
+  padding: 0;
+  font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+  font-size: 14px;
+}
+
+#calendar {
+  max-width: 900px;
+  margin: 0 auto;
+}
+</style>
+
 	</head>
 	
 	<body>
@@ -27,6 +146,7 @@
 			<main role ="main">
 				<nav>
 					<ul>
+            <li>Username:<?php echo $_SESSION['username']; ?> </li>   
 					  <li><a href="http://secs.oakland.edu/~hmbock/betwixtBooking.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/upcomingApp.php"><i class="fa fa-arrow-up"></i>&nbsp;Upcoming Appointments</a></li>
@@ -37,14 +157,19 @@
 					</ul>
 				</nav>	
 				
-				<div id="content">
-					<iframe src="https://calendar.google.com/calendar/embed?src=betwixtbooking%40gmail.com&ctz=America/New_York" style="border:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-				</div>
 				
-				
-			</main>
-	
+					
+    <div id='calendar'></div>       
+ 
 			
+      
+			</div>	
+			</main>
 
 		<footer role = "contentinfo"></footer>
 	</body>
+
+
+</script>
+
+</html>
