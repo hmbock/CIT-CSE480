@@ -150,44 +150,40 @@
             <!-- start sign up form -->  
             <form action="signUp.php" method="post">
               <fieldset>
-                <div class="form-group">
-                <input type="radio" name="chooseone" value="student" checked> Student<br> 
-                <input type="radio" name="chooseone" value="staff"> Staff<br> 
+                <div class="form-group"> <!--radio buttons-->
+					<input type="radio" name="chooseone" value="student" checked> Student<br> 
+					<input type="radio" name="chooseone" value="staff"> Staff<br> 
                 </div>
                 <fieldset>
-            <div class="form-group">
-						  <label for="firstName">First Name:</label>
-						  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" value="" maxlength="50" />
-            <div class="form-group">
-				      <label for="lastName">Last Name:</label>
-		          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" value="" maxlength="50" />
-					  <div class="form-group">
-						  <label for="email">Email:</label>
-						  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="email" maxlength="50" />
-					  </div>
-            <div class="form-group">
-			        <label for="username">Username:</label>
-						  <input type="text" class="form-control" id="username" name="username" placeholder="username" value="" maxlength="50" />
-					  </div>
-					  <div class="form-group">
-						  <label  for="password">Password:</label>
-						  <input type="password" class="form-control" id="password" placeholder ="Password" name="password" value="" maxlength="50" />
-					  </div>
-             <div class="form-group">
-                
+            <div class="form-group"> <!--registration form -->
+				<label for="firstName">First Name:</label>
+				<input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" value="" maxlength="50" />
+            
+				<label for="lastName">Last Name:</label>
+				<input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" value="" maxlength="50" />
+					 
+				<label for="email">Email:</label>
+				<input type="email" class="form-control" id="email" name="email" placeholder="Email" value="Email" maxlength="50" />
+
+				<label for="username">Username:</label>
+				<input type="text" class="form-control" id="username" name="username" placeholder="username" value="" maxlength="50" />
+					  
+				<label  for="password">Password:</label>
+				<input type="password" class="form-control" id="password" placeholder ="Password" name="password" value="" maxlength="50" />
+		
                 <p>
                 <input type="submit" class="submit_button" value="Sign up" />
                 </p>
                 </fieldset>
                 <p>
-            <?php echo $msg; ?> 
+					<?php echo $msg; ?> 
                 </p>
-                </div>
+               </div>
             </form>
             <!-- end sign up form -->
           
     </div>
-    </div>
+		</div>
     </body>
 </html>
 
