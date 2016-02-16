@@ -8,7 +8,7 @@ h1 {
 	background-color: #D2B48C;
 	color: #000000;
 	background-image: url(logos-ou.png);
-	background-position: center;
+	background-position: Left;
 	background-repeat: no-repeat;
 	height: 100px;
 	text-indent: -9999px;
@@ -82,18 +82,19 @@ h1 {
 
 nav {
 	font-weight: bold;
-	text-align: center;
+	text-align: Left;
 	float: left;
 	width: 160px;
 }
 nav ul {
 		list-style-type: none;
 		padding-left: 0;
-		font-size: 1.2em;
-		text-decoration: none;
+		font-size: 1.1em;
+		
 }
 nav li a {
 	display: block;
+	color: #FFFFFF
 }
 
 nav li a:hover:not(.active) {

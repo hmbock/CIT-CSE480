@@ -154,8 +154,9 @@ body {
 					</ul>
 				</nav>	
 			
-    			<div id='calendar'></div>       
-
+    		
+					<div id='calendar'></div> 
+				
 			</main>
 
 			<footer role="contentinfo">
