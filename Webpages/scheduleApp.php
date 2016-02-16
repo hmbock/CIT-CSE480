@@ -41,8 +41,9 @@ session_start();
 					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
 					</ul>
 				</nav>	
-                <form action="" method="POST" >
+                
                     <div id="content">
+					<form action="" method="POST" >
                         <h2> Schedule an Appointment </h2>
                         <p><b><u>To make a New appointment, fill the form below:</u></b></p>
                         

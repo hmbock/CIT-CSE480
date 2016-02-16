@@ -100,7 +100,7 @@ echo '<br /><a href="betwixtBooking.php?' . SID . '">page 2</a>';
         <div id ="content">
         
          
-        <h3>Please choose and enter in the correct information to login:</h3>
+			<h3>Please choose and enter in the correct information to login:</h3>
          
                 <!-- start sign in form --> 
         
@@ -109,33 +109,35 @@ echo '<br /><a href="betwixtBooking.php?' . SID . '">page 2</a>';
           <div class = "form-group">
             <input type="radio" name="chooseone" value="student" checked> Student<br>
             <input type="radio" name="chooseone" value="staff"> Staff<br>
-          </div>
-          <div class ="form-group">
+         
+    
             <label for="username">Username:</label>
             <input type="text" name="username" value="" />
-          </div>
-          <div class="form-group">
+        
+     
             <label for="password">Password:</label>
             <input type="password" name="password" value="" />
-          </div>
+        
              
              <p>
             <input type="submit" class="submit_button" value="Sign In" />
             </p>
             
-  <p>          
- <a href="http://www.secs.oakland.edu/~hmbock/forgotPassword.php"> Forgot Password </a>
- </p>
-        </fieldset>
+			  <p>          
+			 <a href="http://www.secs.oakland.edu/~hmbock/forgotPassword.php"> Forgot Password </a>
+			 </p>
         
-         <p>
-            <?php echo $msg; ?> 
-                </p>
-                
-        </div>
+        
+			 <p>
+				<?php echo $msg; ?> 
+			</p>
+					
+		 </div>
+		</fieldset>
         </form>
+		
         <!-- end sign in form --> 
-</div>
+		<div>
 </div>
 
  </body>
