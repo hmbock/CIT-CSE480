@@ -16,19 +16,19 @@ session_start();
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	   <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
-	   <script src="../scheduler/dhtmlxscheduler.js" type="text/javascript"></script>
-	   <link rel="stylesheet" href="../scheduler/dhtmlxscheduler.css" type="text/css">
-	   <!--<link href='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.css' rel='stylesheet' />
-	<link href='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.print.css' rel='stylesheet' media='print' />
-	<script src='//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js'></script>
-	<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-	<script src='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.js'></script>
+   <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+   <script src="../scheduler/dhtmlxscheduler.js" type="text/javascript"></script>
+   <link rel="stylesheet" href="../scheduler/dhtmlxscheduler.css" type="text/css">
+   <!--<link href='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.css' rel='stylesheet' />
+<link href='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js'></script>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.js'></script>
 -->
-		<link rel='stylesheet' href='fullcalendar.css' />
-		<script src='lib/jquery.min.js'></script>
-		<script src='lib/moment.min.js'></script>
-		<script src='fullcalendar/fullcalendar.js'></script>
+<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+<script src='lib/jquery.min.js'></script>
+<script src='lib/moment.min.js'></script>
+<script src='fullcalendar/fullcalendar.js'></script>
 
 <!-- the code from the JavaScript tab will go here -->
 <script>
@@ -115,7 +115,22 @@ $(function() { // document ready
   
 });
 </script>
+<!-- the code from the CSS tab will go here -->
 
+<style> 
+<!--media ="screen" type="text/css">-->
+body {
+  margin: 40px 10px;
+  padding: 0;
+  font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+  font-size: 14px;
+}
+
+#calendar {
+  max-width: 900px;
+  margin: 0 auto;
+}
+</style>
 
 	</head>
 	

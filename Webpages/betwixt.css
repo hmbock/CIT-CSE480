@@ -14,10 +14,7 @@ h1 {
 	text-indent: -9999px;
 	margin-bottom: 0;
 }
-h3{ 
-	background-color: #E2D2B0;
-  
-	}
+
  /* h2{
 	text-align: center;
 	font-family: Arial;
@@ -101,7 +98,7 @@ nav li a {
 
 nav li a:hover:not(.active) {
 	background-color: #E2D2B0;
-	color: #FFFFFF
+
 	
 }
 
@@ -109,12 +106,8 @@ nav a {
 		text-decoration:none;
 	
 	}
-nav a:link {
-			color: #FFFFFF;
-		  }
-nav a:visited { 
-			   color:#A58366;
-			 }
+
+
 
 #content {
 	/*font-family: candara, century gothic;*/
