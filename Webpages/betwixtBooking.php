@@ -29,8 +29,8 @@ session_start();
 					<ul>
 					  <li>Welcome <?php echo $_SESSION['username']; ?> </li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i> &nbsp;My Calendar</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/upcomingApp.php"><i class="fa fa-arrow-up"></i>&nbsp;Appointments</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
 					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
 					</ul>
@@ -43,14 +43,7 @@ session_start();
 					</br>
 					<p><b> Schedule your Semesterly appointment with your advisor! </b> </p>
 					<p> Summer, Fall, Winter Registration starts March 1st! </p>
-					<!-- <ul>
-						<li> You have appointments this week!</li>
-						<li> We recommend you schedule an Appointment with your advisior this week</li>
-						<li> Vaction next week!</li>
-					</ul> -->
 				</div>
-				
-				
 			</main>
 			
 			<footer role = "contentinfo"></footer>

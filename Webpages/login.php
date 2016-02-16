@@ -15,12 +15,13 @@
  <body>
  
  
-<header>
-    <div class ="title">
-       <h1>Betwixt Booking Log In </h1> 
-    </div>
-</header>
+
 <div id="wrapper">	
+	<header>
+		<div class ="title">
+		   <h1>Betwixt Booking Log In </h1> 
+		</div>
+	</header>
 			
 			<main role ="main">
 				<nav>
@@ -30,9 +31,9 @@
 					  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
-            <li><a href="#blank"></a></li>
+					  <li><a href="#blank"></a></li>
 					  <li><a href="blank"></a></li>
-            <li><a href="#blank"></a></li>
+					  <li><a href="#blank"></a></li>
 					  <li><a href="blank"></a></li>
 					</ul>
 				</nav>	
