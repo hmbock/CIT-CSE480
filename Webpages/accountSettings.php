@@ -145,54 +145,47 @@ $data2 = mysql_fetch_array($query);
 					  <li>Username: <?php echo $_SESSION['username']; ?> </li> 
 					  <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i>&nbsp;Home</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/cancelApp.php"><i class="fa fa-ban"></i> &nbsp; Appointments </a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Appointments</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/upcomingApp.php"><i class="fa fa-arrow-up"></i>&nbsp;Upcoming Appointments</a></li>
-					 
 					  <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
 					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
 					</ul>
 				</nav>	
 			
 			
-						<div id="content">
-								<h2> User Profile </h2>
-					<h3>Enter new account information and submit to update:</h3>
-
-            
-
+				<div id="content">
+							<h2> User Profile </h2>
+							<h3>Enter new account information and submit to update:</h3>
             <!-- start sign up form -->  
-            <form action="accountSettings.php" method="post">
-			
-              <fieldset>
-      
-					<div class="form-group">
-								  <label for="firstName">First Name:</label>
-								  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" value="<?php echo $data2[F_Name] ?>" maxlength="20" />
-					
-							<label for="lastName">Last Name:</label>
-							 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" value="<?php echo $data2[L_Name] ?>" maxlength="20" />
-							 
-								  <label for="email">Email:</label>
-								  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $data2[stu_email] ?>" maxlength="20" />
+							<form action="accountSettings.php" method="post">
 							
-				
-							<label for="username">Username:   <?php echo $_SESSION['username']; ?><strong></strong></label>
-								  
-							<p><h3><a href="http://secs.oakland.edu/~hmbock/changePassword.php">Change Password</a></h3></p>
-           
-                
-							<p>
-							<input type="submit" class="submit_button" value="Update Account Info" />
-							</p>
-               
-							   <p>
-							<?php echo $msg; ?> 
-								</p>
-                
-					</div>
-				 </fieldset>
-            </form>
+							  <fieldset>
+					  
+									<div class="form-group">
+												  <label for="firstName">First Name:</label>
+												  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" value="<?php echo $data2[F_Name] ?>" maxlength="20" />
+									
+											<label for="lastName">Last Name:</label>
+											 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" value="<?php echo $data2[L_Name] ?>" maxlength="20" />
+											 
+												  <label for="email">Email:</label>
+												  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $data2[stu_email] ?>" maxlength="20" />
+											
+								
+											<label for="username">Username:   <?php echo $_SESSION['username']; ?><strong></strong></label>
+												  
+											<p><h3><a href="http://secs.oakland.edu/~hmbock/changePassword.php">Change Password</a></h3></p>
+						   
+								
+											<p>
+											<input type="submit" class="submit_button" value="Update Account Info" />
+											</p>
+							   
+											   <p>
+												<?php echo $msg; ?> 
+												</p>
+								
+									</div>
+								 </fieldset>
+							</form>
             <!-- end sign up form -->
           
 				</div>

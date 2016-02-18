@@ -18,8 +18,6 @@ session_start();
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-
-
 	</head>
 	
 	<body>	
@@ -32,11 +30,9 @@ session_start();
 				<nav>
 					<ul>
             		  <li>Username:<?php echo $_SESSION['username']; ?> </li> 
-					  <li><a href="http://secs.oakland.edu/~hmbock/betwixtBooking.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i>&nbsp;Home</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/cancelApp.php"><i class="fa fa-ban"></i> &nbsp; Appointments</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/upcomingApp.php"><i class="fa fa-arrow-up"></i>&nbsp;Upcoming Appointments</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/cancelApp.php"><i class="fa fa-ban"></i> &nbsp; Cancel Appointment</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i> &nbsp;My Calendar</a></li>
             		  <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
 					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
 					</ul>
@@ -48,33 +44,32 @@ session_start();
                         <p><b><u>To make a New appointment, fill the form below:</u></b></p>
                         
                             <div class="dropdown" id="app">
-                                <h2>Where would you like to make an appointment?</h2>
+                                <p>Where would you like to make an appointment?</p>
                                   <select name="sel_type"class="dropbtn">
                                     <option value="0">Please select</option>
                                     <option value="aa">Academic Advising</option>
                                     <option value="pf">Professors</option>
                                     <option value="tc">Tutor Center</option>
-                                    <option value="hc">Health Center</option>
                                   </select>
                             </div>
     
-                        <div class="dropdown" id="pcd" style="display: block">
-                                <h2>Would you like to sort by person, class or date?</h2>
-                                <select id="pcddd" name="sel_pcd" class="dropbtn">
-                                    <option value="ps">Please select</option>
-                                    <option value="pn">Person</option>
-                                    <option value="cl">Class/Department</option>
-                                    <option value="dt">Date</option>
-                                </select>
-                            </div>
+							<div class="dropdown" id="pcd" style="display: block">
+									<p>Would you like to sort by person, class or date?</p>
+									<select id="pcddd" name="sel_pcd" class="dropbtn">
+										<option value="ps">Please select</option>
+										<option value="pn">Person</option>
+										<option value="cl">Class/Department</option>
+										<option value="dt">Date</option>
+									</select>
+							</div>
                             
                             <!-- if class is chosen: --->
-                        <div class="dropdown" id="department" style="display: none">
-                            <h2>Select a department</h2>
-                            <select title="sel_dep" id="departmentdd" name="sel_dep" class="dropbtn">
-                                <option value="">Please Select</option>
-                            </select>
-                        </div>
+							<div class="dropdown" id="department" style="display: none">
+								<p>Select a department</p>
+								<select title="sel_dep" id="departmentdd" name="sel_dep" class="dropbtn">
+									<option value="">Please Select</option>
+								</select>
+							</div>
 
 
                   <script>
@@ -433,10 +428,10 @@ session_start();
                             });
                         });
 
-
+				</script>
 
                     <div class="dropdown" id="class" style="display: none">
-                        <h2>Select a class</h2>
+                        <p>Select a class</p>
                         <select title="class" id="classdd" class="dropbtn">
                             <option value="">Please Select</option>
                         </select>
@@ -445,7 +440,7 @@ session_start();
                     
                     <!-- if PERSON is chosen: --->
                     <div class="dropdown" id="person" style="display: none">
-                        <h2>Select a person</h2>
+                        <p>Select a person</p>
                         <select name="person" title="persondd" id="persondd" class="dropbtn">
                             <option value="">Please Select</option>
                         </select>
@@ -455,7 +450,7 @@ session_start();
                     <!-- if PERSON is chosen: --->
 
                     <div class="dropdown" id="date" style="display: none;" >
-                        <h2>Select a date</h2>
+                        <p>Select a date:</p> 
                         Title: <input name="title" id="title" type="text" />
 
                     </div>
@@ -470,11 +465,7 @@ session_start();
 				</div>
 				
                 </form>
-				
-		
-							
-		
-		
+	
 
 
             <script>
