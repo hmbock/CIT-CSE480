@@ -16,7 +16,7 @@ session_start();
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-   <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+  
    <script src="../scheduler/dhtmlxscheduler.js" type="text/javascript"></script>
    <link rel="stylesheet" href="../scheduler/dhtmlxscheduler.css" type="text/css">
    <!--<link href='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.css' rel='stylesheet' />
@@ -25,13 +25,34 @@ session_start();
 <script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://fullcalendar.io/js/fullcalendar-2.6.0/fullcalendar.js'></script>
 -->
-<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+<link rel="stylesheet" href="fullcalendar/fullcalendar.css" />
 <script src='lib/jquery.min.js'></script>
 <script src='lib/moment.min.js'></script>
-<script src='fullcalendar/fullcalendar.js'></script>
+<script src="fullcalendar/fullcalendar.js"></script>
 
-<!-- the code from the JavaScript tab will go here -->
-<script>
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			<header>
+				<h1> My Calendar</h1>
+			</header>
+			
+			
+			<main role ="main">
+				<nav>
+					<ul>
+                    	
+            		  <li>Username:<?php echo $_SESSION['username']; ?> </li>   
+                      <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i> &nbsp; Home</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/cancelApp.php"><i class="fa fa-ban"></i> &nbsp; Appointments</a></li>
+             		  <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
+					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
+					</ul>
+				</nav>	
+			
+				<div id="content">
+					<div id='calendar'><script>
 $(function() { // document ready
   
   $('#calendar').fullCalendar({
@@ -114,48 +135,8 @@ $(function() { // document ready
   });
   
 });
-</script>
-<!-- the code from the CSS tab will go here -->
-
-<style> 
-<!--media ="screen" type="text/css">-->
-body {
-  margin: 40px 10px;
-  padding: 0;
-  font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-  font-size: 14px;
-}
-
-#calendar {
-  max-width: 900px;
-  margin: 0 auto;
-}
-</style>
-
-	</head>
-	
-	<body>
-		<div id="wrapper">
-			<header>
-				<h1> My Calendar</h1>
-			</header>
-			
-			
-			<main role ="main">
-				<nav>
-					<ul>
-                    	
-            		  <li>Username:<?php echo $_SESSION['username']; ?> </li>   
-                      <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i> &nbsp;My Calendar</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/cancelApp.php"><i class="fa fa-ban"></i> &nbsp; Appointments </a></li>
-             		  <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
-					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
-					</ul>
-				</nav>	
-			
-    		
-					<div id='calendar'></div> 
+</script></div> 
+</div>
 				
 			</main>
 

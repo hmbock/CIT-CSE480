@@ -42,7 +42,7 @@ session_start();
 					</ul>
 				</nav>	
                 
-                    <div id="content">
+                <div id="content">
 					<form action="" method="POST" >
                         <h2> Schedule an Appointment </h2>
                         <p><b><u>To make a New appointment, fill the form below:</u></b></p>
@@ -459,7 +459,7 @@ session_start();
                         Title: <input name="title" id="title" type="text" />
 
                     </div>
-					</br>
+					<br>
 					
 					<p> Summer, Fall, Winter Registration starts March 1st!</p> 
 					 <p>	Walk-in's ONLY First Week of March. </p>
@@ -471,15 +471,9 @@ session_start();
 				
                 </form>
 				
-			</main>
+		
 							
-			<footer role="contentinfo">
-				Copyright &copy; 2016 Betwixt Booking<br>
-				<a href="mailto:betwixtbooking@gmail.com">
-					<address>BetwixtBooking@gmail.com</address>
-				</a>
-			</footer>
-		</div>
+		
 		
 
 
@@ -842,6 +836,14 @@ session_start();
                 });
 
             </script>
+			</main>
+			<footer role="contentinfo">
+				Copyright &copy; 2016 Betwixt Booking<br>
+				<a href="mailto:betwixtbooking@gmail.com">
+					<address>BetwixtBooking@gmail.com</address>
+				</a>
+			</footer>
+		</div>
     
 	</body>
 	

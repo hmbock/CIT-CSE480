@@ -28,7 +28,7 @@ session_start();
 				<nav>
 					<ul>
 					  <li>Welcome <?php echo $_SESSION['username']; ?> </li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i> &nbsp;My Calendar</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i> &nbsp;Home</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/upcomingApp.php"><i class="fa fa-arrow-up"></i>&nbsp;Appointments</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
@@ -46,7 +46,12 @@ session_start();
 				</div>
 			</main>
 			
-			<footer role = "contentinfo"></footer>
+			<footer role="contentinfo">
+				Copyright &copy; 2016 Betwixt Booking<br>
+				<a href="mailto:betwixtbooking@gmail.com">
+					<address>BetwixtBooking@gmail.com</address>
+				</a>
+			</footer>
 		</div>
 		
 	</body>
