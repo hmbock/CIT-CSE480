@@ -22,7 +22,7 @@ session_destroy();
 	</head>
 
 	<body>
-		<div id="#wrapper">
+		<div id="wrapper">
 		
 			<header>
 			   <h1>Betwixt Booking</h1> 
