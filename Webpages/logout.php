@@ -22,30 +22,35 @@ session_destroy();
 	</head>
 
 	<body>
-	<header>
-    <div class ="title">
-       <h1>Betwixt Booking</h1> 
-    </div>
-	</header>
-	<nav>
-					<ul>
-					  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-circle"></i>&nbsp;About</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/signup.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
-            <li><a href="#blank"></a></li>
-					  <li><a href="blank"></a></li>
-            <li><a href="#blank"></a></li>
-					  <li><a href="blank"></a></li>
-					</ul>
+		<div id="#wrapper">
+		
+			<header>
+			   <h1>Betwixt Booking</h1> 
+			</header>
+			<main role="main">
+				<nav>
+						<ul>
+						  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-circle"></i>&nbsp;About</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/signup.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
+			 
+						</ul>
 				</nav>	
-	<div id ="content">
-		<div class="container" id="Logout">
-			<h3>Successfully logged out.</h3>
-			
+				<div id ="content">
+					<div class="container" id="Logout">
+						<h3>Successfully logged out.</h3>
+					</div>
+				</div>
+			</main>
+			<footer role="contentinfo">
+				Copyright &copy; 2016 Betwixt Booking<br>
+				<a href="mailto:betwixtbooking@gmail.com">
+					<address>BetwixtBooking@gmail.com</address>
+				</a>
+			</footer>
 		</div>
-	</div>
  
 	</body>
 </html>

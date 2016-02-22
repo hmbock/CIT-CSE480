@@ -8,9 +8,9 @@ h1 {
 	background-color: #D2B48C;
 	color: #000000;
 	background-image: url(logos-ou.png);
-	background-position: Left;
+	background-position: center;
 	background-repeat: no-repeat;
-	height: 100px;
+	height: 125px;
 	text-indent: -9999px;
 	margin-bottom: 0;
 }
@@ -337,11 +337,9 @@ audio {
 		}
 	nav li { 
 			display: inline-block;
-			width: 5em;
-			font-size:120%;
+			font-size: 120%;
 			text-align: center;
 			box-shadow: 2px 2px 2px #330000;
-			background-color: #F5F5DC;
 			margin: 1%;
 			padding: 2.5%;
 		}

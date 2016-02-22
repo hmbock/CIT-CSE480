@@ -31,10 +31,7 @@
 						  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
 						  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
 						  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
-						  <li><a href="#blank"></a></li>
-						  <li><a href="blank"></a></li>
-						  <li><a href="#blank"></a></li>
-						  <li><a href="blank"></a></li>
+						 
 						</ul>
 					</nav>	
 
