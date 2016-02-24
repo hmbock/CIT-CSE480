@@ -2,7 +2,8 @@
  <head>
  <title>Betwixt Booking Login</title> 
     <meta charset = "UTF-8">
-    <meta charset="utf-8">
+
+	
 		<meta name= "viewport" content= "width= device-width, initial-scale=1.0">
 		<link href="betwixt.css" rel="stylesheet">
 		<link rel="stylesheet" href="C:\Users\lkwal_000\Google Drive\CIT_CSE 480\Production\css\font-awesome-4.5.0\css\font-awesome.min.css">
@@ -28,9 +29,9 @@
 						<ul>
 						  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
 						  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-circle"></i>&nbsp;About</a></li>
-						  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
-						  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
-						  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/signup.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-sign-in"></i> &nbsp; Login</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-info"></i> &nbsp;Help</a></li>
 						 
 						</ul>
 					</nav>	
@@ -101,7 +102,9 @@
 					<form action="" form method="post">
 						<fieldset>  
 						  <div class = "form-group">
-							<input type="radio" name="chooseone" value="student" checked> Student<br>
+							 
+								
+							<input type="radio" name="chooseone" value="student" checked>Student<br>
 							<input type="radio" name="chooseone" value="staff"> Staff<br>
 						 
 					

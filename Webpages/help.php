@@ -9,35 +9,63 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
 		<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $('.faq').click(function(){
+        $(this).next('.faqAnswer').slideToggle();
+    });
+});
+</script>
+
 	
  </head>
 
  <body>
-	<header>
-		<div class="title">
-			<h1> Betwixt Booking Help </h1>
-		<div>
-	</header>
-	<div id="wrapper">
 	
-				<main role ="main">
-				<nav>
-					<ul>
-					  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-circle"></i>&nbsp;About</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
-            <li><a href="#blank"></a></li>
-					  <li><a href="blank"></a></li>
-            <li><a href="#blank"></a></li>
-					  <li><a href="blank"></a></li>
-					</ul>
-				</nav>	
-				<div id = "content">
-					<h2>Betwixt Booking Help</h2>
-						
-				</div>
+	<div id="wrapper">
+		<header>
+			<div class="title">
+				<h1> Betwixt Booking Help </h1>
+			<div>
+		</header>
+		<main role ="main">
+					<nav>
+						<ul>
+						  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-circle"></i>&nbsp;About</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
+				<li><a href="#blank"></a></li>
+						  <li><a href="blank"></a></li>
+				<li><a href="#blank"></a></li>
+						  <li><a href="blank"></a></li>
+						</ul>
+					</nav>	
+					<div id = "content">
+											<h2>Betwixt Booking Help</h2>
+								 <h3>My FAQ</h2>
+						<ul>
+						<li><a class="faq" href="#">What Can I Use Betwixt Booking For?</a>
+						<div id="answer" class="faqAnswer">lorem ipsum</div></li>
+						<li><a class="faq" href="#">How Do I Schedule An Appointment?</a>
+						<div id="answer" class="faqAnswer">lorem ipsum</div></li>
+						<li><a class="faq" href="#">How Do I Cancel An Appointment</a>
+						<div id="answer" class="faqAnswer">lorem ipsum</div></li>
+						</ul>
+
+					</div>
+			</main>
+			<footer role="contentinfo">
+					Copyright &copy; 2016 Betwixt Booking<br>
+					<a href="mailto:betwixtbooking@gmail.com">
+						<address>BetwixtBooking@gmail.com</address>
+					</a>
+			</footer>
+		</div>
  
  
  </body>
