@@ -758,46 +758,10 @@ session_start();
                             case "pf":
 
                                 fillDD('getStaff.php', 'persondd', sel, 'classpf');
-//                                        //Ajax request
-//                                        $.ajax({
-//                                            url: 'getStaff.php',
-//                                            data: {ID: sel, type: "classpf"},
-//                                            method: "GET",
-//                                            dataType: "json",
-//                                            contentType: "application/json; charset=utf-8",
-//                                            success: function (data) {
-//                                                $('#persondd').empty();
-//                                                $('#persondd').append('<option value=\"0\">Please select</option>');
-//                                                $.each(data, function (i, item) {
-//                                                    $('#persondd').append('<option value="' + data[i].id + '">' + data[i].fname + ' ' + data[i].lname + '</option>');
-//                                                });
-//                                            },
-//                                            error: function (xhr, ajaxOptions, thrownError) {
-//                                                alert(xhr.status + " " + thrownError);
-//                                            }
-//                                        });
                                 break;
                             case "tc":
 
                                 fillDD('getStaff.php', 'persondd', sel, 'tutor');
-
-//                                        $.ajax({
-//                                            url: 'getStaff.php',
-//                                            data: {ID: sel, type: "tutor"},
-//                                            method: "GET",
-//                                            dataType: "json",
-//                                            contentType: "application/json; charset=utf-8",
-//                                            success: function (data) {
-//                                                $('#persondd').empty();
-//                                                $('#persondd').append('<option value=\"0\">Please select</option>');
-//                                                $.each(data, function (i, item) {
-//                                                    $('#persondd').append('<option value="' + data[i].id + '">' + data[i].fname + ' ' + data[i].lname + '</option>');
-//                                                });
-//                                            },
-//                                            error: function (xhr, ajaxOptions, thrownError) {
-//                                                alert(xhr.status + " " + thrownError);
-//                                            }
-//                                        });
                                 break;
                             default:
                         }
