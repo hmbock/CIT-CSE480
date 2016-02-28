@@ -18,32 +18,23 @@ session_start();
 	
 	<body>
    
+		<div id="wrapper">
 			<header>
 				<h1> Welcome to Betwixt Booking</h1>
 				
-			</header>
-	
-	
-	
-		<div id="wrapper">
-	
-			
-			
-			<div id="wrapper">
-	
-			
-			
+			</header>	
+
 			<main role ="main">
 				<nav>
 					<ul>
-            <li>Welcome <?php echo $_SESSION['username']; ?> </li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/betwixtBooking.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/betwixtBooking.php"><i class="fa fa-circle"></i>&nbsp;Manage Availability</a></li>
+					  <li>Welcome <?php echo $_SESSION['username']; ?> </li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/staffBetwixtBooking.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/manageAvailability.php"><i class="fa fa-circle"></i>&nbsp;Manage Availability</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/upcomingApp.php"><i class="fa fa-arrow-up"></i>&nbsp;Upcoming Appointments</a></li>
+					  <!--<li><a href="http://secs.oakland.edu/~hmbock/upcomingApp.php"><i class="fa fa-arrow-up"></i>&nbsp;Upcoming Appointments</a></li>-->
 					  <li><a href="http://secs.oakland.edu/~hmbock/cancelApp.php"><i class="fa fa-ban"></i> &nbsp; Cancel Appointment</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i> &nbsp;My Calendar</a></li>
-             <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
+					<li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
 					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
 					</ul>
 				</nav>		
@@ -61,11 +52,13 @@ session_start();
 						<li> Vaction next week!</li>
 					</ul> -->
 				</div>
-				
-				
 			</main>
-			
-			<footer role = "contentinfo"></footer>
+			<footer role="contentinfo">
+					Copyright &copy; 2016 Betwixt Booking<br>
+					<a href="mailto:betwixtbooking@gmail.com">
+						<address>BetwixtBooking@gmail.com</address>
+					</a>
+				</footer>
 		</div>
 		
 	</body>

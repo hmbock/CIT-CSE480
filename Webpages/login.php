@@ -77,14 +77,14 @@
 
 						if($match > 0){
 						  session_start();
-						 // $_SESSION['username'] = 'hello';
-						  //header("Location:http://www.secs.oakland.edu/~hmbock/betwixtBooking.php");
+						 $_SESSION['username'] = 'hello';
+						  header("Location:http://www.secs.oakland.edu/~hmbock/staffBetwixtBooking.php");
 						  
 	// Works if session cookie was accepted
-	echo '<br /><a href="betwixtBooking.php">page 2</a>';
+	//echo '<br /><a href="betwixtBooking.php">page 2</a>';
 
 	// Or maybe pass along the session id, if needed
-	echo '<br /><a href="betwixtBooking.php?' . SID . '">page 2</a>';  
+	//echo '<br /><a href="betwixtBooking.php?' . SID . '">page 2</a>';  
 						}else{
 							$msg = 'Login Failed! Please make sure that you enter the correct details and that you have activated your account.';
 						}
