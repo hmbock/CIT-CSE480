@@ -34,7 +34,7 @@ session_start();
 					  <!--<li><a href="http://secs.oakland.edu/~hmbock/cancelApp.php"><i class="fa fa-ban"></i> &nbsp; Appointments</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule Appointment</a></li>-->
 					  <li><a href="phonebook.php"><i class="fa fa-phone-square"></i> &nbsp; Phonebook</a></li>
-            		  <li><a href="http://secs.oakland.edu/~hmbock/staffAccountSettings.php"><i class="fa fa-aterisk"></i> &nbsp; Manage Account</a></li>
+            		  <li><a href="http://secs.oakland.edu/~hmbock/staffAccountSettings.php"><i class="fa fa-user"></i> &nbsp; Manage Account</a></li>
 					  <li><a href="logout.php"><i class="fa fa-sign-out"></i>&nbsp; Logout</a></li>
 					</ul>
 				</nav>	
