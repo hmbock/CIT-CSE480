@@ -64,7 +64,7 @@ session_start();
                             defaultDate: new Date().toJSON().slice(0,10),//'2015-01-31',
                             editable: true,
                             eventLimit: true, // allow "more" link when too many events
-                            events: [
+                            events: [/*
                                 {
                                     title: 'All Day Event',
                                     id: 123,
@@ -132,8 +132,30 @@ session_start();
                                     title: 'Click for Google',
                                     url: 'http://google.com/',
                                     start: '2014-11-28'
-                                }
-                            ],
+                                }*/
+                                $.ajax({
+                                    url: 'getAppointments.php',
+                                    method: "GET",
+                                    data: { ID : <?php echo $_POST['stu_id'] ?> },
+                                    dataType: "json",
+                                    contentType: "application/json; charset=utf-8",
+                                    success: function (data) {
+                                        for(var i = 0; i < ) {
+                                            $('#calendar').fullCalendar('addEvent', {
+                                                id: data.Appointment_ID,
+                                                title: data.Appointment_Title,
+                                                start: data.start_time,
+                                                end: data.end_time
+                                            });
+                                        }
+                                    },
+                                    error: function (xhr, ajaxOptions, thrownError) {
+                                        alert(xhr.status + " " + thrownError);
+                                    }
+                                });
+                            ]
+
+                            ,
                             eventRender: function(event, element) {
                                 element.append( "<span class='cl'>X</span>" );
                                 element.find(".cl").click(function() {
