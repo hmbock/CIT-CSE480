@@ -27,11 +27,10 @@
 				<main role ="main">
 					<nav>
 						<ul>
-						  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
-						  <li><a href="http://secs.oakland.edu/~hmbock/about.html"><i class="fa fa-circle"></i>&nbsp;About</a></li>
-						  <li><a href="http://secs.oakland.edu/~hmbock/signup.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
-						  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-sign-in"></i> &nbsp; Login</a></li>
-						  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-info"></i> &nbsp;Help</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php">&nbsp;<i class="fa fa-home"></i>&nbsp;Home</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/about.html">&nbsp;<i class="fa fa-book"></i>&nbsp;About</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/signup.php">&nbsp;<i class="fa fa-user-plus"></i>&nbsp;Sign Up</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/help.php">&nbsp;<i class="fa fa-question-circle"></i> &nbsp;Help</a></li>
 						 
 						</ul>
 					</nav>	
@@ -59,7 +58,7 @@
 						if($match > 0){
 							session_start();                                                                                                                           
 						  $_SESSION['username'] = $_POST['username'];
-						  header("Location:http://www.secs.oakland.edu/~hmbock/myCalendar.php");
+						  header("Location:http://www.secs.oakland.edu/~hmbock/newCal.php");
 						  
 
 						}else{

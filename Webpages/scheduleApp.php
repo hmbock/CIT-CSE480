@@ -30,12 +30,10 @@ session_start();
 				<nav>
 					<ul>
             		  <li>Username:<?php echo $_SESSION['username']; ?> </li> 
-					  <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i>&nbsp;Home</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/cancelApp.php"><i class="fa fa-ban"></i> &nbsp; Appointments</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
-					  <li><a href="#blank"><i class="fa fa-circle"></i> &nbsp; Contacts</a></li>
-            		  <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
-					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/newCal.php">&nbsp;<i class="fa fa-calendar"></i>&nbsp;Home</a></li>
+					  <li><a href="phonebook.php">&nbsp;<i class="fa fa-phone-square"></i>&nbsp;Contacts</a></li>
+            		  <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php">&nbsp;<i class="fa fa-user"></i> &nbsp; Manage Account</a></li>
+					  <li><a href="logout.php">&nbsp;<i class="fa fa-sign-out"></i>&nbsp; Logout</a></li>
 					</ul>
 				</nav>	
                 

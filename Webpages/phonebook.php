@@ -39,18 +39,19 @@ session_start();
 				<h1> Phone Book</h1>
 			</header>
 			
-		 
+		 <main role="main">
 				<nav>
 						<ul>
 						  <li>Username:<?php echo $_SESSION['username'];?> </li>   
-						  <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i> &nbsp; Home</a></li>
-						  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-ban"></i> &nbsp; Schedule Appointment</a></li>
-						  <li><a href="http://secs.oakland.edu/~hmbock/phonebook.php"><i class="fa fa-phone-square"></i> &nbsp; Contacts</a></li>
-						  <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
-						  <li><a href="logout.php"><i class="fa fa-sign-out"></i>&nbsp; Logout</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/newCal.php">&nbsp;<i class="fa fa-calendar"></i>&nbsp;Home</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php">&nbsp;<i class="fa fa-plus-circle"></i>&nbsp;Schedule Appointment</a></li>
+						  <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php">&nbsp;<i class="fa fa-user"></i> &nbsp;Manage Account</a></li>
+						  <li><a href="logout.php">&nbsp;<i class="fa fa-sign-out"></i>&nbsp;Logout</a></li>
 						</ul>
 					</nav>	
-		
+					<div id="content">
+						<h2> Contact Info Directory </h2>
+						
 
 <?php
 
@@ -110,6 +111,8 @@ $result = $conn->query($sql);
 
 
 ?>
+
+
 <script type="text/javascript">
 //function sortBy(btn){
 //var a = btn.split(".");
@@ -153,8 +156,8 @@ $result = $conn->query($sql);
 //};
 //</script>
 
-				
-			
+				</div>
+			</main>
 			<footer role="contentinfo">
                     Copyright &copy; 2016 Betwixt Booking<br>
                     <a href="mailto:betwixtbooking@gmail.com">
