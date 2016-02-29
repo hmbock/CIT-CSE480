@@ -20,8 +20,12 @@
 	
 	<body>	
 		<div id="wrapper">
+		
        		 <header>
-				<h1> Calendar</h1>
+				<h1>Calendar 
+			</h1>
+	
+				
 			 </header>
 
 			<main role ="main">

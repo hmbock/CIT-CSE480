@@ -145,8 +145,9 @@ $data2 = mysql_fetch_array($query);
 					<ul>
 					  <li>Username: <?php echo $_SESSION['username']; ?> </li> 
 					  <li><a href="http://secs.oakland.edu/~hmbock/staffBetwixtBooking.php">&nbsp;<i class="fa fa-home"></i>&nbsp;Home</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/cancelApp.php">&nbsp;<i class="fa fa-ban"></i>&nbsp;Appointments </a></li>
-					  <li><a href="phonebook.php">&nbsp;<i class="fa fa-phone-square"></i>&nbsp;Contacts</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/manageAvailability.php">&nbsp;<i class="fa fa-share"></i>&nbsp;Manage Availability</a></li>
+					   <li><a href="http://secs.oakland.edu/~hmbock/staffscheduleApp.php">&nbsp;<i class="fa fa-plus-circle"></i>&nbsp;Schedule Appointment</a></li>
+					  <li><a href="staffPhonebook.php">&nbsp;<i class="fa fa-phone-square"></i>&nbsp;Contacts</a></li>
 					  <!--<li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>-->
 					  <li><a href="logout.php">&nbsp;<i class="fa fa-sign-out"></i>&nbsp;Logout</a></li>
 				

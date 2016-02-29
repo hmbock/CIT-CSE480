@@ -42,19 +42,15 @@ $(document).ready(function(){
 						</ul>
 					</nav>	
 					<div id = "content">
-						<h2>Betwixt Booking Help</h2>
-						<h3>My FAQ</h2>
+											<h2>Betwixt Booking Help</h2>
+								 <h3>My FAQ</h2>
 						<ul>
-							<li>
-								<a class="faq" href="#">&nbsp;<i class="fa fa-angle-down"></i>&nbsp;&nbsp;What Can I Use Betwixt Booking For?</a>
-								<div id="answer" class="faqAnswer" >You can use Betwixt Booking for scheduling an appointment with an advisor or tutor. You are able to view you calendar
-								to see your different events and to schedule the appointments.
-								</div>
-							</li>
-							<li><a class="faq" href="#">&nbsp;<i class="fa fa-angle-down"></i>&nbsp;&nbsp;How Do I Schedule An Appointment?</a>
+						<li><a class="faq" href="#">&nbsp;<i class="fa fa-angle-down"></i>&nbsp;What Can I Use Betwixt Booking For?</a>
+						<div id="answer" class="faqAnswer">You can use Betwixt Booking for scheduling an appointment with an advisor or tutor. You are able to view you calendar<br> to see your different events and to schedule the appointments. </div></li>
+						<li><a class="faq" href="#">&nbsp;<i class="fa fa-angle-down"></i>&nbsp;How Do I Schedule An Appointment?</a>
 						<div id="answer" class="faqAnswer">To schedule an appointment, go to the schedule appointment page and select the information of what type of appointment you would like to make. Then select the date you would like the appointment and you will be provided the the availabilities for that day.
             provided with the availabilites of </div></li>
-						<li><a class="faq" href="#">&nbsp;<i class="fa fa-angle-down"></i>&nbsp;&nbsp;How Do I Cancel An Appointment</a>
+						<li><a class="faq" href="#">&nbsp;<i class="fa fa-angle-down"></i>&nbsp;How Do I Cancel An Appointment</a>
 						<div id="answer" class="faqAnswer">To cancel an appointment, click on the appointment you would like to cancel and select the "x" in the corner and you will be provided with confirmation that the appointment has been cancelled.</div></li>
 						</ul>
 

@@ -35,7 +35,7 @@ session_start();
 					  <li><a href="http://secs.oakland.edu/~hmbock/staffBetwixtBooking.php">&nbsp;<i class="fa fa-home"></i>&nbsp;Home</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/manageAvailability.php">&nbsp;<i class="fa fa-share"></i>&nbsp;Manage Availability</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/staffscheduleApp.php">&nbsp;<i class="fa fa-plus-circle"></i>&nbsp;Schedule Appointment</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/phonebook.php">&nbsp;<i class="fa fa-phone-square"></i>&nbsp;Contacts</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/staffPhonebook.php">&nbsp;<i class="fa fa-phone-square"></i>&nbsp;Contacts</a></li>
 				
 					  <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php">&nbsp;<i class="fa fa-calendar"></i> &nbsp;My Calendar</a></li>
 					 <li><a href="http://secs.oakland.edu/~hmbock/staffAccountSettings.php">&nbsp;<i class="fa fa-user"></i> &nbsp; Manage Account</a></li>

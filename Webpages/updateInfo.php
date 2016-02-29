@@ -133,24 +133,23 @@ $data2 = mysql_fetch_array($query);
 	</head>
 	
 	<body>
-			<header>
-				<h1> Account Settings</h1>
-			</header>
+			
 	
 	
 	
 		<div id="wrapper">
+		<header>
+				<h1> Account Settings</h1>
+			</header>
 	<main role ="main">
 				<nav>
 					<ul>
             <li>Username:<?php echo $_SESSION['username']; ?> </li> 
-					  <li><a href="http://secs.oakland.edu/~hmbock/betwixtBooking.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/upcomingApp.php"><i class="fa fa-arrow-up"></i>&nbsp;Upcoming Appointments</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/cancelApp.php"><i class="fa fa-ban"></i> &nbsp; Cancel Appointment</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i> &nbsp;My Calendar</a></li>
-             <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
-					  <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/newCal.php">&nbsp;<i class="fa fa-calendar"></i>&nbsp;Home</a></li>
+					  <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php">&nbsp;<i class="fa fa-plus-circle"></i>&nbsp;Schedule Appointment</a></li>
+					   <li><a href="phonebook.php">&nbsp;<i class="fa fa-phone-square"></i>&nbsp;Contacts</a></li>
+      
+					  <li><a href="logout.php"><i class="fa fa-sign-out"></i>&nbsp; Logout</a></li>
 					</ul>
 				</nav>	
 			

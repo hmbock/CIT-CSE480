@@ -70,7 +70,12 @@
 .clear {
 	clear: both;
 }
-<!-- overlay --!> 
+<!-- overlay --> 
+
+#html {
+	font-family: candara; 
+}
+
 body {
 	height:100%;
 	margin:0;
