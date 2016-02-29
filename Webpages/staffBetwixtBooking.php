@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 	
 	<head>
-		<title>Betwixt Booking</title>
+		<title>Betwixt Booking | Home</title>
 		<meta charset="utf-8">
 		<meta name= "viewport" content= "width= device-width, initial-scale=1.0">
 		
@@ -38,7 +38,7 @@ session_start();
 					  <li><a href="http://secs.oakland.edu/~hmbock/staffPhonebook.php">&nbsp;<i class="fa fa-phone-square"></i>&nbsp;Contacts</a></li>
 				
 					  <li><a href="http://secs.oakland.edu/~hmbock/staffnewCal.php">&nbsp;<i class="fa fa-calendar"></i> &nbsp;My Calendar</a></li>
-					 <li><a href="http://secs.oakland.edu/~hmbock/staffAccountSettings.php">&nbsp;<i class="fa fa-user"></i> &nbsp; Manage Account</a></li>
+					 <li><a href="http://secs.oakland.edu/~hmbock/staffAccountSettings.php">&nbsp;<i class="fa fa-user"></i> &nbsp;Manage Account</a></li>
 					  <li><a href="logout.php">&nbsp;<i class="fa fa-sign-out"></i>&nbsp;Logout</a></li>
 					<li><a href="#blank"></a></li>
                      <li><a href="blank"></a></li>

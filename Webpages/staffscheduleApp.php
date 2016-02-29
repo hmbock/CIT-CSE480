@@ -28,7 +28,7 @@ session_start();
 			<main role ="main">
 				<nav>
 					<ul>
-            		  <li>Username:<?php echo $_SESSION['username']; ?> </li> 
+            		   <li>Welcome <?php echo $_SESSION['username'];?> </li>  
 					  <li><a href="http://secs.oakland.edu/~hmbock/staffBetwixtBooking.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
 					  <li><a href="http://secs.oakland.edu/~hmbock/manageAvailability.php">&nbsp;<i class="fa fa-share"></i>&nbsp;Manage Availability</a></li>
 					  <!--<li><a href="http://secs.oakland.edu/~hmbock/cancelApp.php"><i class="fa fa-ban"></i> &nbsp; Appointments</a></li>

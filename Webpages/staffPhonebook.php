@@ -5,7 +5,7 @@ session_start();
 <html lang="en">
 	
 	<head>
-		<title>Betwixt Booking</title>
+		<title>Betwixt Booking | Contacts</title>
 		<meta charset="utf-8">
 		<meta name= "viewport" content= "width= device-width, initial-scale=1.0">
 		
@@ -27,7 +27,7 @@ session_start();
 		 <main role="main">
 				<nav>
 						<ul>
-						  <li>Username:<?php echo $_SESSION['username'];?> </li>   
+						  <li>Welcome <?php echo $_SESSION['username'];?> </li>   
 						  <li><a href="http://secs.oakland.edu/~hmbock/staffBetwixtBooking.php">&nbsp;<i class="fa fa-calendar"></i>&nbsp;Home</a></li>
 						  <li><a href="http://secs.oakland.edu/~hmbock/manageAvailability.php">&nbsp;<i class="fa fa-share"></i>&nbsp;Manage Availability</a></li>
 						  <li><a href="http://secs.oakland.edu/~hmbock/staffscheduleApp.php">&nbsp;<i class="fa fa-plus-circle"></i>&nbsp;Schedule Appointment</a></li>
