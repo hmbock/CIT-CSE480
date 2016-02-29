@@ -4,20 +4,17 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		
 		<title>Betwixt Booking</title>
 		<meta charset="utf-8">
 		<meta name= "viewport" content= "width= device-width, initial-scale=1.0">
-		<link href="betwixt.css" rel="stylesheet">
+		
 		
 		<link rel="stylesheet" href="font-awesome-4.5.0\css\font-awesome.min.css">
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
-		
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		
+		<link href="betwixt.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 	</head>
 	
@@ -44,6 +41,7 @@ session_start();
                 <div id="content">
 					<form action="" method="POST" >
                         <h2> Schedule an Appointment </h2>
+						
                         <p><b><u>To make a New appointment, fill the form below:</u></b></p>
                         
                             <div class="dropdown" id="app">
