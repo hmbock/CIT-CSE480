@@ -16,6 +16,7 @@ session_start();
 		<link href="betwixt.css" rel="stylesheet">
 		<script type="text/javascript" src="/path/to/jquery-latest.js"></script> 
 		<script type="text/javascript" src="/path/to/jquery.tablesorter.js"></script>
+	
 	</head>
 	<body>
 		<div id="wrapper">
