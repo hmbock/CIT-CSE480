@@ -44,7 +44,7 @@
 				$selected_radio = $_POST['chooseone'];
 	 
 				if (isset($_POST['username']) && !empty($_POST['username']) AND isset($_POST['password']) && !empty($_POST['password'])) {
-
+					//if selected radio button is Student
 					if ($selected_radio == 'student') {
 						$username = mysql_escape_string($_POST['username']); // Set variable for the username
 						$password = mysql_escape_string(md5($_POST['password'])); // Set variable for the password and convert it to an MD5 hash.
@@ -54,16 +54,20 @@
 
 						$match  = mysql_num_rows($search); //records the number of rows that have matched the search
 
+						//if the account has been found, start session
 						if($match > 0){
 							session_start();                                                                                                                           
 						  $_SESSION['username'] = $_POST['username'];
-						  header("Location:http://www.secs.oakland.edu/~hmbock/newCal.php");
+						  header("Location:http://www.secs.oakland.edu/~hmbock/newCal.php"); //bring up Student portal with Student calendar
 						  
 
-						}else{
+						}
+						//if the account has not been found, show an error message
+						else{
 							$msg = 'Login Failed! Please make sure that you enter the correct details and that you have activated your account.';
 						}
 					}
+					//if selected radio button is Staff
 					else{
 						$username = mysql_escape_string($_POST['username']); // Set variable for the username
 						$password = mysql_escape_string(md5($_POST['password'])); // Set variable for the password and convert it to an MD5 hash.
@@ -76,13 +80,13 @@
 						if($match > 0){
 						  session_start();
 						 $_SESSION['username'] = $_POST['username'];
-						  header("Location:http://www.secs.oakland.edu/~hmbock/staffBetwixtBooking.php");
+						  header("Location:http://www.secs.oakland.edu/~hmbock/staffBetwixtBooking.php"); //bring up Staff portal with Staff calendar
 						  
-	// Works if session cookie was accepted
-	//echo '<br /><a href="betwixtBooking.php">page 2</a>';
+							// Works if session cookie was accepted
+							//echo '<br /><a href="betwixtBooking.php">page 2</a>';
 
-	// Or maybe pass along the session id, if needed
-	//echo '<br /><a href="betwixtBooking.php?' . SID . '">page 2</a>';  
+							// Or maybe pass along the session id, if needed
+							//echo '<br /><a href="betwixtBooking.php?' . SID . '">page 2</a>';  
 						}else{
 							$msg = 'Login Failed! Please make sure that you enter the correct details and that you have activated your account.';
 						}

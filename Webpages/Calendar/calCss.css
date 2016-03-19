@@ -41,7 +41,7 @@
 	margin-bottom: 4px;
 	width: 128px;
 	height: 95px;
-	background-color: #9C9;
+	background-color: #9C9; /* Calendar Day box */
 }
 .day_heading {
 	position: relative;
@@ -65,7 +65,7 @@
 	margin-bottom: 4px;
 	width: 128px;
 	height: 95px;
-	background-color: #CCC;
+	background-color: #CCC; /* grayed out calendar days */
 }
 .clear {
 	clear: both;
@@ -101,7 +101,7 @@ body {
 	margin-top: 100px;
 	margin-right: auto;
 	margin-left:  auto;
-	background-color: #FFF;
+	background-color: #FFF; /* white color for pop up box */
 	height: 400px;
 	overflow: scroll;
 }
