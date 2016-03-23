@@ -60,7 +60,7 @@
                     if($match > 0){
                          session_start();                                                                                                                          
                       $_SESSION['username'] = "$username";
-                      header("Location:http://www.secs.oakland.edu/~hmbock/betwixtBooking.php");
+                      header("Location:http://www.secs.oakland.edu/~hmbock/newCal.php");
                     }else{
                         $msg = 'Incorrect verification code. Please enter code that was emailed';
                     }
