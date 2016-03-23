@@ -39,7 +39,7 @@
 				</nav>	
                 
                 <div id="content">
-					<iframe src="stu_show_calendar.php" width="1000" height="650" style="border:none"></iframe>
+					<iframe src="show_calendar.php" width="1000" height="650" style="border:none"></iframe>
 				</div>
 			</main>
 			<footer role="contentinfo">

@@ -65,17 +65,12 @@
 	margin-bottom: 4px;
 	width: 128px;
 	height: 95px;
-	background-color: #CCC; /* grayed out calendar days */
+	background-color: #CCC;
 }
 .clear {
 	clear: both;
 }
-<!-- overlay --> 
-
-#html {
-	font-family: candara; 
-}
-
+<!-- overlay --!> 
 body {
 	height:100%;
 	margin:0;
@@ -101,7 +96,7 @@ body {
 	margin-top: 100px;
 	margin-right: auto;
 	margin-left:  auto;
-	background-color: #FFF; /* white color for pop up box */
+	background-color: #FFF;
 	height: 400px;
 	overflow: scroll;
 }
