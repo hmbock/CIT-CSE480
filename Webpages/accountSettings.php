@@ -11,7 +11,7 @@ $servername = 'localhost';
 					mysql_connect("localhost", "hmbock", "team@480") or die(mysql_error()); // Connect to database server(localhost) with username and password.
           mysql_select_db("hmbock") or die(mysql_error()); // Select hmbock database.
 
-$username= $_SESSION['username'];
+$username = $_SESSION['username'];
 
 
 $data = "SELECT F_Name, L_Name, stu_email FROM Student WHERE stu_username='$username'";
@@ -40,7 +40,7 @@ $data2 = mysql_fetch_array($query);
 					$dbpassword = 'team@480';
 					$dbname = 'hmbock';
 
-
+			if(isset($_POST['update'])) {
 			try
 				{
 					mysql_connect("localhost", "hmbock", "team@480") or die(mysql_error()); // Connect to database server(localhost) with username and password.
@@ -113,7 +113,29 @@ $data2 = mysql_fetch_array($query);
 				//Couldn't connect to database
 				$msg = 'Unable to connect. Please try again later';
 				}
+
+
+	}
+
+
 }
+
+if(isset($_POST['delete'])) {
+                                                try {
+                                                        mysql_connect("localhost", "hmbock", "team@480") or die(mysql_error()); // Connect to database server(localhost) with username and password.
+                                                        mysql_select_db("hmbock") or die(mysql_error()); // Select prdaram database.
+
+                                                        if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+
+
+								 header('location:http://www.secs.oakland.edu/~hmbock/confirmDeleteAccount.php');
+
+                                                        }
+                                                } catch(Exception $e) {
+                                                        $msg = 'Unable to connect. Please try again later.';
+                                                }
+                                        }
+
 ?>
   
                                               
@@ -130,6 +152,9 @@ $data2 = mysql_fetch_array($query);
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/wow.min.js"></script>
 	</head>
 	
 	<body>
@@ -155,7 +180,7 @@ $data2 = mysql_fetch_array($query);
 							<h2> User Profile </h2>
 							<h3>Enter new account information and submit to update:</h3>
             <!-- start sign up form -->  
-							<form action="accountSettings.php" method="post">
+							<form action="accountSettings.php" method="post" id="settingsForm">
 							
 							  <fieldset>
 					  
@@ -176,7 +201,11 @@ $data2 = mysql_fetch_array($query);
 						   
 								
 											<p>
-											<input type="submit" class="submit_button" value="Update Account Info" />
+											<input type="submit" class="submit_button" name="update" value="Update Account Info" />
+											</p>
+											
+											<p>
+												<input type="submit" class="submit_button" name="delete" value="Delete Account">
 											</p>
 							   
 											   <p>
