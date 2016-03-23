@@ -1,20 +1,20 @@
 body{
-	background-color: #F5F5DC; 
+	background-color: #000000; 
 	font-family: Candara, Arial, sans-serif;
 	color: #2E0000; 
-	background-image: url(javabackground.gif);    
+	   
 }
 
 
 h1 {
-	background-color: #D2B48C;
+	background-color: #000000;
 	color: #000000;
-	background-image: url(logos-ou.png);
-	background-position: center;
+	background-image: url(betwixt4.png);
+	background-position: left;
 	
 	
 	background-repeat: no-repeat;
-	height: 150px;
+	height: 75px;
 	text-indent: -9999px;
 	margin-bottom: 0;
 }
@@ -80,6 +80,7 @@ header{
 }
 
 nav {
+	background-color: #000000;
 	font-weight: bold;
 	text-align: Left;
 	float: left;
@@ -110,7 +111,7 @@ nav a {
 #content {
 	font-family: candara, century gothic;
 	padding: 1px 20px 20px;
-	background-color: #F5F5DC;
+	background-color: #ffffff;
 	margin-left: 175px;
 	font-size: 20px;
 	
@@ -129,6 +130,11 @@ nav a {
 			  padding-left: 40px;
 			  padding-right: 40px;
 			}
+			
+#content p { 
+			
+			text-align: center;
+}
 #content ul {
 	list-style-position: inside;
 	list-style-type: none;
@@ -169,7 +175,7 @@ dt {
 #wrapper {
 
 	 	  width: 80%;
-		  background-color:#8b7b62;
+		  background-color:#c0b283;
 		  margin-left: auto;
 		  margin-right:auto;
 		  min-width: 1200px;
@@ -184,6 +190,7 @@ table {
 		margin-top: 25px;
 		border-collapse: collapse;
 		font-size: 16px;
+		
 	}
 	table, td, th {    
 
@@ -195,6 +202,7 @@ th {
 	text-align:center;
 	background-color: #4CAF50;
     color: white;
+	border-bottom: 1px solid #d6d6d6;
 }
 
 td {
@@ -209,7 +217,10 @@ tr:hover{
 			font-size: 18px;
 }
 		
-
+tr:nth-child(even)
+{
+background:#e9e9e9;
+}
 
 img{ 
 	 border-style: none;
@@ -233,15 +244,15 @@ input[type=radio ] {
 
 
 footer{ 
-	   background-color: #D2B48C; 
-	   color: #000000; 
+	   background-color: #000000;
+	   color: #ffffff; 
 	   font-size: .60em;
 	   font-style: italic;
 	   text-align: center;
 	   padding: 20px;
 	 }
 footer a:link{
-				color: #2E0000;
+				color: #ffffff;
 			}
 footer a:visited { 
 				color: #000000;

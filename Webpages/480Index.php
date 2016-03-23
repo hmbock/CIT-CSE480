@@ -32,8 +32,10 @@
                  </nav>
 	    
                 <div id="content">
-                        <h2> Welcome to Betwixt Booking </h2>
-						
+                        <h2> Welcome! </h2>
+						<p>Need to make an appointment with your advisor or tutor quick and easy?</p>
+						<p> Guaranteed to help students and staff coordinate appointments</p>
+						 <p>Sign up NOW!</p>
 						
                         
                         <br>
