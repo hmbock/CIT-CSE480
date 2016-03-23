@@ -770,7 +770,7 @@ session_start();
                         e.preventDefault();
 
                         var staffID = $('#persondd option:selected').attr('value');
-                        var stuID = 42; //change to real val
+                        var stuID = <?php echo $_SESSION['id'];?> ;
                         var title = $('#title').val();
 
                         $.ajax({
