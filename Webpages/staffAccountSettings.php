@@ -14,7 +14,7 @@ $servername = 'localhost';
 $username= $_SESSION['username'];
 
 
-$data = "SELECT F_Name, L_Name, stu_email FROM Student WHERE stu_username='$username'";
+$data = "SELECT F_Name, L_Name, staff_email FROM Staff WHERE staff_username='$username'";
 
 $query = mysql_query($data);
 
@@ -55,7 +55,7 @@ $data2 = mysql_fetch_array($query);
 		            $newUsername = mysql_escape_string($_POST['username']); // Set variable for the username
 
                 
-                      if($search = mysql_query("SELECT F_Name, L_Name,staff_email FROM Staff WHERE staff_username='$username'")) 
+                      if($search = mysql_query("SELECT F_Name, L_Name, staff_email FROM Staff WHERE staff_username='$username'")) 
                     {
                           $match  = mysql_num_rows($search); //records the number of rows that have matched the search
                               if($match > 0)
@@ -69,7 +69,7 @@ $data2 = mysql_fetch_array($query);
                                 header("location:http://www.secs.oakland.edu/~hmbock/updateInfo.php");    
                               } 
                     
-                              elseif($search = mysql_query("SELECT F_Name, L_Name,stu_email FROM Student WHERE stu_username='$username'")) 
+                              elseif($search = mysql_query("SELECT F_Name, L_Name, staff_email FROM Staff WHERE staff_username='$username'")) 
                               {
                                 $match  = mysql_num_rows($search); //records the number of rows that have matched the search
                                     if($match > 0)
@@ -80,9 +80,9 @@ $data2 = mysql_fetch_array($query);
                                         $updatedEmail = ($newEmail);
                                                                              
                                              
-                                         mysql_query("UPDATE Student SET F_Name = '$updatedFirstName', L_Name = '$updatedLastName', stu_email = '$updatedEmail' WHERE stu_username='$username'"); 
+                                         mysql_query("UPDATE Staff SET F_Name = '$updatedFirstName', L_Name = '$updatedLastName', staff_email = '$updatedEmail' WHERE staff_username='$username'"); 
                                 
-                                  header("location:http://www.secs.oakland.edu/~hmbock/updateInfo.php");
+                                  header("location:http://www.secs.oakland.edu/~hmbock/staffUpdateInfo.php");
 
                                     }
                                     else
@@ -113,6 +113,24 @@ $data2 = mysql_fetch_array($query);
 				//Couldn't connect to database
 				$msg = 'Unable to connect. Please try again later';
 				}
+
+
+	if(isset($_POST['delete'])) {
+                                                try {
+                                                        mysql_connect("localhost", "hmbock", "team@480") or die(mysql_error()); // Connect to database server(localhost) with username and password.
+                                                        mysql_select_db("hmbock") or die(mysql_error()); // Select prdaram database.
+
+                                                        if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+
+
+                                                                 header('location:http://www.secs.oakland.edu/~hmbock/confirmDeleteAccount.php');
+
+                                                        }
+                                                } catch(Exception $e) {
+                                                        $msg = 'Unable to connect. Please try again later.';
+                                                }
+                                        }
+
 }
 ?>
   
@@ -171,7 +189,7 @@ $data2 = mysql_fetch_array($query);
 											 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" value="<?php echo $data2[L_Name] ?>" maxlength="20" />
 											 
 												  <label for="email">Email:</label>
-												  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $data2[stu_email] ?>" maxlength="20" />
+												  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $data2[staff_email] ?>" maxlength="20" />
 											
 								
 											<label for="username">Username:   <?php echo $_SESSION['username']; ?><strong></strong></label>
@@ -181,6 +199,10 @@ $data2 = mysql_fetch_array($query);
 								
 											<p>
 											<input type="submit" class="submit_button" value="Update Account Info" />
+											</p>
+
+											<p>
+												<input type="submit" class="submit_button" name="delete" value="Delete Account">
 											</p>
 							   
 											   <p>
@@ -209,6 +231,3 @@ $data2 = mysql_fetch_array($query);
 	
 </html>
 
-
-
-	
