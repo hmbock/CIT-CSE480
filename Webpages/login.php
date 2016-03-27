@@ -79,6 +79,11 @@
 
 						if($match > 0){
 						  session_start();
+						  
+						  while ($row = mysql_fetch_array($search)) {
+                					$_SESSION['id'] = $row["stu_id"];
+              					  }
+						  
 						 $_SESSION['username'] = $_POST['username'];
 						  header("Location:http://www.secs.oakland.edu/~hmbock/staffBetwixtBooking.php"); //bring up Staff portal with Staff calendar
 						  
