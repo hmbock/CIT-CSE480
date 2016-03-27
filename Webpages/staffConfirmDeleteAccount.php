@@ -50,11 +50,11 @@ if(isset($_POST['submit']))
             $conn = new mysqli("localhost", "hmbock", "team@480", "hmbock");
     
     
-            $result = $conn->query("DELETE FROM Student WHERE stu_id = '" . $_SESSION['id'] . "'");
+            $result = $conn->query("DELETE FROM Staff WHERE staff_id = '" . $_SESSION['id'] . "'");
     
             if ($result) {
 
-                            $resultAppts = $conn->query("DELETE FROM events WHERE stu_id = '" . $_SESSION['id'] . "'");
+                            $resultAppts = $conn->query("DELETE FROM events WHERE staff_id = '" . $_SESSION['id'] . "'");
                             
                             if($resultAppts) {
 
