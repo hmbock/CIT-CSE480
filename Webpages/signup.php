@@ -1,38 +1,31 @@
-<!DOCTYPE html> 
-
+<!DOCTYPE html>
 <html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Betwixt Booking | Registration Page</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
 
-    <head>
-        <title>Betwixt Booking Create Account</title> 
-          <meta charset="utf-8">
-          <meta name= "viewport" content= "width= device-width, initial-scale=1.0">
-          <link href="betwixt.css" rel="stylesheet">
-          <link rel="stylesheet" href="C:\Users\lkwal_000\Google Drive\CIT_CSE 480\Production\css\font-awesome-4.5.0\css\font-awesome.min.css">
-          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
-          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
-          <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-    
-    </head>
-    
-    <body>
-     
-      <div id="wrapper">
-		 <header>
-			<div class="title">
-				<h1> Betwixt Booking Create Account </h1>
-			</div>
-		  </header>
-        <main role ="main">
-				<nav>
-					<ul>
-					  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php">&nbsp;<i class="fa fa-home"></i>&nbsp;Home</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/about.html">&nbsp;<i class="fa fa-book"></i>&nbsp;About</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/login.php">&nbsp;<i class="fa fa-sign-in"></i> &nbsp;Login</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/help.php">&nbsp;<i class="fa fa-question-circle"></i>&nbsp;Help</a></li>
-          
-					</ul>
-				</nav>	
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition register-page">
+
         
         <!-- start php code -->
          
@@ -140,62 +133,87 @@
                     }
             }
             }else{
-              $msg = 'Please enter information for registration';
+              $msg = ' ';
               }
              
         ?>
 
         <!-- stop php code -->
 
-        <div id = "content" >
-            <h3>Please choose and enter in the correct information to create your account:</h3>
+<div class="register-box">
+  <div class="register-logo">
+    <a href="#"><b>Betwixt</b>Booking</a>
+  </div>
 
-            
+  <div class="register-box-body">
+    <p class="login-box-msg">Sign up for an Account</p>
 
-			<!-- start sign up form -->  
-            <form action="signup.php" method="post">
-              <fieldset>
-                <div class="form-group"> <!--radio buttons-->
+    <form action="signup.php" method="post">
 					<input type="radio" name="chooseone" value="student" checked> Student<br> 
 					<input type="radio" name="chooseone" value="staff"> Staff<br> 
-                <!--registration form -->
-					<label for="firstName">First Name:</label>
-					<input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" value="" maxlength="50" />
-				
-					<label for="lastName">Last Name:</label>
-					<input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" value="" maxlength="50" />
-						 
-					<label for="email">Email:</label>
-					<input type="email" class="form-control" id="email" name="email" placeholder="Email" value="Email" maxlength="50" />
-
-					<label for="username">Username:</label>
-					<input type="text" class="form-control" id="username" name="username" placeholder="username" value="" maxlength="50" />
-						  
-					<label  for="password">Password:</label>
-					<input type="password" class="form-control" id="password" placeholder ="Password" name="password" value="" maxlength="50" />
-			
-					<p>
-					<input type="submit" class="submit_button" value="Sign up" />
-					</p>
-                
-                <p>
+					
+      <div class="form-group has-feedback">
+        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First Name" value="" maxlength="50">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+	  <div class="form-group has-feedback">
+        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Last Name" value="" maxlength="50">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" id="email" name="email"  placeholder="Email" value="" maxlength="50" >
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+	  <div class="form-group has-feedback">
+        <input type="username" class="form-control" id="username" name="username"  placeholder="Username" value="" maxlength="50" >
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control"  id="password1" name="password1" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" id="password" name="password" value="" placeholder="Retype password" maxlength="50">
+        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+           <a href="login.php" class="text-center">I am already registered.</a>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+        </div>
+		
+		<p>
 					<?php echo $msg; ?> 
                 </p>
-               </div>
-			   </fieldset>
-            </form>
-            <!-- end sign up form -->
-          
-			</div>
-		</main>
-			<footer role="contentinfo">
-				Copyright &copy; 2016 Betwixt Booking<br>
-				<a href="mailto:betwixtbooking@gmail.com">
-					<address>BetwixtBooking@gmail.com</address>
-				</a>
-			</footer>
-		</div>
-    </body>
+        <!-- /.col -->
+      </div>
+    </form>
+
+  
+
+  
+  </div>
+  <!-- /.form-box -->
+</div>
+<!-- /.register-box -->
+
+<!-- jQuery 2.2.0 -->
+<script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="plugins/iCheck/icheck.min.js"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
+  });
+</script>
+</body>
 </html>
-
-
