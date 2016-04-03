@@ -94,7 +94,7 @@ session_start();
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           
-          <!-- Notifications: style can be found in dropdown.less -->
+          <!-- Notifications: style can be found in dropdown.less 
           <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
@@ -103,7 +103,7 @@ session_start();
             <ul class="dropdown-menu">
               <li class="header">You have 1 notification</li>
               <li>
-                <!-- inner menu: contains the actual data -->
+                <!-- inner menu: contains the actual data 
                 <ul class="menu">
                   <li>
                     <a href="#">
@@ -190,7 +190,7 @@ session_start();
         <li> <!--Calendar Link-->
           <a href="index.php">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
-            <small class="label pull-right bg-red">3</small>
+            <!--<small class="label pull-right bg-red">3</small>-->
           </a>
         </li>
         

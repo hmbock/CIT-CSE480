@@ -33,7 +33,7 @@ session_destroy();
 						  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php">&nbsp;<i class="fa fa-home"></i>&nbsp;Home</a></li>
 						  <li><a href="http://secs.oakland.edu/~hmbock/about.html">&nbsp;<i class="fa fa-book"></i>&nbsp;About</a></li>
 						  <li><a href="http://secs.oakland.edu/~hmbock/signup.php">&nbsp;<i class="fa fa-user-plus"></i>&nbsp;Sign Up</a></li>
-						  <li><a href="http://secs.oakland.edu/~hmbock/login.php">&nbsp;<i class="fa fa-sign-in"></i> &nbsp;Login</a></li>
+						  <li><a href="pages/examples/login.php">&nbsp;<i class="fa fa-sign-in"></i> &nbsp;Login</a></li>
 						  <li><a href="http://secs.oakland.edu/~hmbock/help.php">&nbsp;<i class="fa fa-question-circle"></i>&nbsp;Help</a></li>
 			 
 						</ul>
