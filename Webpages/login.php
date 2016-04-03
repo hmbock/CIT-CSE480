@@ -59,7 +59,7 @@
 						if($match > 0){
 							session_start();                                                                                                                           
 						  $_SESSION['username'] = $_POST['username'];
-						  header("Location:http://www.secs.oakland.edu/~hmbock/index.php"); //bring up Student portal with Student calendar
+						  header("Location:http://www.secs.oakland.edu/~hmbock/stuIndex.php"); //bring up Student portal with Student calendar
 						  
 
 						}
