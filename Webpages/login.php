@@ -86,7 +86,7 @@
               					  }
 						  
 						 $_SESSION['username'] = $_POST['username'];
-						  header("Location:http://www.secs.oakland.edu/~hmbock/staffBetwixtBooking.php"); //bring up Staff portal with Staff calendar
+						  header("Location:http://www.secs.oakland.edu/~hmbock/staffIndex.php"); //bring up Staff portal with Staff calendar
 						  
 							// Works if session cookie was accepted
 							//echo '<br /><a href="betwixtBooking.php">page 2</a>';

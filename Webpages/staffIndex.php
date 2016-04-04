@@ -40,12 +40,12 @@ session_start();
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="stuIndex.php" class="logo">
+    <a href="staffIndex.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>B</b>B</span>
       <!-- logo for regular state and mobile devices -->
@@ -98,7 +98,7 @@ session_start();
 
                 <p>
 				  <?php echo $_SESSION['username'];?> 
-                  <small>Student</small>
+                  <small>Staff</small>
                 </p>
               </li>
           
@@ -106,7 +106,7 @@ session_start();
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="accountSettings.php" class="btn btn-default btn-flat">Manage Account</a>
+                  <a href="staffManageAcct.php" class="btn btn-default btn-flat">Manage Account</a>
                 </div>
                 <div class="pull-right">
                   <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
@@ -162,11 +162,11 @@ session_start();
         </li>
         
        
-        <li> <!--Schedule Appointment -->
-          <a href="scheduleApp.php"><i class="fa fa-share"></i> <span>Schedule Appointment</span></a>
+        <li> <!--Manage Availability-->
+          <a href="manageAvailability.php"><i class="fa fa-share"></i> <span>Manage Availability</span></a>
         
         </li>
-        <li><a href="phonebook.php"><i class="fa fa-book"></i> <span>Contacts</span></a></li>
+        <li><a href="staffContacts.php"><i class="fa fa-book"></i> <span>Contacts</span></a></li>
       
       </ul>
     </section>
@@ -179,7 +179,7 @@ session_start();
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
+        Home
         <small>Calendar</small>
       </h1>
       <ol class="breadcrumb">
@@ -193,7 +193,7 @@ session_start();
       <!-- Main Content -->
       <div class="row">
        
-       
+       <!--need to change to staff calendar this is still the student calendar on this link 04/04/2016 2:15pm-->
         <iframe id="cal_frame" src="show_calendar.php?stu_id=<?php echo $_SESSION['id'] ; ?>" width="1000" height="650" style="border:none"></iframe>
 
        
@@ -204,7 +204,7 @@ session_start();
 	</section>
      
   </div>
-  <!-- /.content-wrapper -->
+  <!-- end content-wrapper -->
   
   
   <footer class="main-footer">

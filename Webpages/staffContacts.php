@@ -73,12 +73,12 @@ session_start();
 
 		  <link rel="stylesheet" href="/resources/demos/style.css">
 	</head>
-	<body class="hold-transition skin-green sidebar-mini>
-		<div id="wrapper">
+	<body class="hold-transition skin-green sidebar-mini">
+		<div class="wrapper">
 			
 		  <header class="main-header">
     <!-- Logo -->
-    <a href="staffBetwixtBooking.php" class="logo">
+    <a href="staffIndex.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>B</b>B</span>
       <!-- logo for regular state and mobile devices -->
@@ -187,12 +187,12 @@ session_start();
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
       
-      <!--  <li> <!--Calendar Link
-          <a href="index.php">
+       <li> <!--Calendar Link-->
+          <a href="staffIndex.php">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
-            <!--<small class="label pull-right bg-red">3</small>
+            <!--<small class="label pull-right bg-red">3</small>-->
           </a>
-        </li>-->
+        </li>
         
        
         <li> <!--Manage Availability Link -->
@@ -212,11 +212,11 @@ session_start();
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
-        <small>Contact Directory</small>
+        Contact Directory
+        <small>Search for Contacts</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="staffIndex.php"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Contacts</li>
       </ol>
     </section>
@@ -229,7 +229,7 @@ session_start();
 			
 				
 					
-						<h2> Contact Info Directory </h2>
+					
 
 					<input type="text" class="search" name="searchid" id="searchid" placeholder="Search for people by last name" />&nbsp; &nbsp; Ex: <b><i>Tutor, Guy, or Doctor</i></b><br /> 
 						<!--<button>Click Me!</button>-->

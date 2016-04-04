@@ -62,7 +62,7 @@
 		<div class="wrapper">
 			 <header class="main-header">
 				<!-- Logo -->
-				<a href="staffBetwixtBooking.php" class="logo">
+				<a href="staffIndex.php" class="logo">
 				  <!-- mini logo for sidebar mini 50x50 pixels -->
 				  <span class="logo-mini"><b>B</b>B</span>
 				  <!-- logo for regular state and mobile devices -->
@@ -172,12 +172,12 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
       
-       <!-- <li> <!--Calendar Link
-          <a href="#">
+        <li> <!--Calendar Link-->
+          <a href="staffIndex.php">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
            
           </a>
-        </li>-->
+        </li>
         
        
         <li> <!--Manage Availability -->
@@ -199,11 +199,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
-        <small>Staff Portal</small>
+        Manage Availability
+        <small></small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="staffIndex.php"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Manage Availability</li>
       </ol>
     </section>
@@ -217,9 +217,9 @@
      
    	<form action="" form method="post">
 				
-					<h2> Manage Availability:</h2>
+					
 					<p><b><u> </u></b></p>
-					<p> Please enter date to make unavailabile: </p>
+					<p> Please enter date to make unavailable: </p>
               <br>
               <br>
               Date: <input name="datepicker" id="datepicker" type="text"/>
