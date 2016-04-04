@@ -48,80 +48,103 @@ session_start();
 	
 	</head>
 	
-	<body class="hold-transition skin-green sidebar-mini">
-		<div class="wrapper">
-			<header class="main-header">
-			 <!-- Logo -->
-				<a href="staffBetwixtBooking.php" class="logo">
-				  <!-- mini logo for sidebar mini 50x50 pixels -->
-				  <span class="logo-mini"><b>B</b>B</span>
-				  <!-- logo for regular state and mobile devices -->
-				  <span class="logo-lg"><b>Betwixt</b>Booking</span>
-				</a>
-				<!-- Header Navbar: style can be found in header.less -->
-				<nav class="navbar navbar-static-top">
-				  <!-- Sidebar toggle button-->
-				  <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-					<span class="sr-only">Toggle navigation</span>
-				  </a>
-			
-				  <div class="navbar-custom-menu">
-					<ul class="nav navbar-nav">
-					
-									 <!-- User Account: style can be found in dropdown.less -->
-					  <li class="dropdown user user-menu">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						  <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-						  <span class="hidden-xs"><?php echo $_SESSION['username'];?> </span>
-						</a>
-						<ul class="dropdown-menu">
-						  <!-- User image -->
-						  <li class="user-header">
-							<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
 
-							<p>
-							  <?php echo $_SESSION['username'];?> 
-							  <small>Staff</small>
-							</p>
-						  </li>
-					  
-						
-						  <!-- Menu Footer-->
-						  <li class="user-footer">
-							<div class="pull-left">
-							  <a href="staffManageAcct.php" class="btn btn-default btn-flat">Manage Account</a>
-							</div>
-							<div class="pull-right">
-							  <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
-							</div>
-						  </li>
-						</ul>
-					  </li>
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="staffBetwixtBooking.php" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>B</b>B</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Betwixt</b>Booking</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          
+          <!-- Notifications: style can be found in dropdown.less -->
+         <!-- <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning">1</span>
+            </a>
+         <!--   <ul class="dropdown-menu">
+              <li class="header">You have 1 notification</li>
+         <!--     <li>
+                <!-- inner menu: contains the actual data -->
+                <!--<ul class="menu">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> You have 1 Appointment this week!
+                    </a>
+                  </li>
+                 
+                 
+                </ul>
+              </li>
+             
+            </ul>
+          </li>-->
+        
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs"><?php echo $_SESSION['username'];?> </span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+				  <?php echo $_SESSION['username'];?> 
+                  <small>Student</small>
+                </p>
+              </li>
+          
+            
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="accountSettings.php" class="btn btn-default btn-flat">Manage Account</a>
+                </div>
+                <div class="pull-right">
+                  <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
          
 		 
         </ul>
       </div>
     </nav>
-          
-				
-	</header>	
-
-					 <!-- Left nav bar contains the logo  -->
-		  <aside class="main-sidebar"> 
-			<!-- Top of sidebar: style can be found in sidebar.less -->
-			<section class="sidebar">
-			  <!-- Sidebar user panel -->
-			  <div class="user-panel">
-				<div class="pull-left image">
-				  <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-				</div>
-				<div class="pull-left info">
-				  <p><?php echo $_SESSION['username'];?> </p>
-				  <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-				</div>
-			  </div>
-			  
-			    <!-- search form -->
+  </header>
+  
+  <!-- Left nav bar contains the logo  -->
+  <aside class="main-sidebar"> 
+    <!-- Top of sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p><?php echo $_SESSION['username'];?> </p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+	  
+      <!-- search form -->
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -139,16 +162,16 @@ session_start();
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
       
-       <!-- <li> <!--Calendar Link
+        <li> <!--Calendar Link-->
           <a href="#">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
            
           </a>
-        </li>-->
+        </li>
         
        
-        <li> <!--Manage Availability-->
-          <a href="manageAvailability.php"><i class="fa fa-share"></i> <span>Manage Availability</span></a>
+        <li> <!--Schedule Appointment -->
+          <a href="scheduleApp.php"><i class="fa fa-share"></i> <span>Schedule Appointment</span></a>
         
         </li>
         <li><a href="phonebook.php"><i class="fa fa-book"></i> <span>Contacts</span></a></li>
@@ -157,17 +180,19 @@ session_start();
     </section>
     <!-- /.sidebar -->
   </aside>
- <!-- Content Wrapper. Contains page content -->
+
+  
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Control panel</small>
+        <small>Calendar</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li class="active">Calendar</li>
       </ol>
     </section>
 
@@ -177,12 +202,9 @@ session_start();
       <div class="row">
        
        
-       	<h2> News Feed </h2>
-					<p><b><u> Your Upcoming Appointments:</u></b></p>
-					<p> Appointments for the day here?? </p>
-						<br>
-                        <br>
-                    
+        <iframe id="cal_frame" src="staff_show_calendar.php?staff_id=<?php echo $_SESSION['id'] ; ?>" width="1000" height="650" style="border:none"></iframe>
+
+       
    
 
        
@@ -191,21 +213,22 @@ session_start();
      
   </div>
   <!-- /.content-wrapper -->
-				
-					
-				
-			
-					<footer class="main-footer">
-			<div class="pull-right hidden-xs">
-			  <b>Version</b> 2.3.2
-			</div>
-			<strong>Copyright &copy; 2014-2015 <a href="#">Betwixt Booking</a>.</strong> All rights
-			reserved.
-		  </footer>
-		  
-		  
-		  
-		  <div class="control-sidebar-bg"></div>
+  
+  
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.3.2
+    </div>
+    <strong>Copyright &copy; 2014-2015 <a href="#">Betwixt Booking</a>.</strong> All rights
+    reserved.
+  </footer>
+
+ 
+
+        
+
+ 
+  <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
 
@@ -246,7 +269,6 @@ session_start();
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-		
-	</body>
+</body>
 	
 </html>
