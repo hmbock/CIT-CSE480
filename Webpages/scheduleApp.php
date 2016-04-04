@@ -64,7 +64,7 @@ session_start();
        		
     <header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="stuIndex.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>B</b>B</span>
       <!-- logo for regular state and mobile devices -->
@@ -80,7 +80,7 @@ session_start();
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           
-          <!-- Notifications: style can be found in dropdown.less -->
+          <!-- Notifications: style can be found in dropdown.less 
           <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
@@ -89,7 +89,7 @@ session_start();
             <ul class="dropdown-menu">
               <li class="header">You have 1 notification</li>
               <li>
-                <!-- inner menu: contains the actual data -->
+                <!-- inner menu: contains the actual data 
                 <ul class="menu">
                   <li>
                     <a href="#">
@@ -175,9 +175,9 @@ session_start();
         <li class="header">MAIN NAVIGATION</li>
       
         <li> <!--Calendar Link-->
-          <a href="index.php">
+          <a href="stuIndex.php">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
-            <small class="label pull-right bg-red">3</small>
+           <!-- <small class="label pull-right bg-red">3</small>-->
           </a>
         </li>
         
@@ -633,6 +633,7 @@ session_start();
                         <br>
                         
               
+<div id="radioButtonList"></div>
 <input type="radio" name="timeSlot" id="8:00am" value="8:00am">&nbsp8:00am&nbsp
                         <input type="radio" name="timeSlot" id="9:00am" value="9:00am">&nbsp9:00am&nbsp
                         <input type="radio" name="timeSlot" id="10:00am" value="10:00am">&nbsp10:00am&nbsp
@@ -643,15 +644,20 @@ session_start();
                         <input type="radio" name="timeSlot" id="3:00pm" value="3:00pm">&nbsp3:00pm&nbsp
                         <input type="radio" name="timeSlot" id="4:00pm" value="4:00pm">&nbsp4:00pm&nbsp  
 
-                        
+         
+              
 <script type="text/javascript">
       $(document).ready(function () {
       var timeSlot = $('input[type="radio"]:checked').val();
        $.ajax({
                      type: "GET",
-                     data: { timeSlot: timeSlot },
+                     url: "getAvailability.php",
+                     dataType: 'json'
+                     data: { availableTimes: availableTimes },
                      success: function() {
-                         $('#success');
+                         $.each(availableTimes,function(i,entity){
+                         $('#radioButtonList').append($('<input/>',{'type':'radio','name':'availableTimes','id':entity})).append(entity'<br/>');
+                         });
 
                      },
                      error: function() {

@@ -193,7 +193,7 @@ if(isset($_POST['delete'])) {
 			
 			<header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="stuIndex.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>B</b>B</span>
       <!-- logo for regular state and mobile devices -->
@@ -209,7 +209,7 @@ if(isset($_POST['delete'])) {
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           
-          <!-- Notifications: style can be found in dropdown.less -->
+          <!-- Notifications: style can be found in dropdown.less 
           <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
@@ -218,7 +218,7 @@ if(isset($_POST['delete'])) {
             <ul class="dropdown-menu">
               <li class="header">You have 1 notification</li>
               <li>
-                <!-- inner menu: contains the actual data -->
+                <!-- inner menu: contains the actual data 
                 <ul class="menu">
                   <li>
                     <a href="#">
@@ -303,7 +303,7 @@ if(isset($_POST['delete'])) {
         <li class="header">MAIN NAVIGATION</li>
       
         <li> <!--Calendar Link/Main homepage-->
-          <a href="index.php">
+          <a href="stuIndex.php">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
            
           </a>
@@ -341,10 +341,12 @@ if(isset($_POST['delete'])) {
       <!-- Main Content -->
       <div class="row">
   
-  
+						<div class="box box-primary">
 							<h2> User Profile </h2>
-							<h3>Enter new account information and submit to update:</h3>
-            <!-- start sign up form -->  
+							<div class="box-header with-border">
+								<h3 class="box-title">Enter new account information and submit to update:</h3>
+							</div>
+			<!-- start sign up form -->  
 							<form action="accountSettings.php" method="post" id="settingsForm">
 							
 							  <fieldset>
@@ -352,14 +354,16 @@ if(isset($_POST['delete'])) {
 									<div class="form-group">
 												  <label for="firstName">First Name:</label>
 												  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" value="<?php echo $data2[F_Name] ?>" maxlength="20" />
-									
+									</div>
+									<div class="form-group">
 											<label for="lastName">Last Name:</label>
 											 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" value="<?php echo $data2[L_Name] ?>" maxlength="20" />
-											 
+									</div>		 
+									<div class="form-group">
 												  <label for="email">Email:</label>
 												  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $data2[stu_email] ?>" maxlength="20" />
-											
-								
+									</div>		
+								<div class="form-group">
 											<label for="username">Username:   <?php echo $_SESSION['username']; ?><strong></strong></label>
 												  
 											<p><h3><a href="http://secs.oakland.edu/~hmbock/changePassword.php">Change Password</a></h3></p>
@@ -380,6 +384,8 @@ if(isset($_POST['delete'])) {
 									</div>
 								 </fieldset>
 							</form>
+							</div>
+						
             <!-- end sign up form -->
           
 				</div>
