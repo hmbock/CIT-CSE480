@@ -194,7 +194,7 @@ session_start();
       <div class="row">
        
        
-        <iframe id="cal_frame" src="show_calendar.php?stu_id=<?php echo $_SESSION['id'] ; ?>" width="1000" height="650" style="border:none"></iframe>
+        <iframe id="cal_frame" src="stu_show_calendar.php?stu_id=<?php echo $_SESSION['id'] ; ?>" width="1000" height="650" style="border:none"></iframe>
 
        
    
