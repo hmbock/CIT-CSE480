@@ -195,7 +195,7 @@ session_start();
        
 <<<<<<< HEAD
        <!--need to change to staff calendar this is still the student calendar on this link 04/04/2016 2:15pm-->
-        <iframe id="cal_frame" src="show_calendar.php?stu_id=<?php echo $_SESSION['id'] ; ?>" width="1000" height="650" style="border:none"></iframe>
+        <iframe id="cal_frame" src="staff_show_calendar.php?stu_id=<?php echo $_SESSION['id'] ; ?>" width="1000" height="650" style="border:none"></iframe>
 =======
        
         <iframe id="cal_frame" src="staff_show_calendar.php?stu_id=<?php echo $_SESSION['id'] ; ?>" width="1000" height="650" style="border:none"></iframe>
