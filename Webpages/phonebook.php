@@ -73,26 +73,26 @@ session_start();
 
 		  <link rel="stylesheet" href="/resources/demos/style.css">
 	</head>
-	<body class="hold-transition skin-blue sidebar-mini>
-		<div id="wrapper">
+	<body class="hold-transition skin-blue sidebar-mini">
+		<div class="wrapper">
 			
 		  <header class="main-header">
-    <!-- Logo -->
-    <a href="stuIndex.php" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>B</b>B</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Betwixt</b>Booking</span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
+			<!-- Logo -->
+			<a href="stuIndex.php" class="logo">
+			  <!-- mini logo for sidebar mini 50x50 pixels -->
+			  <span class="logo-mini"><b>B</b>B</span>
+			  <!-- logo for regular state and mobile devices -->
+			  <span class="logo-lg"><b>Betwixt</b>Booking</span>
+			</a>
+			<!-- Header Navbar: style can be found in header.less -->
+			<nav class="navbar navbar-static-top">
+			  <!-- Sidebar toggle button-->
+			  <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+				<span class="sr-only">Toggle navigation</span>
+			  </a>
 
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
+			<div class="navbar-custom-menu">
+				<ul class="nav navbar-nav">
           
           <!-- Notifications: style can be found in dropdown.less 
           <li class="dropdown notifications-menu">
@@ -213,7 +213,7 @@ session_start();
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Control panel</small>
+        <small>Contact Directory</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -223,8 +223,7 @@ session_start();
 
 			
 		<!--Main Content-->
-				
-                <section class="content">
+			<section class="content">
 					<div class = "row">
 			
 				
@@ -385,20 +384,25 @@ ORIGINAL PHONEBOOK.PHP CODE*/
 //sortBy(jump);
 //};
 //</script>
-					</section>
+					</div>
 					
+					</section>
 				</div>
+  <!-- /.content-wrapper -->	
+				
 
 			
-	 <footer class="main-footer">
+			<footer class="main-footer">
 				<div class="pull-right hidden-xs">
 				<b>Version</b> 2.3.2
 				</div>
 				<strong>Copyright &copy; 2016 <a href="#">Betwixt Booking</a>.</strong> All rights
 				reserved.
 			</footer>
+			
+			
 			<div class="control-sidebar-bg"></div>
-</div>
+	</div>
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.0 -->
