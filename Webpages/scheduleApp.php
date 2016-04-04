@@ -81,7 +81,7 @@ session_start();
         <ul class="nav navbar-nav">
           
           <!-- Notifications: style can be found in dropdown.less -->
-         <!-- <li class="dropdown notifications-menu">
+          <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
               <span class="label label-warning">1</span>
@@ -89,7 +89,7 @@ session_start();
             <ul class="dropdown-menu">
               <li class="header">You have 1 notification</li>
               <li>
-                <!-- inner menu: contains the actual data 
+                <!-- inner menu: contains the actual data -->
                 <ul class="menu">
                   <li>
                     <a href="#">
@@ -102,7 +102,7 @@ session_start();
               </li>
              
             </ul>
-          </li>-->
+          </li>
         
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
@@ -177,7 +177,7 @@ session_start();
         <li> <!--Calendar Link-->
           <a href="index.php">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
-           <!-- <small class="label pull-right bg-red">3</small>-->
+            <small class="label pull-right bg-red">3</small>
           </a>
         </li>
         
@@ -229,7 +229,7 @@ session_start();
                             </div>
     
 							<div class="dropdown" id="pcd" style="display: block">
-									<p>Would you like to sort by , class or date?</p>
+									<p>Would you like to sort by person, class or date?</p>
 									<select id="pcddd" name="sel_pcd" class="dropbtn">
 										<option value="ps">Please select</option>
 										<option value="pn">Person</option>
@@ -581,31 +581,28 @@ session_start();
                                 }
                             });
 
-//                            $('#submit').click(function(e) {
-//
-//                                var staffID = $('#persondd option:selected').attr('value');
-//                                var stuID = '42'; 
-//                                var title = $('#title').val();
-//                                var reason= $('#reason').val();  
-//                                var description = document.getElementById('description').value;
-//                                
-//                                //alert(description);
-//                                                               
-//                                $.ajax({
-//                                    url: 'submitApp.php',
-//                                    data: { staffID : staffID, stuID : stuID, title: title, reason:reason, date:date description:description },
-//                                    method: "GET",
-//                                    dataType: "json",
-//                                    contentType: "application/json; charset=utf-8",
-//                                    success: function () {
-//                                        $('#success');
-//                                    },
-//                                   error: function (xhr, ajaxOptions, thrownError) {
-//                                        alert(xhr.status + " " + thrownError);
- //                                   }
-//                                });
-//                            });
-//                        });
+                            $('#submit').click(function(e) {
+
+                                var staffID = $('#persondd option:selected').attr('value');
+                                var stuID = '42'; 
+                                var title = $('#title').val();
+                                var description = $('#description').val();
+                                                               
+                                $.ajax({
+                                    url: 'submitApp.php',
+                                    data: { staffID : staffID, stuID : stuID, title: title, description:description },
+                                    method: "GET",
+                                    dataType: "json",
+                                    contentType: "application/json; charset=utf-8",
+                                    success: function () {
+                                        $('#success');
+                                    },
+                                    error: function (xhr, ajaxOptions, thrownError) {
+                                        alert(xhr.status + " " + thrownError);
+                                    }
+                                });
+                            });
+                        });
 
 				</script>
 
@@ -629,13 +626,14 @@ session_start();
                     <!-- if PERSON is chosen: --->
 
                     <div class="dropdown" id="date" style="display: none;" >
+                        
                         <br>
-                         Date: <input name="datepicker" id="datepicker" type="text"/>
+                        Date: <input name="datepicker" id="datepicker" type="text"/>
                         <br>
                         <br>
-                
-                      
-                        <input type="radio" name="timeSlot" id="8:00am" value="8:00am">&nbsp8:00am&nbsp
+                        
+              
+<input type="radio" name="timeSlot" id="8:00am" value="8:00am">&nbsp8:00am&nbsp
                         <input type="radio" name="timeSlot" id="9:00am" value="9:00am">&nbsp9:00am&nbsp
                         <input type="radio" name="timeSlot" id="10:00am" value="10:00am">&nbsp10:00am&nbsp
                         <input type="radio" name="timeSlot" id="11:00am" value="11:00am">&nbsp11:00am&nbsp
@@ -645,8 +643,7 @@ session_start();
                         <input type="radio" name="timeSlot" id="3:00pm" value="3:00pm">&nbsp3:00pm&nbsp
                         <input type="radio" name="timeSlot" id="4:00pm" value="4:00pm">&nbsp4:00pm&nbsp  
 
-                        <br>
-                        <br>  
+                        
 <script type="text/javascript">
       $(document).ready(function () {
       var timeSlot = $('input[type="radio"]:checked').val();
@@ -662,27 +659,28 @@ session_start();
                      }
                 });
         });
-       
 </script>
+<br>
+<br>
+Title: <input name="title" id="title" type="text" />
+<br>
+<br>
+                        Description: <input name = "description" id="description" type="text" />
+                        
 
-                        Title: <input name="title" id="title" type="text" />
-                        <br>
-                        <br>
-                        Reason for your appointment: <input name="reason" id="reason" type="text" />
+
+
                     </div>
-                    
-                   
-                     <script type="text/javascript">
+                    <script type="text/javascript">
                 $(document).ready(function () {
-                      $("#datepicker").datepicker({
+                    $("#datepicker").datepicker({
                       dateFormat: "m/d/yy",
                       onSelect: function () {
                       var date = $("#datepicker").val();
-                      var reason = $("#reason").val();
 
                 $.ajax({
                      type: "GET",
-                     data: { date: date, reason:reason },
+                     data: { date: date },
                      success: function() {
                          $('#success');
 
@@ -696,7 +694,6 @@ session_start();
     });
     
 </script>
-
 
 
 					<br>
@@ -1016,27 +1013,19 @@ session_start();
                         e.preventDefault();
 
                         var staffID = $('#persondd option:selected').attr('value');
-                        var stuID = <?php echo $_SESSION['id']; ?> ; //change to real val
+                        var stuID = <?php echo $_SESSION['id'];?> ; //change to real val
                         var title = $('#title').val();
                         var date = $('#datepicker').val();
+                        var description = $('#description').val();
                         var timeSlot = $('input[type="radio"]:checked').val();
-                        var reason = $('#reason').val();
-                        
-                         
-                       
                         $.ajax({
                             url: 'submitApp.php',
-                            data: { staffID: staffID, stuID: stuID, title: title,reason : reason, date : date, timeSlot : timeSlot},
+                            data: { staffID : staffID, stuID : stuID, title: title, date:date, description:description, timeSlot : timeSlot},
                             method: "GET",
 			                      dataType: "json",
                             contentType: "application/json; charset=utf-8",
                             success: function (data) {
-                                
-                                alert('Appointment has scheduled successfully!));
-                                
-                                
-                                
-                                window.location.replace("http://www.secs.oakland.edu/~hmbock/index.php");
+                                $('#success').append(data);
                             },
                             error: function (xhr, ajaxOptions, thrownError) {
                                 alert(xhr.status + " " + thrownError);

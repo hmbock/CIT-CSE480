@@ -10,7 +10,7 @@ $post_days = (6 - (date('w', mktime(0, 0, 0, $showmonth, $day_count, $showyear))
 
 echo '<div id="calendar_wrap">';
 echo '<div class="title_bar">';
-echo '<div class="previous_month"><input name="myBtn" type="submit" value="Previous Month" onClick="javascript:last_month();"></div>';
+echo '<div class="previous_month"><input name="myBtn" type="submit" value="Previous Month" class="btn btn-block btn-default" onClick="javascript:last_month();"></div>';
 echo '<div class="show_month">' . $showmonth . '/' . $showyear . '</div>';
 echo '<div class="next_month"><input name="myBtn" type="submit" value="Next Month" onClick="javascript:next_month();"></div>';
 echo '</div>';

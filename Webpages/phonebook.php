@@ -78,7 +78,7 @@ session_start();
 			
 		  <header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="stuIndex.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>B</b>B</span>
       <!-- logo for regular state and mobile devices -->
@@ -188,7 +188,7 @@ session_start();
         <li class="header">MAIN NAVIGATION</li>
       
         <li> <!--Calendar Link-->
-          <a href="index.php">
+          <a href="stuIndex.php">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
             <!--<small class="label pull-right bg-red">3</small>-->
           </a>

@@ -45,7 +45,7 @@ session_start();
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="stuIndex.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>B</b>B</span>
       <!-- logo for regular state and mobile devices -->
@@ -180,11 +180,11 @@ session_start();
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Control panel</small>
+        <small>Calendar</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li class="active">Calendar</li>
       </ol>
     </section>
 
