@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
 
 //$q = mysqli_real_escape_string($conn,$_POST['dataString']);    
 $searchfor = "Adv";	
-$sql = "SELECT Staff.L_Name, Staff.F_Name,Staff.Department_ID,Staff.Phone,Staff.staff_email,Department.Department FROM Staff,Department WHERE Staff.L_Name LIKE '%$dataString%' ORDER BY L_Name";
+$sql = "SELECT Distinct Staff.L_Name, Staff.F_Name,Staff.Department_ID,Staff.Phone,Staff.staff_email, Department.Department FROM Staff INNER JOIN Department ON Staff.Department_ID = Department.Department_ID WHERE Staff.L_Name LIKE '%$dataString%' ORDER BY L_Name";
 
 $result = $conn->query($sql);
     
