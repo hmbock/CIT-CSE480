@@ -240,18 +240,17 @@ session_start();
 <script type="text/javascript">
 
 $(document).ready(function(){
-	$("input").keyup(function(e){
+	$("input").keydown(function(e){
 		//alert("keyup called");
-		var value;
+		var value = $('#searchid').val();
 		var trimVal;
 	if(e.which==8){
-		value=$("input").val().substring(0,$("input").val().length-2);
-		trimVal=value;
+		trimVal=value.substring(0, value.length);
 			//alert(trimVal);
 	}
 	else{
-		value=$("input").val()+String.fromCharCode(e.which);
-		trimVal=value.substring(0, value.length - 1);
+		value=value+String.fromCharCode(e.which);
+		trimVal=value;
 		//alert(trimVal);
 		
 	}
