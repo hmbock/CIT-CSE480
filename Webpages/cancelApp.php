@@ -17,8 +17,6 @@ $emailSql = "SELECT events.stu_id, events.staff_id, evdate, app_time, Student.F_
 $emailResult = mysql_query($emailSql);
 
 while ($row = mysql_fetch_array($emailResult)) {
-  $stuID = $row["stu_id"];
-  $staffID = $row["staff_id"];
   $date = $row["evdate"];
   $time = $row["app_time"];
   $stuFName = $row["Student.F_Name"];
