@@ -14,7 +14,7 @@ $servername = 'localhost';
 $username = $_SESSION['username'];
 
 
-$data = "SELECT F_Name, L_Name, stu_email FROM Student WHERE stu_username='$username'";
+$data = "SELECT F_Name, L_Name, staff_email FROM Staff WHERE staff_username='$username'";
 
 $query = mysql_query($data);
 
@@ -151,9 +151,11 @@ if(isset($_POST['delete'])) {
 	
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
-		<script src="js/jquery-1.11.0.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/wow.min.js"></script>
+   
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 		
 		
 		<!--links from new theme-->
@@ -184,6 +186,7 @@ if(isset($_POST['delete'])) {
 		  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker-bs3.css">
 		  <!-- bootstrap wysihtml5 - text editor -->
 		  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+                
 
 	</head>
 	
@@ -358,8 +361,7 @@ if(isset($_POST['delete'])) {
 											 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" value="<?php echo $data2[L_Name] ?>" maxlength="20" />
 											 
 												  <label for="email">Email:</label>
-												  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $data2[stu_email] ?>" maxlength="20" />
-											
+												  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $data2[staff_email] ?>" maxlength="20" />
 								
 											<label for="username">Username:   <?php echo $_SESSION['username']; ?><strong></strong></label>
 												  
@@ -448,7 +450,3 @@ if(isset($_POST['delete'])) {
 	
 	
 </html>
-
-
-
-	
