@@ -10,24 +10,26 @@ include ("connect.php");
 
 $aId = $_POST['ID'];
 
-$emailSql = "SELECT events.stu_id, events.staff_id, evdate, app_time, Student.F_Name, Student.L_Name, Student.stu_email, Staff.F_Name, Staff.L_Name, Staff.staff_email FROM events
+$emailSql = "SELECT events.stu_id stu_id, events.staff_id staff_id, evdate, app_time, Student.F_Name StuF_Name, Student.L_Name StuL_Name, stu_email, Staff.F_Name StaffF_Name, Staff.L_Name StaffL_Name, staff_email FROM events
               INNER JOIN Student ON events.stu_id = Student.stu_id
               INNER JOIN Staff ON events.staff_id = Staff.staff_id
               WHERE id = '$aId'"; 
 $emailResult = mysql_query($emailSql);
 
 while ($row = mysql_fetch_array($emailResult)) {
+  $stuID = $row["stu_id"];
+  $staffID = $row["staff_id"];
   $date = $row["evdate"];
   $time = $row["app_time"];
-  $stuFName = $row["Student.F_Name"];
-  $stuLName = $row["Student.L_Name"];
-  $stuEmail = $row["Student.stu_email"];
-  $staffFName = $row["Staff.F_Name"];
-  $staffLName = $row["Staff.L_Name"];
-  $staffEmail = $row["Staff.staff_email"];
+  $stuFName = $row["StuF_Name"];
+  $stuLName = $row["StuL_Name"];
+  $stuEmail = $row["stu_email"];
+  $staffFName = $row["StaffF_Name"];
+  $staffLName = $row["StaffL_Name"];
+  $staffEmail = $row["staff_email"];
 }
 
-//$sql = "DELETE FROM events WHERE id=" . $aId;
+$sql = "DELETE FROM events WHERE id=" . $aId;
 $delSql = 'DELETE FROM events WHERE id=' . $aId;
 $delResult = mysql_query($sql);
 
