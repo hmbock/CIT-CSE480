@@ -9,7 +9,7 @@ $username = $_SESSION['username'];
 include ("connect.php");
 
 $events = '';
-$query = mysql_query('SELECT id, app_title, app_time, description, stu_id FROM events WHERE evdate = "'.$deets.'" AND stu_id = "'.$id.'"');
+$query = mysql_query('SELECT id, app_title, app_time, description, stu_id FROM events WHERE Confirmed = 1 AND evdate = "'.$deets.'" AND stu_id = "'.$id.'"');
 $num_rows = mysql_num_rows($query);
 if($num_rows > 0) {
 	$events .= '<div id="eventsControl"><button onMouseDown="overlay()">Close</button><br /><br /><b> ' . $deets . '</b><br /><br /><b> ' . $username . '</b><br /><br /></div>'; 
@@ -24,4 +24,3 @@ if($num_rows > 0) {
 }
 echo $events;
 ?>
-
