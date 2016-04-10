@@ -1,12 +1,106 @@
 <?php
 session_start();
 ?>
+<?php 
+
+
+	
+		//make sure username and password is input
+			if(!isset($_POST['newUserPassword']) && !empty($_POST['newUserPassword']) AND !isset($_POST['confirmPassword']) && !empty($_POST['confirmPassword']))
+				{
+					$message = 'Please enter a new password';
+				}
+				else
+    {
+					// insert into database
+					$newUserPassword = ($_POST['newUserPassword']);
+          $confirmPassword = ($_POST['confirmPassword']);
+          $username= $_SESSION['username'];
+
+					//connect to database ***/
+					$servername = 'localhost';
+					$dbusername = 'hmbock';
+					$dbpassword = 'team@480';
+					$dbname = 'hmbock';
+
+
+			try
+				{
+					mysql_connect("localhost", "hmbock", "team@480") or die(mysql_error()); // Connect to database server(localhost) with username and password.
+            mysql_select_db("hmbock") or die(mysql_error()); // Select prdaram database.
+           
+            
+            if(isset($_POST['newUserPassword']) && !empty($_POST['newUserPassword']) AND isset($_POST['confirmPassword']) && !empty($_POST['confirmPassword']))
+            { 
+                $newUserPassword = mysql_escape_string($_POST['newUserPassword']); // Set variable for the username
+                  if($newUserPassword != $confirmPassword)
+                  {
+                    $message = 'Passwords do not match';        
+                  }
+                    else
+                    {
+                      if($search = mysql_query("SELECT stu_password FROM Staff WHERE stu_username='$username'")) 
+                    {
+                          $match  = mysql_num_rows($search); //records the number of rows that have matched the search
+                              if($match > 0)
+                              {
+                                $newPassword = md5($newUserPassword);
+                                mysql_query("UPDATE Student SET stu_password= '$newPassword' WHERE stu_username='$username'");
+                                $message='Password has sucessfully been reset!';        
+                              } 
+                    
+                              elseif($search = mysql_query("SELECT staff_password FROM Staff WHERE staff_username='$username'")) 
+                              {
+                                $match  = mysql_num_rows($search); //records the number of rows that have matched the search
+                                    if($match > 0)
+                                    {
+                                        $newPassword = md5($newUserPassword); // Generate random number between 1000 and 5000 and assign it to a local variable. 
+                                             // Example output: 4568 
+                                        $message='Password has sucessfully been reset!';
+                                             
+                                         mysql_query("UPDATE Staff SET staff_password= '$newPassword' WHERE staff_username='$username'"); //update the Staff table with randomly generated password where the email matches 
+                                    
+                                          //header('Location: http://www.secs.oakland.edu/~hmbock/index.php');
+                                    }
+                                    else
+                                    {
+                                     $message = 'Cannot locate account 1'; //returns if no match found
+                                    }
+                              }     
+                             else
+                             {
+                                $message = 'Cannot locate account 2'; //returns if no match found
+                             }
+                  }
+                  else
+                  {
+                    $message = 'Cannot locate account 3'; 
+                  } 
+                  }
+                  }
+                 /// else{
+               // $message = 'Passwords do not match'; 
+                  //} 
+                 // }
+                  else{
+                $message = ''; 
+                 } 
+				}
+     
+    
+			catch(Exception $e)
+				{
+				//Couldn't connect to database
+				$message = 'Unable to connect. Please try again later';
+				}
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Betwixt Booking | Dashboard</title>
+  <title>Betwixt Booking | Change Password</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
@@ -40,7 +134,7 @@ session_start();
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini">
 	<div class="wrapper">
 
   <header class="main-header">
@@ -76,7 +170,7 @@ session_start();
 
                 <p>
 				  <?php echo $_SESSION['username'];?> 
-                  <small>Student</small>
+                  <small>Staff</small>
                 </p>
               </li>
           
@@ -84,7 +178,7 @@ session_start();
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="accountSettings.php" class="btn btn-default btn-flat">Manage Account</a>
+                  <a href="staffManageAcct.php" class="btn btn-default btn-flat">Manage Account</a>
                 </div>
                 <div class="pull-right">
                   <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
@@ -133,18 +227,18 @@ session_start();
         <li class="header">MAIN NAVIGATION</li>
       
         <li> <!--Calendar Link-->
-          <a href="#">
+          <a href="staffIndex.php">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
            
           </a>
         </li>
         
        
-        <li> <!--Schedule Appointment -->
-          <a href="scheduleApp.php"><i class="fa fa-share"></i> <span>Schedule Appointment</span></a>
+        <li> <!--Manage Availability -->
+          <a href="scheduleApp.php"><i class="fa fa-share"></i> <span>Manage Availability</span></a>
         
         </li>
-        <li><a href="phonebook.php"><i class="fa fa-book"></i> <span>Contacts</span></a></li>
+        <li><a href="staffContacts.php"><i class="fa fa-book"></i> <span>Contacts</span></a></li>
       
       </ul>
     </section>
@@ -156,13 +250,10 @@ session_start();
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Home
-        <small>Calendar</small>
-      </h1>
+    
       <ol class="breadcrumb">
-        <li><a href="stuIndex.php"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Calendar</li>
+        <li><a href="staffManageAcct.php"><i class="fa fa-dashboard"></i> Manage Account</a></li>
+        <li class="active">Change Password</li>
       </ol>
     </section>
 
@@ -170,12 +261,42 @@ session_start();
     <section class="content">
       <!-- Main Content -->
       <div class="row">
-       
-       
-        <iframe id="cal_frame" src="stu_show_calendar.php?stu_id=<?php echo $_SESSION['id'] ; ?>" width="1000" height="650" style="border:none"></iframe>
+	  
+        <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Change Password</h3>
+            </div>
+        	<form role="form" action="staffIndex.php" method="post" class="form-signin">
+              <div class="box-body">
+             
+			 		<div class="form-group">
+									<label  for="newUserPassword"> New Password:</label>
+									<input type="password" class="form-control" id="newUserPassword" placeholder ="New Password" name="newUserPassword" value="" maxlength="20" />
+								</div>
+								
+								<div class="form-group">
+									<label  for="confirmPassword"> Confirm Password:</label>
+									<input type="password" class="form-control" id="confirmPassword" placeholder ="Confirm Password" name="confirmPassword" />
+								</div>
+ 
+							
+								
+									<p> 
+									  <?php echo $message; ?>
+									</p>
+			 
+           
+              </div>
+              <!-- /.box-body -->
 
-       
-   
+              <div class="box-footer">
+                <button type="submit" class="btn btn-success">Reset Password</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.box -->
+		
+				
 
        
       </div>

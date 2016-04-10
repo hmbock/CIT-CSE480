@@ -304,8 +304,8 @@ if(isset($_POST['delete'])) {
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
-        <small>Account</small>
+        Manage Account
+        
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -324,9 +324,10 @@ if(isset($_POST['delete'])) {
 								<h3 class="box-title">Enter new account information and submit to update:</h3>
 							</div>
 			<!-- start sign up form -->  
+							 
 							<form action="accountSettings.php" method="post" id="settingsForm">
 							
-							  <fieldset>
+							
 					  
 									<div class="form-group">
 												  <label for="firstName">First Name:</label>
@@ -359,8 +360,9 @@ if(isset($_POST['delete'])) {
 												</p>
 								
 									</div>
-								 </fieldset>
+								
 							</form>
+							
 							</div>
 						
             <!-- end sign up form -->

@@ -325,7 +325,7 @@ if(isset($_POST['delete'])) {
 								
 											<label for="username">Username:   <?php echo $_SESSION['username']; ?><strong></strong></label>
 												  
-											<p><h3><a href="http://secs.oakland.edu/~hmbock/changePassword.php">Change Password</a></h3></p>
+											<p><h3><a href="staffChangePassword.php">Change Password</a></h3></p>
 						   
 								
 											<p>
