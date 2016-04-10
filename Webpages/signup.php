@@ -177,14 +177,13 @@
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
       <div class="row">
-        <div class="col-xs-8">
-           <a href="login.php" class="text-center">I am already registered.</a>
-        </div>
+       
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+		<td>
+          <button type="submit" class="btn btn-primary btn-lg">Register</button>
         </div>
-		
+		</td>
 		<p>
 					<?php echo $msg; ?> 
                 </p>
@@ -192,6 +191,12 @@
       </div>
     </form>
 
+	<br>
+		<br>
+		
+				<td>
+                    <a href ="index.html"><button type="button" class="btn btn-block btn-default">Back</button></a>	
+                  </td>
   
 
   

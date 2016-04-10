@@ -126,56 +126,56 @@ once logged in. Do not share verification code.
  <head>
 	<title>Betwixt Booking Forgot Password</title> 
 	<meta charset="utf-8">
-		<meta name= "viewport" content= "width= device-width, initial-scale=1.0">
-		<link href="betwixt.css" rel="stylesheet">
-		<link rel="stylesheet" href="C:\Users\lkwal_000\Google Drive\CIT_CSE 480\Production\css\font-awesome-4.5.0\css\font-awesome.min.css">
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
-		<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Betwixt Booking | Welcome Page</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
+		
+	
 	
  </head>
 
- <body>
-	<header>
-		<div class="title">
-			<h1> Betwixt Booking </h1>
-		<div>
-	</header>
-	<div id="wrapper">
+ <body class="hold-transition register-page">
 	
-				<main role ="main">
-				<nav>
-					<ul>
-					  <li><a href="http://secs.oakland.edu/~hmbock/480Index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/about.php"><i class="fa fa-circle"></i>&nbsp;About</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/signUp.php"><i class="fa fa-circle"></i>&nbsp;Sign Up</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/login.php"><i class="fa fa-circle"></i> &nbsp; Login</a></li>
-					  <li><a href="http://secs.oakland.edu/~hmbock/help.php"><i class="fa fa-circle"></i> &nbsp;Help</a></li>
-            <li><a href="#blank"></a></li>
-					  <li><a href="blank"></a></li>
-            <li><a href="#blank"></a></li>
-					  <li><a href="blank"></a></li>
-					</ul>
-				</nav>	
-				<div id = "content">
-					<h2>Forgot Password</h2>
+		<div class="register-box">
+			<div class="register-logo">
+				<a href="#"><b>Betwixt</b>Booking</a>
+			</div>
+
+				<div class="register-box-body">
+					<p class="login-box-msg"><?php echo $message; ?></p>
+					
+					
 						<fieldset>
 							<form role="form" action="forgotPassword.php" method="post" class="form-signin">
 								<div class = "form-group"> 
  
-									<label for="email">Email:</label>
+								
 									<input type="email" class="form-control" id="email" name="email" placeholder="Email" value="" maxlength="40" />
 								</div>
 							 
-								<button type="submit" "btn btn-default">Reset Password</button>
+								<button type="submit" class="btn btn-block btn-danger btn-lg">Reset Password</button>
+								<br><br>
+								 <td>
+									<a href ="login.php"><button type="button" class="btn btn-block btn-default btn-lg">Back</button></a>
+								<td>
 								
-							  <p> 
-                  <?php echo $message; ?>
-                </p>
-						</fieldset>
+
+						
 							</form>
+						</fieldset>
 				</div>
+			</div>
  
  
  </body>

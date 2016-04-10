@@ -6,12 +6,7 @@ session_start();
 	<head>
 	
 		<meta charset="utf-8">
-		<!--<link href="betwixt.css" rel="stylesheet">-->
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -245,25 +240,16 @@ session_start();
 									<option value="">Please Select</option>
 								</select>
 							</div>
-
-
                   <script>
-
-
                         $(document).ready(function($) {
-
                             //Empties a select list and sets initial option
                             function resetDD(dd) {
-
                                 $('#'+dd).empty();
                                 $('#'+dd).append('<option value=\"0\">Please select</option>');
                             }
-
                             //Fills a select list with the appropriate values
                             function fillDD(url, list, sID, type) {
-
                                 switch (type) {
-
                                     case "department":
                                         $.ajax({
                                             url: url,
@@ -282,7 +268,6 @@ session_start();
                                             }
                                         });
                                         break;
-
                                     case "class":
                                         $.ajax({
                                             url: url,
@@ -303,7 +288,6 @@ session_start();
                                             }
                                         });
                                         break;
-
                                     default:
                                         $.ajax({
                                             url: url,
@@ -326,16 +310,13 @@ session_start();
                                         break;
                                 }
                             }
-
                             //On change event for appointment type select list
                             $('#app').change(function(e) {
-
                                 //Change person/class/date select list back to "Please select" and reset all others
                                 $('#pcddd').val('ps');
                                 resetDD("persondd");
                                 resetDD("departmentdd");
                                 resetDD("classdd");
-
                                 //If "Please Select" is selected, hide all other select lists
                                 if ($('#app option:selected').attr('value') == 'ps') {
                                     document.getElementById('person').style.display = 'none';
@@ -348,19 +329,15 @@ session_start();
                                     document.getElementById('person').style.display = 'block';
                                 }
                             });
-
                             //On change event for person/class/date select list
                             $('#pcd').change(function(e) {
-
                                 //Reset all select lists
                                 resetDD('departmentdd');
                                 resetDD('classdd');
                                 resetDD('persondd');
-
                                 //Get chosen value from appointment type and P/C/D select lists
                                 var sel =  $('#app option:selected').attr('value');
                                 var pcd = $('#pcd option:selected').attr('value');
-
                                 //Logic for deciding which select lists to display
                                 switch (pcd) {
                                     //If "Person" if selected, display only "Person" select list
@@ -378,9 +355,7 @@ session_start();
                                     //If date is selected,
                                     case "date":
                                         /*
-
                                                 SHOW CALENDAR
-
                                          */
                                         document.getElementById('department').style.display = 'none';
                                         document.getElementById('class').style.display = 'none';
@@ -392,62 +367,43 @@ session_start();
                                         document.getElementById('class').style.display = 'none';
                                         document.getElementById('person').style.display = 'none';
                                 }
-
                                 document.getElementById('date').style.display = 'block';
-
                                 //Logic for deciding which data should be retrieved based on which appointment type is selected
                                switch (sel) {
-
                                    //If "Academic Advising" is selected...
                                    case "aa":
                                        //...and "Class/Department" is selected,  fill the "Departments" select list
                                        if ( pcd == 'cl' ) {
-
                                             fillDD('getDepartments.php', 'departmentdd', 0, 'department');
                                            document.getElementById('class').style.display = 'none';
-
                                            //...and "Person" is selected, fill the person select list with advisors
                                        } else if (pcd == 'pn') fillDD('getStaff.php', 'persondd', sel, 'adv');
-
                                        document.getElementById('person').style.display = 'block';
                                        document.getElementById('class').style.display = 'none';
-
                                        break;
-
                                    //If "Professors" is selected...
                                    case "pf":
                                        //...and "Class/Department" is selected, fill the "Department" select list
                                        if(pcd == 'cl') {
-
                                            fillDD('getDepartments.php', 'departmentdd', 0, 'department');
-
                                            //...and person is selected, fill "Person" select list with all professors
                                        } else if (pcd == 'pn') {
-
                                            fillDD('getStaff.php', 'persondd', sel, 'prof');
                                        }
-
                                        //Reset "Person" and "Class" select lists
                                        //resetDD("classdd");
                                        //resetDD("persondd");
                                        break;
-
                                    //If "Tutoring Center" is selected...
                                    case "tc":
-
                                        //...and "Class/Department" is selected, fill "Department" select list
                                        if (pcd == 'cl') {
-
                                            fillDD('getDepartments.php', 'departmentdd', 0, 'department');
-
                                        } else if (pcd == 'pn') {
-
                                            document.getElementById('department').style.display = 'none';
                                            document.getElementById('class').style.display = 'none';
                                            document.getElementById('person').style.display = 'block';
-
                                            fillDD('getStaff.php', 'persondd', sel, 'tutorpn');
-
                                        }
                                        resetDD("classdd");
                                        resetDD("persondd");
@@ -455,48 +411,29 @@ session_start();
                                    case "hc":
                                        $('#classdd').empty();
                                        $('#persondd').empty();
-
                                        fillDD('getStaff.php', 'persondd', sel, 'hc');
-
                                        document.getElementById('person').style.display = 'block';
                                        document.getElementById('department').style.display = 'none';
                                        document.getElementById('class').style.display = 'none';
                                        break;
                                    default:
-
                                }
-
                             });
-
                             $('#department').change(function(e) {
-
                                 resetDD("persondd");
                                 resetDD("classdd");
-
                                 var type = $('#app option:selected').attr('value');
-
                                 var pcd = $('#pcd option:selected').attr('value');
-
                                 var selID = $('#department option:selected').attr('value');
-
                                 switch (type) {
-
                                     case "aa":
-
                                         fillDD('getStaff.php', 'persondd', selID, 'dept');
-
                                         break;
-
                                     case "pf":
-
                                         fillDD('getClasses.php', 'classdd', selID, 'class');
-
                                          break;
-
                                     case "tc":
-
                                         fillDD('getStaff.php', 'persondd', selID, 'tutordept');
-
                                             $.ajax({url: 'getClasses.php',
                                                 data: { ID : selID },
                                                 method: "GET",
@@ -506,11 +443,8 @@ session_start();
                                                     //alert(data);
                                                     $('#classdd').empty();
                                                     $('#classdd').append('<option value=\"0\">Please select</option>');
-
                                                     if (data.length == 0) {
-
                                                         resetDD('persondd');
-
                                                     } else {
                                                         $.each(data, function (i, item) {
                                                             $('#classdd').append('<option value="' + data[i].id + '">' + data[i].crn + ': ' + data[i].title + '</option>');
@@ -521,20 +455,15 @@ session_start();
                                                     alert(xhr.status + " " + thrownError);
                                                 }});
                                         break;
-
                                     default:
                                 }
                             });
-
                             $('#classdd').change(function(e) {
                                var sel = $('#class option:selected').attr('value');
                                 var dep = $('#department option:selected').attr('value');
-
                                 var type =  $('#app option:selected').attr('value');
-
                                 switch (type) {
                                     case "pf":
-
                                         fillDD('getStaff.php', 'persondd', sel, 'classpf');
 //                                        //Ajax request
 //                                        $.ajax({
@@ -556,9 +485,7 @@ session_start();
 //                                        });
                                         break;
                                     case "tc":
-
                                         fillDD('getStaff.php', 'persondd', sel, 'tutor');
-
 //                                        $.ajax({
 //                                            url: 'getStaff.php',
 //                                            data: {ID: sel, type: "tutor"},
@@ -580,9 +507,7 @@ session_start();
                                     default:
                                 }
                             });
-
                             $('#submit').click(function(e) {
-
                                 var staffID = $('#persondd option:selected').attr('value');
                                 var stuID = '42'; 
                                 var title = $('#title').val();
@@ -603,9 +528,7 @@ session_start();
                                 });
                             });
                         });
-
 				</script>
-
                     <div class="dropdown" id="class" style="display: none">
                         <p>Select a class</p>
                         <select title="class" id="classdd" class="dropbtn">
@@ -624,7 +547,6 @@ session_start();
                     
                     
                     <!-- if PERSON is chosen: --->
-
                     <div class="dropdown" id="date" style="display: none;" >
                         
                         <br>
@@ -643,7 +565,6 @@ session_start();
                         <input type="radio" name="timeSlot" id="2:00pm" value="2:00pm">&nbsp2:00pm&nbsp
                         <input type="radio" name="timeSlot" id="3:00pm" value="3:00pm">&nbsp3:00pm&nbsp
                         <input type="radio" name="timeSlot" id="4:00pm" value="4:00pm">&nbsp4:00pm&nbsp  
-
          
               
 <script type="text/javascript">
@@ -658,7 +579,6 @@ session_start();
                          $.each(availableTimes,function(i,entity){
                          $('#radioButtonList').append($('<input/>',{'type':'radio','name':'availableTimes','id':entity})).append(entity'<br/>');
                          });
-
                      },
                      error: function() {
                          alert("Error.");
@@ -673,9 +593,6 @@ Title: <input name="title" id="title" type="text" />
 <br>
                         Description: <input name = "description" id="description" type="text" />
                         
-
-
-
                     </div>
                     <script type="text/javascript">
                 $(document).ready(function () {
@@ -683,13 +600,11 @@ Title: <input name="title" id="title" type="text" />
                       dateFormat: "m/d/yy",
                       onSelect: function () {
                       var date = $("#datepicker").val();
-
                 $.ajax({
                      type: "GET",
                      data: { date: date },
                      success: function() {
                          $('#success');
-
                      },
                      error: function() {
                          alert("Error.");
@@ -700,39 +615,26 @@ Title: <input name="title" id="title" type="text" />
     });
     
 </script>
-
-
 					<br>
 					
 					<p> Summer, Fall, Winter Registration starts March 1st!</p> 
 					 <p>	Walk-ins ONLY First Week of March. </p>
-
                     <input type="submit" id="submit" />
-
                     <div id="success" name="success"></div>
 				</div>
 				
                 </form>
 	
-
-
             <script>
-
-
                 $(document).ready(function($) {
-
                     //Empties a select list and sets initial option
                     function resetDD(dd) {
-
                         $('#'+dd).empty();
                         $('#'+dd).append('<option value=\"0\">Please select</option>');
                     }
-
                     //Fills a select list with the appropriate values
                     function fillDD(url, list, sID, type) {
-
                         switch (type) {
-
                             case "department":
                                 $.ajax({
                                     url: url,
@@ -751,7 +653,6 @@ Title: <input name="title" id="title" type="text" />
                                     }
                                 });
                                 break;
-
                             case "class":
                                 $.ajax({
                                     url: url,
@@ -772,7 +673,6 @@ Title: <input name="title" id="title" type="text" />
                                     }
                                 });
                                 break;
-
                             default:
                                 $.ajax({
                                     url: url,
@@ -795,16 +695,13 @@ Title: <input name="title" id="title" type="text" />
                                 break;
                         }
                     }
-
                     //On change event for appointment type select list
                     $('#app').change(function(e) {
-
                         //Change person/class/date select list back to "Please select" and reset all others
                         $('#pcddd').val('ps');
                         resetDD("persondd");
                         resetDD("departmentdd");
                         resetDD("classdd");
-
                         //If "Please Select" is selected, hide all other select lists
                         if ($('#app option:selected').attr('value') == 'ps') {
                             document.getElementById('person').style.display = 'none';
@@ -817,19 +714,15 @@ Title: <input name="title" id="title" type="text" />
                             document.getElementById('person').style.display = 'block';
                         }
                     });
-
                     //On change event for person/class/date select list
                     $('#pcd').change(function(e) {
-
                         //Reset all select lists
                         resetDD('departmentdd');
                         resetDD('classdd');
                         resetDD('persondd');
-
                         //Get chosen value from appointment type and P/C/D select lists
                         var sel =  $('#app option:selected').attr('value');
                         var pcd = $('#pcd option:selected').attr('value');
-
                         //Logic for deciding which select lists to display
                         switch (pcd) {
                             //If "Person" if selected, display only "Person" select list
@@ -847,9 +740,7 @@ Title: <input name="title" id="title" type="text" />
                             //If date is selected,
                             case "date":
                                 /*
-
                                  SHOW CALENDAR
-
                                  */
                                 document.getElementById('department').style.display = 'none';
                                 document.getElementById('class').style.display = 'none';
@@ -861,62 +752,43 @@ Title: <input name="title" id="title" type="text" />
                                 document.getElementById('class').style.display = 'none';
                                 document.getElementById('person').style.display = 'none';
                         }
-
                         document.getElementById('date').style.display = 'block';
-
                         //Logic for deciding which data should be retrieved based on which appointment type is selected
                         switch (sel) {
-
                             //If "Academic Advising" is selected...
                             case "aa":
                                 //...and "Class/Department" is selected,  fill the "Departments" select list
                                 if ( pcd == 'cl' ) {
-
                                     fillDD('getDepartments.php', 'departmentdd', 0, 'department');
                                     document.getElementById('class').style.display = 'none';
-
                                     //...and "Person" is selected, fill the person select list with advisors
                                 } else if (pcd == 'pn') fillDD('getStaff.php', 'persondd', sel, 'adv');
-
                                 document.getElementById('person').style.display = 'block';
                                 document.getElementById('class').style.display = 'none';
-
                                 break;
-
                             //If "Professors" is selected...
                             case "pf":
                                 //...and "Class/Department" is selected, fill the "Department" select list
                                 if(pcd == 'cl') {
-
                                     fillDD('getDepartments.php', 'departmentdd', 0, 'department');
-
                                     //...and person is selected, fill "Person" select list with all professors
                                 } else if (pcd == 'pn') {
-
                                     fillDD('getStaff.php', 'persondd', sel, 'prof');
                                 }
-
                                 //Reset "Person" and "Class" select lists
                                 //resetDD("classdd");
                                 //resetDD("persondd");
                                 break;
-
                             //If "Tutoring Center" is selected...
                             case "tc":
-
                                 //...and "Class/Department" is selected, fill "Department" select list
                                 if (pcd == 'cl') {
-
                                     fillDD('getDepartments.php', 'departmentdd', 0, 'department');
-
                                 } else if (pcd == 'pn') {
-
                                     document.getElementById('department').style.display = 'none';
                                     document.getElementById('class').style.display = 'none';
                                     document.getElementById('person').style.display = 'block';
-
                                     fillDD('getStaff.php', 'persondd', sel, 'tutorpn');
-
                                 }
                                 resetDD("classdd");
                                 resetDD("persondd");
@@ -924,48 +796,29 @@ Title: <input name="title" id="title" type="text" />
                             case "hc":
                                 $('#classdd').empty();
                                 $('#persondd').empty();
-
                                 fillDD('getStaff.php', 'persondd', sel, 'hc');
-
                                 document.getElementById('person').style.display = 'block';
                                 document.getElementById('department').style.display = 'none';
                                 document.getElementById('class').style.display = 'none';
                                 break;
                             default:
-
                         }
-
                     });
-
                     $('#department').change(function(e) {
-
                         resetDD("persondd");
                         resetDD("classdd");
-
                         var type = $('#app option:selected').attr('value');
-
                         var pcd = $('#pcd option:selected').attr('value');
-
                         var selID = $('#department option:selected').attr('value');
-
                         switch (type) {
-
                             case "aa":
-
                                 fillDD('getStaff.php', 'persondd', selID, 'dept');
-
                                 break;
-
                             case "pf":
-
                                 fillDD('getClasses.php', 'classdd', selID, 'class');
-
                                 break;
-
                             case "tc":
-
                                 fillDD('getStaff.php', 'persondd', selID, 'tutordept');
-
                                 $.ajax({url: 'getClasses.php',
                                     data: { ID : selID },
                                     method: "GET",
@@ -975,11 +828,8 @@ Title: <input name="title" id="title" type="text" />
                                         //alert(data);
                                         $('#classdd').empty();
                                         $('#classdd').append('<option value=\"0\">Please select</option>');
-
                                         if (data.length == 0) {
-
                                             resetDD('persondd');
-
                                         } else {
                                             $.each(data, function (i, item) {
                                                 $('#classdd').append('<option value="' + data[i].staff_id + '">' + data[i].crn + ': ' + data[i].title + '</option>');
@@ -990,34 +840,25 @@ Title: <input name="title" id="title" type="text" />
                                         alert(xhr.status + " " + thrownError);
                                     }});
                                 break;
-
                             default:
                         }
                     });
-
                     $('#classdd').change(function(e) {
                         var sel = $('#class option:selected').attr('value');
                         var dep = $('#department option:selected').attr('value');
-
                         var type =  $('#app option:selected').attr('value');
-
                         switch (type) {
                             case "pf":
-
                                 fillDD('getStaff.php', 'persondd', sel, 'classpf');
                                 break;
                             case "tc":
-
                                 fillDD('getStaff.php', 'persondd', sel, 'tutor');
                                 break;
                             default:
                         }
                     });
-
                     $('#submit').click(function(e) {
-
                         e.preventDefault();
-
                         var staffID = $('#persondd option:selected').attr('value');
                         var stuID = <?php echo $_SESSION['id'];?> ; //change to real val
                         var title = $('#title').val();
@@ -1039,7 +880,6 @@ Title: <input name="title" id="title" type="text" />
                         });
                     });
                 });
-
             </script>
 			
 	</div>
@@ -1101,6 +941,5 @@ Title: <input name="title" id="title" type="text" />
 	</body>
 	
 </html>
-
 
 

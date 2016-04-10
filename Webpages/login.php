@@ -27,7 +27,7 @@
  <body class="hold-transition login-page">
 	<div class="login-box">
 	  <div class="login-logo">
-		<a href="#"><b>Betwixt</b>Booking</a>
+		<a href="index.html"><b>Betwixt</b>Booking</a>
 	  </div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">
@@ -136,7 +136,7 @@
 							</div>		
 						<!-- /.col -->
 							<div class="col-xs-4">
-								<button type="submit" class="submit_button" class="btn btn-primary btn-block btn-flat">Sign In</button>	
+								<button type="submit" class="btn btn-block btn-primary">Sign In</button>
 							</div>
         <!-- /.col -->
 						</div>
@@ -144,7 +144,13 @@
 			</form>				<!-- end sign in form -->
 							 
 		<a href="http://www.secs.oakland.edu/~hmbock/forgotPassword.php"> Forgot Password </a> <br>
-		<a href="signup.php" class="text-center">Create an Account</a>
+		
+		<br>
+		<br>
+		
+				<td>
+                    <a href ="index.html"><button type="button" class="btn btn-block btn-default">Back</button></a>	
+                  </td>
 	 </div>
 	 
 <!-- /.login-box-body -->
