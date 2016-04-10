@@ -39,9 +39,27 @@ if ($pre_days != 0) {
 include ("connect.php");
 //
 for($i=1; $i<= $day_count; $i++) {
+if($showmonth <= 9)
+   {
+     $m = '0' . $showmonth;
+   }
+   else
+   {
+     $m = $showmonth;
+   }
+   if($i <= 9)
+   {
+     $d = '0' . $i;
+   }
+   else
+   {
+     $d = $i;
+   }
+ 
+	$date = $m.'/'.$d.'/'.$showyear;
 	//get events logic
-	$date = $showmonth.'/'.$i.'/'.$showyear;
-	$query = mysql_query('SELECT id FROM events WHERE evdate = "'.$date.'" AND Staff_ID = "'.$id.'"');
+
+	$query = mysql_query('SELECT id FROM events WHERE Confirmed = 1 AND evdate = "'.$date.'" AND Staff_ID = "'.$id.'"');
 	$num_rows = mysql_num_rows($query);
 	if($num_rows > 0) {
 		$event = "<input name='$date' type='submit' value='Details' id='$date' onClick='javascript:show_details(this);'>";
@@ -63,5 +81,6 @@ if ($post_days != 0) {
 }
 echo '</div>';
 ?>
+
 
 
