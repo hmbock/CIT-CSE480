@@ -229,7 +229,6 @@ session_start();
 										<option value="ps">Please select</option>
 										<option value="pn">Person</option>
 										<option value="cl">Class/Department</option>
-										<option value="dt">Date</option>
 									</select>
 							</div>
                             
