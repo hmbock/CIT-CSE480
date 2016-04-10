@@ -1,16 +1,13 @@
  <?php
 session_start();
-
 $showmonth = $_POST['showmonth'];
 $showyear = $_POST['showyear'];
 $showmonth = preg_replace('#[^0-9]#i', '', $showmonth);
 $showyear = preg_replace('#[^0-9]#i', '', $showyear);
 $id = $_SESSION['id'];
-
 $day_count = cal_days_in_month(CAL_GREGORIAN, $showmonth, $showyear);
 $pre_days = date('w', mktime(0, 0, 0, $showmonth, 1, $showyear));
 $post_days = (6 - (date('w', mktime(0, 0, 0, $showmonth, $day_count, $showyear))));
-
 echo '<div id="calendar_wrap">';
 echo '<div class="title_bar">';
 echo '<div class="previous_month"><input name="myBtn" type="submit" value="Previous Month" onClick="javascript:last_month();"></div>';
@@ -27,7 +24,6 @@ echo '<div class="days_of_week">Fri</div>';
 echo '<div class="days_of_week">Sat</div>';
 echo '<div class="clear"></div>';
 echo '</div>';
-
 /* Previous Month Filler Days */
 if ($pre_days != 0) {
 	for($i=1; $i<=$pre_days; $i++) {
@@ -39,9 +35,25 @@ if ($pre_days != 0) {
 include ("connect.php");
 //
 for($i=1; $i<= $day_count; $i++) {
+if($showmonth <= 9)
+   {
+     $m = '0' . $showmonth;
+   }
+   else
+   {
+     $m = $showmonth;
+   }
+   if($i <= 9)
+   {
+     $d = '0' . $i;
+   }
+   else
+   {
+     $d = $i;
+   }
 	//get events logic
-	$date = $showmonth.'/'.$i.'/'.$showyear;
-	$query = mysql_query('SELECT id FROM events WHERE evdate = "'.$date.'" AND stu_id = "'.$id.'"');
+	$date = $m.'/'.$d.'/'.$showyear;
+	$query = mysql_query('SELECT id FROM events WHERE Confirmed = 1 AND evdate = "'.$date.'" AND stu_id = "'.$id.'"');
 	$num_rows = mysql_num_rows($query);
 	if($num_rows > 0) {
 		$event = "<input name='$date' type='submit' value='Details' id='$date' onClick='javascript:show_details(this);'>";
@@ -53,7 +65,6 @@ for($i=1; $i<= $day_count; $i++) {
 	if($num_rows != 0) { echo "<div class='openings'><br />" . $event . "</div>";}
 	//end button
 	echo '</div>';
-
 }
 /* Next Month Filler Days */
 if ($post_days != 0) {
@@ -63,5 +74,3 @@ if ($post_days != 0) {
 }
 echo '</div>';
 ?>
-
-
