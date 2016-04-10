@@ -5,7 +5,7 @@ $showmonth = $_POST['showmonth'];
 $showyear = $_POST['showyear'];
 $showmonth = preg_replace('#[^0-9]#i', '', $showmonth);
 $showyear = preg_replace('#[^0-9]#i', '', $showyear);
-$username = $_SESSION['username'];
+$id = $_SESSION['id'];
 
 $day_count = cal_days_in_month(CAL_GREGORIAN, $showmonth, $showyear);
 $pre_days = date('w', mktime(0, 0, 0, $showmonth, 1, $showyear));
@@ -41,7 +41,7 @@ include ("connect.php");
 for($i=1; $i<= $day_count; $i++) {
 	//get events logic
 	$date = $showmonth.'/'.$i.'/'.$showyear;
-	$query = mysql_query('SELECT id FROM events WHERE evdate = "'.$date.'" AND stu_username = "'.$username.'"');
+	$query = mysql_query('SELECT id FROM events WHERE evdate = "'.$date.'" AND stu_id = "'.$id.'"');
 	$num_rows = mysql_num_rows($query);
 	if($num_rows > 0) {
 		$event = "<input name='$date' type='submit' value='Details' id='$date' onClick='javascript:show_details(this);'>";

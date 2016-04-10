@@ -78,7 +78,7 @@
 						$username = mysql_escape_string($_POST['username']); // Set variable for the username
 						$password = mysql_escape_string(md5($_POST['password'])); // Set variable for the password and convert it to an MD5 hash.
 
-						$search = mysql_query("SELECT staff_username, staff_password, staff_active FROM Staff WHERE staff_username='".$username."' AND staff_password='".$password."' AND staff_active='1'") or die(mysql_error()); 
+						$search = mysql_query("SELECT staff_username, staff_password, staff_active, staff_id FROM Staff WHERE staff_username='".$username."' AND staff_password='".$password."' AND staff_active='1'") or die(mysql_error()); 
 								//selects the fields username, password, and active from the table where username field matches the $username given, password field matches the $password givenm and active field is set to 1 (active = 1 makes sure you can only login if your account has been activated)
 
 						$match  = mysql_num_rows($search); //records the number of rows that have matched the search
