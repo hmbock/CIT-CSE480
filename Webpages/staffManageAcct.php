@@ -141,26 +141,13 @@ if(isset($_POST['delete'])) {
 ?>
   
                                               
-          
 <!DOCTYPE html>
 <html lang="en">
 	
 	<head>
-		<title>Betwixt Booking | Manage Account</title>
-		<meta charset="utf-8">
-	
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
-   
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		
-		
-		<!--links from new theme-->
-				 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		  
+		 <meta charset="utf-8">
+		 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		  <title>Betwixt Booking | Manage Account</title>
 		  <!-- Tell the browser to be responsive to screen width -->
 		  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		  <!-- Bootstrap 3.3.5 -->
@@ -193,10 +180,9 @@ if(isset($_POST['delete'])) {
 	<body class="hold-transition skin-green side-bar mini">
 	<div class="wrapper">
 			
-			
-			<header class="main-header">
+  <header class="main-header">
     <!-- Logo -->
-    <a href="staffBewtixtBooking.php" class="logo">
+    <a href="staffIndex.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>B</b>B</span>
       <!-- logo for regular state and mobile devices -->
@@ -211,31 +197,7 @@ if(isset($_POST['delete'])) {
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
-          <!-- Notifications: style can be found in dropdown.less 
-          <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">1</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 1 notification</li>
-              <li>
-                <!-- inner menu: contains the actual data 
-                <ul class="menu">
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> You have 1 Appointment this week!
-                    </a>
-                  </li>
-                 
-                 
-                </ul>
-              </li>
-             
-            </ul>
-          </li>
-        
+    
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -249,7 +211,7 @@ if(isset($_POST['delete'])) {
 
                 <p>
 				  <?php echo $_SESSION['username'];?> 
-                  <small>Student</small>
+                  <small>Staff</small>
                 </p>
               </li>
           
@@ -272,7 +234,9 @@ if(isset($_POST['delete'])) {
     </nav>
   </header>
 			
-	 <!-- Left nav bar contains the logo  -->
+
+			
+	  <!-- Left nav bar contains the logo  -->
   <aside class="main-sidebar"> 
     <!-- Top of sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -282,7 +246,7 @@ if(isset($_POST['delete'])) {
           <img src="dist/img/boxed-bg.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p><?php echo $_SESSION['username'];?></p>
+          <p><?php echo $_SESSION['username'];?> </p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -298,23 +262,22 @@ if(isset($_POST['delete'])) {
         </div>
       </form>
 	  
-      
-	  <!-- /.search form -->
+      <!-- /.search form -->
 	  
 	  
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
       
-       <!-- <li> <!--Calendar Link/Main homepage
-          <a href="index.php">
+        <li> <!--Calendar Link-->
+          <a href="staffIndex.php">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
            
           </a>
-        </li>-->
+        </li>
         
        
-        <li> <!--Manage Availability -->
+        <li> <!--Manage Availability-->
           <a href="manageAvailability.php"><i class="fa fa-share"></i> <span>Manage Availability</span></a>
         
         </li>
@@ -324,15 +287,14 @@ if(isset($_POST['delete'])) {
     </section>
     <!-- /.sidebar -->
   </aside>
-
   
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
-        <small>Account</small>
+        Manage Account Information
+        <small>User Profile</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -345,8 +307,6 @@ if(isset($_POST['delete'])) {
       <!-- Main Content -->
       <div class="row">
   
-  
-							<h2> User Profile </h2>
 							<h3>Enter new account information and submit to update:</h3>
             <!-- start sign up form -->  
 							<form action="staffManageAcct.php" method="post" id="settingsForm">
@@ -389,7 +349,7 @@ if(isset($_POST['delete'])) {
 		</section>
      
   </div>
-  <!-- /.content-wrapper -->
+  <!-- /. end content-wrapper -->
   
   
   <footer class="main-footer">
@@ -404,7 +364,7 @@ if(isset($_POST['delete'])) {
 
  
 	<div class="control-sidebar-bg"></div>
-	</div>
+</div>
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.0 -->
@@ -445,8 +405,5 @@ if(isset($_POST['delete'])) {
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 		
-	</body>
-	
-	
-	
+</body>
 </html>

@@ -6,7 +6,7 @@ session_start();
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Betwixt Booking | Dashboard</title>
+  <title>Betwixt Booking | Home</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
@@ -60,41 +60,17 @@ session_start();
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
-          <!-- Notifications: style can be found in dropdown.less -->
-         <!-- <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">1</span>
-            </a>
-         <!--   <ul class="dropdown-menu">
-              <li class="header">You have 1 notification</li>
-         <!--     <li>
-                <!-- inner menu: contains the actual data -->
-                <!--<ul class="menu">
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> You have 1 Appointment this week!
-                    </a>
-                  </li>
-                 
-                 
-                </ul>
-              </li>
-             
-            </ul>
-          </li>-->
-        
+    
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="dist/img/boxed-bg.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs"><?php echo $_SESSION['username'];?> </span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="dist/img/boxed-bg.jpg" class="img-circle" alt="User Image">
 
                 <p>
 				  <?php echo $_SESSION['username'];?> 
@@ -128,7 +104,7 @@ session_start();
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="dist/img/boxed-bg.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?php echo $_SESSION['username'];?> </p>
@@ -193,10 +169,7 @@ session_start();
       <!-- Main Content -->
       <div class="row">
        
-
        <!--need to change to staff calendar this is still the student calendar on this link 04/04/2016 2:15pm-->
-
-       
         <iframe id="cal_frame" src="staff_show_calendar.php?stu_id=<?php echo $_SESSION['id'] ; ?>" width="1000" height="650" style="border:none"></iframe>
 
 
@@ -265,3 +238,5 @@ session_start();
 <script src="dist/js/demo.js"></script>
 </body>
 </html>
+
+

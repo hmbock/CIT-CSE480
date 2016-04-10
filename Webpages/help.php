@@ -37,26 +37,37 @@ $(document).ready(function(){
 	  </div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">
-		<p class="login-box-msg">MISSION STATEMENT</p>
+			<h3 class="login-box-msg">FAQs</h3>
 	
-						<h3>My FAQ</h2>
-						<ul>
-							<li>
-								<a class="faq" href="#">&nbsp;<i class="fa fa-angle-down"></i>&nbsp;&nbsp;What Can I Use Betwixt Booking For?</a>
-								<div id="answer" class="faqAnswer" >You can use Betwixt Booking for scheduling an appointment with an advisor or tutor. You are able to view you calendar
-								to see your different events and to schedule the appointments.
-								</div>
+						<ul style="list-style-type:none">
+							<li><b>What Can I Use Betwixt Booking For?</b><br>
+											&nbsp;&nbsp;&nbsp;&nbsp;You can use Betwixt Booking for scheduling<br>
+											&nbsp;&nbsp; &nbsp;&nbsp;an appointment with an advisor or tutor. <br>
+											&nbsp;&nbsp; &nbsp;&nbsp;You are able to view you calendar to see<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;your different events and to schedule the<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;appointments.<br>
 							</li>
-							<li><a class="faq" href="#">&nbsp;<i class="fa fa-angle-down"></i>&nbsp;&nbsp;How Do I Schedule An Appointment?</a>
-						<div id="answer" class="faqAnswer">To schedule an appointment, go to the schedule appointment page and select the information of what type of appointment you would like to make. Then select the date you would like the appointment and you will be provided the the availabilities for that day.
-            provided with the availabilites of </div></li>
-						<li><a class="faq" href="#">&nbsp;<i class="fa fa-angle-down"></i>&nbsp;&nbsp;How Do I Cancel An Appointment</a>
-						<div id="answer" class="faqAnswer">To cancel an appointment, click on the appointment you would like to cancel and select the "x" in the corner and you will be provided with confirmation that the appointment has been cancelled.</div></li>
+							<li><b>How Do I Schedule An Appointment?</b><br>
+											&nbsp;&nbsp;&nbsp;&nbsp;To schedule an appointment, go to the<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;schedule appointment page and select<br>
+										    &nbsp;&nbsp;&nbsp;&nbsp;the information of what type of<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;appointment you would like to make.<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;Then select the date you would like the<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;appointment and you will be provided <br>
+											&nbsp;&nbsp;&nbsp;&nbsp; the availabilities for that day. <br>
+							</li>
+							<li><b>How Do I Cancel An Appointment?</b><br>
+											&nbsp;&nbsp;&nbsp;&nbsp;To cancel an appointment, click on<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;the appointment you would like to cancel<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;and select the "x" in the corner and<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;you will be provided with confirmation <br>
+											&nbsp;&nbsp;&nbsp;&nbsp;that the appointment has been cancelled.
+							</li>
 						</ul>
 
 		
-		<td>
-							<a href ="index.html"><button type="button" class="btn btn-block btn-warning btn-lg">Back</button></a>
+						<td>
+							<a href ="index.html"><button type="button" class="btn btn-block btn-default btn-lg">Back</button></a>
 						</td>
 		 </div> 
 		 <!-- /.login-box-body -->

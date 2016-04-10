@@ -41,7 +41,7 @@ session_start();
   <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+	<div class="wrapper">
 
   <header class="main-header">
     <!-- Logo -->
