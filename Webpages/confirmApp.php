@@ -21,7 +21,13 @@ $reason = $_GET['Reason'];
    
 		<meta charset = "UTF-8">
 		
+<<<<<<< HEAD
 		
+=======
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+>>>>>>> c7d8c3a8c3be9b5ec42e0c3c7f2111bf20c77de6
 		
 		<!--<link href="betwixt.css" rel="stylesheet">-->
 		
@@ -81,7 +87,11 @@ $reason = $_GET['Reason'];
         
         <script type="text/javascript">
      
+<<<<<<< HEAD
            $(document).ready(function() {
+=======
+           $(document).ready(function($) {
+>>>>>>> c7d8c3a8c3be9b5ec42e0c3c7f2111bf20c77de6
            
               $('#confirm').click(function(e) {
               
@@ -109,9 +119,15 @@ $reason = $_GET['Reason'];
                                    }
                                });
               
+<<<<<<< HEAD
               })
            
            })
+=======
+              });
+           
+           });
+>>>>>>> c7d8c3a8c3be9b5ec42e0c3c7f2111bf20c77de6
            
      
      </script>

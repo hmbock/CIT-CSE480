@@ -506,26 +506,26 @@ session_start();
                                     default:
                                 }
                             });
-                            $('#submit').click(function(e) {
-                                var staffID = $('#persondd option:selected').attr('value');
-                                var stuID = '42'; 
-                                var title = $('#title').val();
-                                var description = $('#description').val();
-                                                               
-                                $.ajax({
-                                    url: 'submitApp.php',
-                                    data: { staffID : staffID, stuID : stuID, title: title, description:description },
-                                    method: "GET",
-                                    dataType: "json",
-                                    contentType: "application/json; charset=utf-8",
-                                    success: function () {
-                                        $('#success');
-                                    },
-                                    error: function (xhr, ajaxOptions, thrownError) {
-                                        alert(xhr.status + " " + thrownError);
-                                    }
-                                });
-                            });
+//                            $('#submit').click(function(e) {
+//                                var staffID = $('#persondd option:selected').attr('value');
+//                                var stuID = '42'; 
+//                                var title = $('#title').val();
+//                                var description = $('#description').val();
+//                                                               
+//                               $.ajax({
+//                                    url: 'submitApp.php',
+//                                    data: { staffID : staffID, stuID : stuID, title: title, description:description },
+//                                    method: "GET",
+//                                    dataType: "json",
+//                                    contentType: "application/json; charset=utf-8",
+//                                    success: function () {
+//                                        $('#success');
+//                                    },
+//                                    error: function (xhr, ajaxOptions, thrownError) {
+//                                        alert(xhr.status + " " + thrownError);
+//                                    }
+//                                });
+//                            });
                         });
 				</script>
                     <div class="dropdown" id="class" style="display: none">
@@ -555,35 +555,41 @@ session_start();
                         
               
 <div id="radioButtonList"></div>
-<input type="radio" name="timeSlot" id="8:00am" value="8:00am">&nbsp8:00am&nbsp
-                        <input type="radio" name="timeSlot" id="9:00am" value="9:00am">&nbsp9:00am&nbsp
-                        <input type="radio" name="timeSlot" id="10:00am" value="10:00am">&nbsp10:00am&nbsp
-                        <input type="radio" name="timeSlot" id="11:00am" value="11:00am">&nbsp11:00am&nbsp
-                        <input type="radio" name="timeSlot" id="Noon" value="Noon">&nbspNoon&nbsp
-                        <input type="radio" name="timeSlot" id="1:00pm" value="1:00pm">&nbsp1:00pm&nbsp
-                        <input type="radio" name="timeSlot" id="2:00pm" value="2:00pm">&nbsp2:00pm&nbsp
-                        <input type="radio" name="timeSlot" id="3:00pm" value="3:00pm">&nbsp3:00pm&nbsp
-                        <input type="radio" name="timeSlot" id="4:00pm" value="4:00pm">&nbsp4:00pm&nbsp  
-         
               
+ <div id="radio"></div>
+  
+
 <script type="text/javascript">
-      $(document).ready(function () {
-      var timeSlot = $('input[type="radio"]:checked').val();
+//var json = [{"time":"8:00am"},{"time":"9:00am"},{"time":"11:00am"},{"time":"Noon"},{"time":"1:00pm"},{"time":"3:00pm"},{"time":"4:00pm"}];
+     $(document).ready(function ($) {
        $.ajax({
-                     type: "GET",
-                     url: "getAvailability.php",
-                     dataType: 'json'
-                     data: { availableTimes: availableTimes },
-                     success: function() {
-                         $.each(availableTimes,function(i,entity){
-                         $('#radioButtonList').append($('<input/>',{'type':'radio','name':'availableTimes','id':entity})).append(entity'<br/>');
-                         });
-                     },
-                     error: function() {
-                         alert("Error.");
-                     }
-                });
+      type: 'GET',
+      url: 'getAvailability.php', 
+      dataType: "json",                     
+      contentType: "application/json",
+      success: function(avTime) {
+      var json = avTime;
+       
+       //alert (json);
+        $.each(json, function () {
+        $("#radio").append($("<label>").text(this.time).prepend(
+          $("<input>").attr('type', 'radio').val(this.time)
+           .prop('checked', this.checked)
+        ));
         });
+        $("#radio").on('change', '[type=radio]', function () {
+         console.log($(this).val());
+        });
+      }
+    });
+       
+   
+   });
+   
+  
+      		
+                           
+       
 </script>
 <br>
 <br>
@@ -871,7 +877,10 @@ Title: <input name="title" id="title" type="text" />
 			                      dataType: "json",
                             contentType: "application/json; charset=utf-8",
                             success: function (data) {
-                                $('#success').append(data);
+                                //$('#success').append(data);
+                                alert("Your appointment has been scheduled.");
+                                
+                                window.location.reload();
                             },
                             error: function (xhr, ajaxOptions, thrownError) {
                                 alert(xhr.status + " " + thrownError);

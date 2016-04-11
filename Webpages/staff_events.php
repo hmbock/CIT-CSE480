@@ -9,7 +9,7 @@ $username = $_SESSION['username'];
 include ("connect.php");
 
 $events = '';
-$query = mysql_query('SELECT app_title, app_time, description, Staff_ID FROM events WHERE evdate = "'.$deets.'" AND Staff_ID = "'.$id.'"');
+$query = mysql_query('SELECT id, app_title, app_time, description, Staff_ID FROM events WHERE Confirmed = 1 AND evdate = "'.$deets.'" AND Staff_ID = "'.$id.'"');
 $num_rows = mysql_num_rows($query);
 if($num_rows > 0) {
 	$events .= '<div id="eventsControl"><button onMouseDown="overlay()">Close</button><br /><br /><b> ' . $deets . '</b><br /><br /><b> ' . $username . '</b><br /><br /></div>'; 
@@ -18,8 +18,11 @@ if($num_rows > 0) {
 		$title = $row['app_title'];
 		$time = $row['app_time'];
 		$desc = $row['description'];
-		$events .= '<div id="eventsBody"><b>Title: </b> ' . $title . ' <br/><br/><b>Time: </b> ' . $time . ' <br/><br/><b>Description: </b>' . $desc .'<br /><hr><br /></div>'; 
+    $appId = $row['id'];
+		$events .= '<div id="eventsBody"><b>Title: </b> ' . $title . ' <br/><br/><b>Time: </b> ' . $time . ' <br/><br/><b>Description: </b>' . $desc .'<br /><br /><button id="' . $appId . '" onMouseDown="cancel(' . $appId . ')">Cancel Appointment</button><hr><br /></div>'; 
 	}
 }
 echo $events;
 ?>
+
+
