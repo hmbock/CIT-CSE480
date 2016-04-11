@@ -1,5 +1,15 @@
 <?php
 session_start();
+
+$eventID = $_GET['id'];
+$stuID = $_GET['stu_id'];
+$staffID = $_GET['Staff_ID'];
+$date = $_GET['Date'];
+$time = $_GET['Time'];
+$fname = $_GET['F_Name'];
+$lname = $_GET['L_Name'];
+$reason = $_GET['Reason'];
+
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +24,10 @@ session_start();
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 
 <body>
@@ -21,6 +35,7 @@ session_start();
 
     <header>
         <h1>Confirm Appointment</h1>
+        
     </header>
 
 
@@ -34,14 +49,71 @@ session_start();
                 <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
             </ul>
         </nav>
-        <form action="" method="POST">
+        <form action="" method="GET">
             <div id="content">
                 <h2> Confirm Appointment </h2>
-                <p>Click confirm below to confirm your appointment with <b><?php echo /*$_SESSION['F_Name'] . " " . $_SESSION['L_Name']*/ "Sample Student" ?></b></p>
-                <button id="confirm">Confirm</button>
-                <button id="decline">Decline</button>
+                
+                <p> A student has scheduled an appointment with you. Please review the details: </p>
+                
+                <br />
+                <br />
+                
+                <p>Student: <b><?php echo $fname . " " . $lname; ?></b></p>
+                <br />
+                <p>Date: <b><?php echo $date; ?></b> </p>
+                <br />
+                <p>Time: <b><?php echo $time; ?></b> </p>
+                <br />
+                <?php
+                
+                if($reason != "")
+                {
+                  echo '<p>Reason: <b>' . $reason . '</b> </p>';
+                }
+                
+                ?>
+                <input type="submit" id="confirm" value="confirm"/>
+                <input type="submit" id="decline" value="decline"/>
+                
             </div>
         </form>
+        
+        <script type="text/javascript">
+     
+           $(document).ready(function() {
+           
+              $('#confirm').click(function(e) {
+              
+                e.preventDefault();
+              
+                var eventID = <?php echo $eventID; ?> ;
+                var stuID = <?php echo $stuID; ?> ;
+                var staffID = <?php echo $staffID; ?> ;
+              
+                $.ajax({
+                                   url: 'sendConfirmation.php',
+                                   data: { eventID : eventID },
+                                   method: "GET",
+                                   dataType: "json",
+                                   contentType: "application/json; charset=utf-8",
+                                   success: function () {
+                                      
+                                      alert("Appointment confirmed. Click OK to login.");
+                                      
+                                      window.location.replace("http://www.secs.oakland.edu/~hmbock/login.php");
+                                      
+                                   },
+                                   error: function (xhr, ajaxOptions, thrownError) {
+                                       alert(xhr.status + " " + thrownError);
+                                   }
+                               });
+              
+              })
+           
+           })
+           
+     
+     </script>
     </main>
 
     <footer role="contentinfo">
