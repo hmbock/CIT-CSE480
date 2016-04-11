@@ -427,7 +427,7 @@ $(document).ready(function(){
 		var value = $('#searchid').val();
 		var trimVal;
 	if(e.which==8){
-		trimVal=value.substring(0, value.length);
+		trimVal=value.substring(0, value.length - 1);
 			//alert(trimVal);
 	}
 	else{
