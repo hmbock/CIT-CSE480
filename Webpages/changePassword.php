@@ -95,6 +95,7 @@ session_start();
 
 <html>
  <head>
+ <link rel="stylesheet" href="inputStyle.css">
 	<title>Betwixt Booking | Change Password</title> 
 		<meta charset="utf-8">
   <!-- Tell the browser to be responsive to screen width -->
@@ -261,11 +262,11 @@ session_start();
 		
 				
 					<h2>Change Password</h2>
-						<fieldset>
+						<fieldset><div id="inputsize">
 							<form role="form" action="changePassword.php" method="post" class="form-signin">
 								<div class = "form-group"> 
  
-									
+							
 								<div class="form-group">
 									<label  for="newUserPassword"> New Password:</label>
 									<input type="password" class="form-control" id="newUserPassword" placeholder ="New Password" name="newUserPassword" value="" maxlength="20" />
@@ -274,8 +275,8 @@ session_start();
 									<label  for="confirmPassword"> Confirm Password:</label>
 									<input type="password" class="form-control" id="confirmPassword" placeholder ="Confirm Password" name="confirmPassword" value="" maxlength="20" />
 								</div>
- 
-								<button type="submit" "btn btn-default">Reset Password</button>
+ </div>
+								<button type="submit" class="btn btn-primary">Reset Password</button>
 								
 								<p> 
 								  <?php echo $message; ?>

@@ -145,12 +145,13 @@ if(isset($_POST['delete'])) {
 <html lang="en">
 	
 	<head>
+	<link rel="stylesheet" href="inputStyle.css">
 		 <meta charset="utf-8">
 		 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		  <title>Betwixt Booking | Manage Account</title>
 		  <!-- Tell the browser to be responsive to screen width -->
 		  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-		  <!-- Bootstrap 3.3.5 -->
+		  <!-- Bootstrap 3.3.5-->
 		  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		  <!-- Font Awesome -->
 		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -251,18 +252,7 @@ if(isset($_POST['delete'])) {
         </div>
       </div>
 	  
-      <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
-	  
-      <!-- /.search form -->
+
 	  
 	  
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -312,7 +302,7 @@ if(isset($_POST['delete'])) {
 							<form action="staffManageAcct.php" method="post" id="settingsForm">
 							
 							  <fieldset>
-					  
+					  <div id="inputsize">
 									<div class="form-group">
 												  <label for="firstName">First Name:</label>
 												  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" value="<?php echo $data2[F_Name] ?>" maxlength="20" />
@@ -327,20 +317,21 @@ if(isset($_POST['delete'])) {
 												  
 											<p><h3><a href="staffChangePassword.php">Change Password</a></h3></p>
 						   
-								
+								</div>
 											<p>
-											<input type="submit" class="submit_button" name="update" value="Update Account Info" />
+											<button type="submit" class="btn btn-success" name="update">Update Account Info</button>
 											</p>
 											
 											<p>
-												<input type="submit" class="submit_button" name="delete" value="Delete Account">
+												<button type="submit" class="btn btn-danger" name="delete">Delete Account</button>
 											</p>
 							   
 											   <p>
 												<?php echo $msg; ?> 
 												</p>
 								
-									</div>
+									
+								</div>
 								 </fieldset>
 							</form>
             <!-- end sign up form -->

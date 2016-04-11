@@ -73,8 +73,8 @@ session_start();
                 <img src="dist/img/boxed-bg.jpg" class="img-circle" alt="User Image">
 
                 <p>
-				  <?php echo $_SESSION['username'];?> 
-                  <small>Staff</small>
+				  <?php echo $_SESSION['username'];?> <br>
+            <b>  <small>Staff</small></b>
                 </p>
               </li>
           

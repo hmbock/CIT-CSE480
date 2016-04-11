@@ -98,6 +98,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="inputStyle.css">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Betwixt Booking | Change Password</title>
@@ -235,7 +236,7 @@ session_start();
         
        
         <li> <!--Manage Availability -->
-          <a href="scheduleApp.php"><i class="fa fa-share"></i> <span>Manage Availability</span></a>
+          <a href="manageAvailability.php"><i class="fa fa-share"></i> <span>Manage Availability</span></a>
         
         </li>
         <li><a href="staffContacts.php"><i class="fa fa-book"></i> <span>Contacts</span></a></li>
@@ -262,14 +263,14 @@ session_start();
       <!-- Main Content -->
       <div class="row">
 	  
-        <div class="box box-success">
+      
             <div class="box-header with-border">
               <h3 class="box-title">Change Password</h3>
             </div>
         	<form role="form" action="staffIndex.php" method="post" class="form-signin">
-              <div class="box-body">
-             
-			 		<div class="form-group">
+
+             <div id="inputsize">
+								<div class="form-group">
 									<label  for="newUserPassword"> New Password:</label>
 									<input type="password" class="form-control" id="newUserPassword" placeholder ="New Password" name="newUserPassword" value="" maxlength="20" />
 								</div>
@@ -279,22 +280,21 @@ session_start();
 									<input type="password" class="form-control" id="confirmPassword" placeholder ="Confirm Password" name="confirmPassword" />
 								</div>
  
-							
+						</div>	
 								
 									<p> 
 									  <?php echo $message; ?>
 									</p>
 			 
            
-              </div>
-              <!-- /.box-body -->
+         
 
-              <div class="box-footer">
+           
                 <button type="submit" class="btn btn-success">Reset Password</button>
-              </div>
+       
             </form>
-          </div>
-          <!-- /.box -->
+        
+       
 		
 				
 

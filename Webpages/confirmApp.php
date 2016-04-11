@@ -1,57 +1,152 @@
 <?php
 session_start();
+
+$eventID = $_GET['id'];
+$stuID = $_GET['stu_id'];
+$staffID = $_GET['Staff_ID'];
+$date = $_GET['Date'];
+$time = $_GET['Time'];
+$fname = $_GET['F_Name'];
+$lname = $_GET['L_Name'];
+$reason = $_GET['Reason'];
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Betwixt Booking</title>
+    <title>Betwixt Booking | Confirm Appointment </title>
     <meta charset="utf-8">
-    <meta name= "viewport" content= "width= device-width, initial-scale=1.0">
-    <link href="betwixt.css" rel="stylesheet">
-    <link rel="stylesheet" href="C:\Users\lkwal_000\Google Drive\CIT_CSE 480\Production\css\font-awesome-4.5.0\css\font-awesome.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+   
+		<meta charset = "UTF-8">
+		
+		
+		
+		<!--<link href="betwixt.css" rel="stylesheet">-->
+		
+		<!--new theme links-->
+		<!-- Tell the browser to be responsive to screen width -->
+		  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		  <!-- Bootstrap 3.3.5 -->
+		  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		  <!-- Font Awesome -->
+		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+		  <!-- Ionicons -->
+		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+		  <!-- Theme style -->
+		  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+		  <!-- iCheck -->
+		  <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
 </head>
 
-<body>
-<div id="wrapper">
+<body class="hold-transition login-page">
 
-    <header>
-        <h1>Confirm Appointment</h1>
-    </header>
-
-
-    <main role ="main">
-        <nav>
-            <ul>
-                <li><a href="http://secs.oakland.edu/~hmbock/myCalendar.php"><i class="fa fa-calendar"></i> &nbsp;Home</a></li>
-                <li><a href="http://secs.oakland.edu/~hmbock/upcomingApp.php"><i class="fa fa-arrow-up"></i>&nbsp;Appointments</a></li>
-                <li><a href="http://secs.oakland.edu/~hmbock/scheduleApp.php"><i class="fa fa-plus-circle"></i>&nbsp;Schedule an Appointment</a></li>
-                <li><a href="http://secs.oakland.edu/~hmbock/accountSettings.php"><i class="fa fa-circle"></i> &nbsp; Manage Account</a></li>
-                <li><a href="logout.php"><i class="fa fa-circle"></i>&nbsp; Logout</a></li>
-            </ul>
-        </nav>
-        <form action="" method="POST">
+<div class="login-box">
+	  <div class="login-logo">
+		<a href="index.html"><b>Betwixt</b>Booking</a>
+	  </div>
+		<!-- /.login-logo -->
+		<div class="login-box-body">
+		<h3 class="login-box-msg">Confirm Appointment </h3>
+    
+        <form action="" method="GET">
             <div id="content">
-                <h2> Confirm Appointment </h2>
-                <p>Click confirm below to confirm your appointment with <b><?php echo /*$_SESSION['F_Name'] . " " . $_SESSION['L_Name']*/ "Sample Student" ?></b></p>
-                <button id="confirm">Confirm</button>
-                <button id="decline">Decline</button>
+                <h2> </h2>
+                
+                <p> A student has scheduled an appointment with you. Please review the details: </p>
+                
+                <br />
+                <br />
+                
+                <p>Student: <b><?php echo $fname . " " . $lname; ?></b></p>
+                <br />
+                <p>Date: <b><?php echo $date; ?></b> </p>
+                <br />
+                <p>Time: <b><?php echo $time; ?></b> </p>
+                <br />
+                <?php
+                
+                if($reason != "")
+                {
+                  echo '<p>Reason: <b>' . $reason . '</b> </p>';
+                }
+                
+                ?>
+                <button type="submit" class="btn btn-block btn-success btn-lg" id="confirm"  value="confirm">Confirm</button>
+                <button type="submit" class="btn btn-block btn-danger btn-lg" id="decline" value="decline"/>Decline</button>
+                
             </div>
         </form>
-    </main>
-
-    <footer role="contentinfo">
-        Copyright &copy; 2016 Betwixt Booking<br>
-        <a href="mailto:betwixtbooking@gmail.com">
-            <address>BetwixtBooking@gmail.com</address>
-        </a>
-    </footer>
+        
+        <script type="text/javascript">
+     
+           $(document).ready(function() {
+           
+              $('#confirm').click(function(e) {
+              
+                e.preventDefault();
+              
+                var eventID = <?php echo $eventID; ?> ;
+                var stuID = <?php echo $stuID; ?> ;
+                var staffID = <?php echo $staffID; ?> ;
+              
+                $.ajax({
+                                   url: 'sendConfirmation.php',
+                                   data: { eventID : eventID },
+                                   method: "GET",
+                                   dataType: "json",
+                                   contentType: "application/json; charset=utf-8",
+                                   success: function () {
+                                      
+                                      alert("Appointment confirmed. Click OK to login.");
+                                      
+                                      window.location.replace("http://www.secs.oakland.edu/~hmbock/login.php");
+                                      
+                                   },
+                                   error: function (xhr, ajaxOptions, thrownError) {
+                                       alert(xhr.status + " " + thrownError);
+                                   }
+                               });
+              
+              })
+           
+           })
+           
+     
+     </script>
+	 
+<!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
 </div>
 
-</body>
+<!-- jQuery 2.2.0 -->
+<script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="plugins/iCheck/icheck.min.js"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
+  });
+</script>
+						
+						
+							 <p>
+								<?php echo $msg; ?> 
+							</p>
+									
+						 
+					 
+			
+	
 
-</html>
+ </body>
+ </html>
+

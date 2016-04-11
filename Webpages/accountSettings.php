@@ -146,6 +146,7 @@ if(isset($_POST['delete'])) {
 <html lang="en">
 	
 	<head>
+			<link rel="stylesheet" href="inputStyle.css">
 		<title>Betwixt Booking | Manage Account</title>
 		<meta charset="utf-8">
 	
@@ -308,7 +309,7 @@ if(isset($_POST['delete'])) {
         
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="stuIndex.php"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Manage Account</li>
       </ol>
     </section>
@@ -318,7 +319,7 @@ if(isset($_POST['delete'])) {
       <!-- Main Content -->
       <div class="row">
   
-						<div class="box box-primary">
+					
 							<h2> User Profile </h2>
 							<div class="box-header with-border">
 								<h3 class="box-title">Enter new account information and submit to update:</h3>
@@ -328,7 +329,7 @@ if(isset($_POST['delete'])) {
 							<form action="accountSettings.php" method="post" id="settingsForm">
 							
 							
-					  
+					  <div id="inputsize">
 									<div class="form-group">
 												  <label for="firstName">First Name:</label>
 												  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" value="<?php echo $data2[F_Name] ?>" maxlength="20" />
@@ -360,6 +361,7 @@ if(isset($_POST['delete'])) {
 												</p>
 								
 									</div>
+								</div>
 								
 							</form>
 							

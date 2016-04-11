@@ -142,18 +142,7 @@ session_start();
         </div>
       </div>
 	  
-      <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
-	  
-      <!-- /.search form -->
+
 	  
 	  
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -185,8 +174,8 @@ session_start();
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
-        <small>Contact Directory</small>
+       Contact Directory
+        <small>Search for Contacts</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -199,16 +188,12 @@ session_start();
 			<section class="content">
 					<div class = "row">
 			
-				
 					
-						<h2> Contact Info Directory </h2>
-
-					<input type="text" class="search" name="searchid" id="searchid" placeholder="Search for people by last name" />&nbsp; &nbsp; Ex: <b><i>Tutor, Guy, or Doctor</i></b><br /> 
+					<input type="text" class="search" name="searchid" id="searchid" placeholder="Search for people by last name...." />&nbsp; &nbsp; Ex: <b><i>Tutor, Guy, or Doctor</i></b><br /> 
 						<!--<button>Click Me!</button>-->
 						<div id="result"></div>
 						<div id="responsecontainer" align="center"></div>
-					
-					
+				
 				<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
 <script type="text/javascript">
 
