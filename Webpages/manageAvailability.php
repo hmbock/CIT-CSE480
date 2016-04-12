@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 	
@@ -26,10 +28,6 @@
 		  <link rel="stylesheet" href="plugins/morris/morris.css">
 		  <!-- jvectormap -->
 		  <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-		  <!-- Date Picker -->
-		  <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
-		  <!-- Daterange picker -->
-		  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker-bs3.css">
 		  <!-- bootstrap wysihtml5 - text editor -->
 		  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 				
@@ -42,17 +40,6 @@
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   <link rel="stylesheet" href="/resources/demos/style.css">
-
-
- <script>
-
-  $(function() {
-
-    $( "#datepicker" ).datepicker();
-
-  });
-
-  </script>
 
 
 	</head>
@@ -116,7 +103,7 @@
 							<p>
 							  <?php echo $_SESSION['username'];?> 
 							  <small>Staff</small>
-							</p>
+							</
 						  </li>
 					  
 						
@@ -153,19 +140,6 @@
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
-	  
-      <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
-	  
-      <!-- /.search form -->
 	  
 	  
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -211,28 +185,91 @@
     <!-- Main content -->
     <section class="content">
       <!-- Main Content -->
-      <div class="row">
-       
-       
-     
-   	<form action="" form method="post">
-				
+      <div class="row"> 
 					
 					<p><b><u> </u></b></p>
-					<p> Please enter date to make unavailable: </p>
-              <br>
-              <br>
-              Date: <input name="datepicker" id="datepicker" type="text"/>
-              <br>
-             <?php echo "$return"; ?>
-							<div class="col-xs-4">
-								<button type="submit" class="submit_button" class="btn btn-primary btn-block btn-flat">Update Availability</button>	
-							</div>
-        
-				</form>
-			
+					<p> Please enter date and time to make unavailable: </p>
+              
+    <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script language="javascript">
+        $(document).ready(function () {
+            $("#txtDate").datepicker({
+                onSelect: function (selectedDate) {
+                var date = $('#txtDate').val();
+                var staffID = <?php echo $_SESSION['id'];?>;
+                $( "#radio" ).empty();    
+
+      $.ajax({
+      type: "GET",
+      url: "getAvailability.php", 
+      data: { selectedDate : date, staffID: staffID  },
+      dataType: "json",                     
+      contentType: "application/json",
+      success: function(json) {
+      var avTime = json;
        
+        $.each(avTime, function () {
+        $("#radio").append($("<label>").text(this.time).prepend(
+          $("<input>").attr('type', 'radio').val(this.time)
+           .prop('checked', this.checked)
+        ));
+        });
+        $("#radio").on('change', '[type=radio]', function () {
+         console.log($(this).val());
+        });
+      }
+    });
+                }
+            });
+        });
+    </script>
+                        <br>
+                        Date: <input id="txtDate" name="txtDate" type="text" />
+                        <br>
+                        <br>
+                        
+              
+ 
+              
+                        <div id="radio"></div>
+                        <br>
+                        <br>
+                        <input type="submit" id="submit" />
+                    <div id="success" name="success"></div> 
+                    
+                     <script>
+                    $(document).ready(function($) {
+                        $('#submit').click(function(e) {
+                        e.preventDefault();
+                        var staffID = <?php echo $_SESSION['id'];?> ;
+                        var date = $('#txtDate').val();
+                        var timeSlot = $('input[type="radio"]:checked').val();
+                        $.ajax({
+                            url: 'updateAvailability.php',
+                            data: { staffID : staffID, selectedDate:date, timeSlot : timeSlot},
+                            method: "GET",
+			                      dataType: "json",
+                            contentType: "application/json; charset=utf-8",
+                            success: function (data) {
+                                //$('#success').append(data);
+                                alert("Your availability has been updated");
+                                
+                                window.location.reload();
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                alert(xhr.status + " " + thrownError);
+                            }
+                        });
+                    });
+               });
+            </script>
+			
+                        
+ 
       </div>
+    
 	</section>
      
   </div>
@@ -271,11 +308,6 @@
 <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 <!-- jQuery Knob Chart -->
 <script src="plugins/knob/jquery.knob.js"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
@@ -290,21 +322,15 @@
 <script src="dist/js/demo.js"></script>
 			
 			
-		
-		
- <script type="text/javascript">
-function myFunction(){
-var date = document.getElementById("datepicker").value;
-$.ajax({
-type: "POST",
-url: "updateAvailability.php",
-data: date,
-success: function(html){
-alert(html);
-}
-});
-}
-</script>
+
+
+
+
+
+
+
+
+
 
 
 
