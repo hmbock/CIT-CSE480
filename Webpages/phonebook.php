@@ -164,7 +164,7 @@ session_start();
       </div>
       
         <div class="input-group">
-          <input type="text" name="searchid" class="form-control" id="searchid" placeholder="Search for people by last name" size="35"/>
+          <input type="text" name="searchid" class="form-control" id="searchid" placeholder="Search for people by last name" size="35" autofocus/>
               <span class="input-group-btn">
               </span>
         </div>
