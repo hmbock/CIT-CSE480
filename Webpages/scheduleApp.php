@@ -51,6 +51,30 @@ session_start();
 		  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 		  <link rel="stylesheet" href="/resources/demos/style.css">
+        
+        <style>
+        
+          h2 {
+            text-align: center;
+            background-color: #3385ff;
+            color: white;
+            width: 30%;
+            background-size: 30%;
+          }
+          
+          table {
+            width: 95%;
+            border-collapse: collapse;
+          }
+  
+          th, td {
+            text-align: left;
+            padding: 8px;
+          }
+  
+          tbody:nth-child(even){background-color: #f2f2f2}
+        
+        </style>
 
  	</head>
 	
@@ -197,7 +221,7 @@ session_start();
                 <section class="content">
 					<div class = "row">
 					<form action="" method="POST" >
-                        <h2> Schedule an Appointment </h2>
+                        <h2 style="display:inline-block;"> Schedule an Appointment </h2>
                         <p><b><u>To make a New appointment, fill the form below:</u></b></p>
                         
                             <div class="dropdown" id="app">
