@@ -76,8 +76,8 @@ session_start();
           }
           
           table {
-            border-collapse: collapse;
             width: 100%;
+            border-collapse: collapse;
           }
   
           th, td {
@@ -85,7 +85,7 @@ session_start();
             padding: 8px;
           }
   
-          tr:nth-child(even){background-color: #f2f2f2}
+          tbody:nth-child(even){background-color: #f2f2f2}
         
         </style>
 	</head>
@@ -225,7 +225,8 @@ session_start();
 				<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
 <script type="text/javascript">
 
-$(document).ready(function(){
+  $(document).ready(function(){
+
 
   var value = "";
   var trimVal = "";
