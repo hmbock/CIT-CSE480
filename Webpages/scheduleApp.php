@@ -418,52 +418,52 @@ session_start();
                                    default:
                                }
                             });
-                            $('#department').change(function(e) {
-                                resetDD("persondd");
-                                resetDD("classdd");
-                                var type = $('#app option:selected').attr('value');
-                                var pcd = $('#pcd option:selected').attr('value');
-                                var selID = $('#department option:selected').attr('value');
-                                switch (type) {
-                                    case "aa":
-                                        fillDD('getStaff.php', 'persondd', selID, 'dept');
-                                        break;
-                                    case "pf":
-                                        fillDD('getClasses.php', 'classdd', selID, 'class');
-                                         break;
-                                    case "tc":
-                                        fillDD('getStaff.php', 'persondd', selID, 'tutordept');
-                                            $.ajax({url: 'getClasses.php',
-                                                data: { ID : selID },
-                                                method: "GET",
-                                                dataType: "json",
-                                                contentType: "application/json; charset=utf-8",
-                                                success: function(data) {
+//                            $('#department').change(function(e) {
+//                               resetDD("persondd");
+//                                resetDD("classdd");
+//                                var type = $('#app option:selected').attr('value');
+//                                var pcd = $('#pcd option:selected').attr('value');
+//                                var selID = $('#department option:selected').attr('value');
+//                                switch (type) {
+//                                    case "aa":
+//                                        fillDD('getStaff.php', 'persondd', selID, 'dept');
+//                                        break;
+//                                    case "pf":
+//                                        fillDD('getClasses.php', 'classdd', selID, 'class');
+//                                         break;
+//                                   case "tc":
+//                                        fillDD('getStaff.php', 'persondd', selID, 'tutordept');
+//                                            $.ajax({url: 'getClasses.php',
+//                                                data: { ID : selID },
+//                                                method: "GET",
+//                                                dataType: "json",
+//                                                contentType: "application/json; charset=utf-8",
+//                                                success: function(data) {
                                                     //alert(data);
-                                                    $('#classdd').empty();
-                                                    $('#classdd').append('<option value=\"0\">Please select</option>');
-                                                    if (data.length == 0) {
-                                                        resetDD('persondd');
-                                                    } else {
-                                                        $.each(data, function (i, item) {
-                                                            $('#classdd').append('<option value="' + data[i].id + '">' + data[i].crn + ': ' + data[i].title + '</option>');
-                                                        });
-                                                    }
-                                                },
-                                                error: function (xhr, ajaxOptions, thrownError) {
-                                                    alert(xhr.status + " " + thrownError);
-                                                }});
-                                        break;
-                                    default:
-                                }
-                            });
-                            $('#classdd').change(function(e) {
-                               var sel = $('#class option:selected').attr('value');
-                                var dep = $('#department option:selected').attr('value');
-                                var type =  $('#app option:selected').attr('value');
-                                switch (type) {
-                                    case "pf":
-                                        fillDD('getStaff.php', 'persondd', sel, 'classpf');
+//                                                    $('#classdd').empty();
+//                                                   $('#classdd').append('<option value=\"0\">Please select</option>');
+//                                                    if (data.length == 0) {
+//                                                        resetDD('persondd');
+//                                                    } else {
+//                                                        $.each(data, function (i, item) {
+//                                                            $('#classdd').append('<option value="' + data[i].id + '">' + data[i].crn + ': ' + data[i].title + '</option>');
+//                                                        });
+//                                                    }
+//                                                },
+//                                                error: function (xhr, ajaxOptions, thrownError) {
+//                                                    alert(xhr.status + " " + thrownError);
+//                                                }});
+//                                        break;
+//                                    default:
+//                                }
+//                            });
+//                            $('#classdd').change(function(e) {
+//                               var sel = $('#class option:selected').attr('value');
+//                                var dep = $('#department option:selected').attr('value');
+//                                var type =  $('#app option:selected').attr('value');
+//                                switch (type) {
+//                                    case "pf":
+//                                        fillDD('getStaff.php', 'persondd', sel, 'classpf');
 //                                        //Ajax request
 //                                        $.ajax({
 //                                            url: 'getStaff.php',
@@ -482,9 +482,9 @@ session_start();
 //                                                alert(xhr.status + " " + thrownError);
 //                                            }
 //                                        });
-                                        break;
-                                    case "tc":
-                                        fillDD('getStaff.php', 'persondd', sel, 'tutor');
+//                                        break;
+//                                    case "tc":
+//                                        fillDD('getStaff.php', 'persondd', sel, 'tutor');
 //                                        $.ajax({
 //                                            url: 'getStaff.php',
 //                                            data: {ID: sel, type: "tutor"},
@@ -502,10 +502,10 @@ session_start();
 //                                                alert(xhr.status + " " + thrownError);
 //                                            }
 //                                        });
-                                        break;
-                                    default:
-                                }
-                            });
+//                                        break;
+//                                    default:
+//                                }
+//                            });
 //                            $('#submit').click(function(e) {
 //                                var staffID = $('#persondd option:selected').attr('value');
 //                                var stuID = '42'; 
@@ -547,31 +547,29 @@ session_start();
                     
                     <!-- if PERSON is chosen: --->
                     <div class="dropdown" id="date" style="display: none;" >
-                        
-                        <br>
-                        Date: <input name="datepicker" id="datepicker" type="text"/>
-                        <br>
-                        <br>
-                        
-              
-<div id="radioButtonList"></div>
-              
- <div id="radio"></div>
-  
+                        </head>
+<body>
+<link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script language="javascript">
+        $(document).ready(function () {
+            $("#txtDate").datepicker({
+                onSelect: function (selectedDate) {
+                var date = $('#txtDate').val();
+                var staffID = $('#persondd option:selected').attr('value');
+                $( "#radio" ).empty();    
 
-<script type="text/javascript">
-//var json = [{"time":"8:00am"},{"time":"9:00am"},{"time":"11:00am"},{"time":"Noon"},{"time":"1:00pm"},{"time":"3:00pm"},{"time":"4:00pm"}];
-     $(document).ready(function ($) {
-       $.ajax({
-      type: 'GET',
-      url: 'getAvailability.php', 
+      $.ajax({
+      type: "GET",
+      url: "getAvailability.php", 
+      data: { selectedDate : date, staffID: staffID  },
       dataType: "json",                     
       contentType: "application/json",
-      success: function(avTime) {
-      var json = avTime;
+      success: function(json) {
+      var avTime = json;
        
-       //alert (json);
-        $.each(json, function () {
+        $.each(avTime, function () {
         $("#radio").append($("<label>").text(this.time).prepend(
           $("<input>").attr('type', 'radio').val(this.time)
            .prop('checked', this.checked)
@@ -582,15 +580,22 @@ session_start();
         });
       }
     });
-       
-   
-   });
-   
+                }
+            });
+        });
+    </script>
+                        <br>
+                        Date: <input id="txtDate" name="txtDate" type="text" />
+                        <br>
+                        <br>
+                        
+              
+ 
+              
+ <div id="radio"></div>
   
-      		
-                           
-       
-</script>
+
+
 <br>
 <br>
 Title: <input name="title" id="title" type="text" />
@@ -599,27 +604,7 @@ Title: <input name="title" id="title" type="text" />
                         Description: <input name = "description" id="description" type="text" />
                         
                     </div>
-                    <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#datepicker").datepicker({
-                      dateFormat: "m/d/yy",
-                      onSelect: function () {
-                      var date = $("#datepicker").val();
-                $.ajax({
-                     type: "GET",
-                     data: { date: date },
-                     success: function() {
-                         $('#success');
-                     },
-                     error: function() {
-                         alert("Error.");
-                     }
-                });
-            }
-        });
-    });
-    
-</script>
+                    
 					<br>
 					
 					<p> Summer, Fall, Winter Registration starts March 1st!</p> 
@@ -823,7 +808,7 @@ Title: <input name="title" id="title" type="text" />
                                 fillDD('getClasses.php', 'classdd', selID, 'class');
                                 break;
                             case "tc":
-                                fillDD('getStaff.php', 'persondd', selID, 'tutordept');
+                                //fillDD('getStaff.php', 'persondd', selID, 'tutordept');
                                 $.ajax({url: 'getClasses.php',
                                     data: { ID : selID },
                                     method: "GET",
@@ -837,7 +822,7 @@ Title: <input name="title" id="title" type="text" />
                                             resetDD('persondd');
                                         } else {
                                             $.each(data, function (i, item) {
-                                                $('#classdd').append('<option value="' + data[i].staff_id + '">' + data[i].crn + ': ' + data[i].title + '</option>');
+                                                $('#classdd').append('<option value="' + data[i].staff_id + '" id ="' + data[i].id + '">' + data[i].crn + ': ' + data[i].title + '</option>');
                                             });
                                         }
                                     },
@@ -852,12 +837,13 @@ Title: <input name="title" id="title" type="text" />
                         var sel = $('#class option:selected').attr('value');
                         var dep = $('#department option:selected').attr('value');
                         var type =  $('#app option:selected').attr('value');
+                        var class_id = $('#class option:selected').attr('id');
                         switch (type) {
                             case "pf":
                                 fillDD('getStaff.php', 'persondd', sel, 'classpf');
                                 break;
                             case "tc":
-                                fillDD('getStaff.php', 'persondd', sel, 'tutor');
+                                fillDD('getStaff.php', 'persondd', class_id, 'tutor');
                                 break;
                             default:
                         }
@@ -867,7 +853,7 @@ Title: <input name="title" id="title" type="text" />
                         var staffID = $('#persondd option:selected').attr('value');
                         var stuID = <?php echo $_SESSION['id'];?> ; //change to real val
                         var title = $('#title').val();
-                        var date = $('#datepicker').val();
+                        var date = $('#txtDate').val();
                         var description = $('#description').val();
                         var timeSlot = $('input[type="radio"]:checked').val();
                         $.ajax({
@@ -925,11 +911,6 @@ Title: <input name="title" id="title" type="text" />
 <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 <!-- jQuery Knob Chart -->
 <script src="plugins/knob/jquery.knob.js"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
