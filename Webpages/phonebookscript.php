@@ -17,7 +17,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
-		echo "<table id='phonebook' border='1' class='tablesorter'>
+		echo "<table id='phonebook' >
     <thead>	
     <tr>
         <th> Last Name </th>
