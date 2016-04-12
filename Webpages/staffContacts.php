@@ -73,8 +73,8 @@ session_start();
           }
           
           table {
-            border-collapse: collapse;
             width: 100%;
+            border-collapse: collapse;
           }
   
           th, td {
@@ -82,7 +82,7 @@ session_start();
             padding: 8px;
           }
   
-          tr:nth-child(even){background-color: #f2f2f2}
+          tbody:nth-child(even){background-color: #f2f2f2}
         
         </style>
         
