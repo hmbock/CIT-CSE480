@@ -67,6 +67,27 @@ session_start();
 		  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 		  <link rel="stylesheet" href="/resources/demos/style.css">
+        
+        <style>
+        
+          th {
+            background-color: #3385ff;
+            color: white;
+          }
+          
+          table {
+            border-collapse: collapse;
+            width: 100%;
+          }
+  
+          th, td {
+            text-align: left;
+            padding: 8px;
+          }
+  
+          tr:nth-child(even){background-color: #f2f2f2}
+        
+        </style>
 	</head>
 	<body class="hold-transition skin-blue sidebar-mini">
 		<div class="wrapper">
@@ -141,8 +162,12 @@ session_start();
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
-	  
-
+      
+        <div class="input-group">
+          <input type="text" name="searchid" class="form-control" id="searchid" placeholder="Search for people by last name" size="35"/>
+              <span class="input-group-btn">
+              </span>
+        </div>
 	  
 	  
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -188,8 +213,11 @@ session_start();
 			<section class="content">
 					<div class = "row">
 			
-					
-					<input type="text" class="search" name="searchid" id="searchid" placeholder="Search for people by last name...." />&nbsp; &nbsp; Ex: <b><i>Tutor, Guy, or Doctor</i></b><br /> 
+					<!--
+					<input type="text" class="search" name="searchid" id="searchid" placeholder="Search for people by last name...." />&nbsp; &nbsp; Ex: <b><i>Tutor, Guy, or Doctor</i></b><br />
+          --> 
+                 <br />
+                 <br />
 						<!--<button>Click Me!</button>-->
 						<div id="result"></div>
 						<div id="responsecontainer" align="center"></div>
@@ -198,12 +226,37 @@ session_start();
 <script type="text/javascript">
 
 $(document).ready(function(){
+
+  var value = "";
+  var trimVal = "";
+
+  $.ajax({
+			type: "GET",
+			url: "phonebookscript.php",
+			data: {dataString: trimVal},
+			cache: false,
+			dataType: "html",
+			success: function(response){
+				console.log(response);
+			
+		    $("#responsecontainer").html(response);
+	
+			}, //end success
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+		alert(errorThrown);
+		}
+	
+    });
+
 	$("input").keydown(function(e){
 		//alert("keyup called");
 		var value = $('#searchid').val();
 		var trimVal;
+   
+   
+   
 	if(e.which==8){
-		trimVal=value.substring(0, value.length);
+		trimVal=value.substring(0, value.length - 1);
 			//alert(trimVal);
 	}
 	else{
