@@ -92,13 +92,13 @@ session_start();
 					  <!-- User Account: style can be found in dropdown.less -->
 					  <li class="dropdown user user-menu">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						  <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+						  <img src="dist/img/boxed-bg.jpg" class="user-image" alt="User Image">
 						  <span class="hidden-xs"><?php echo $_SESSION['username'];?> </span>
 						</a>
 						<ul class="dropdown-menu">
 						  <!-- User image -->
 						  <li class="user-header">
-							<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+							<img src="dist/img/boxed-bg.jpg" class="img-circle" alt="User Image">
 
 							<p>
 							  <?php echo $_SESSION['username'];?> 
@@ -133,7 +133,7 @@ session_start();
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="dist/img/boxed-bg.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?php echo $_SESSION['username'];?> </p>
@@ -186,9 +186,15 @@ session_start();
     <section class="content">
       <!-- Main Content -->
       <div class="row"> 
-					
+		<div class="checkbox icheck">
+			<div class="col-md-6">					
+					<div class="box box-success">
+						 <div class="box-header with-border">
+							<h3 class="box-title"> Please enter date and time to make unavailable:</h3>
+						</div>
+						<div class="box-body">
 					<p><b><u> </u></b></p>
-					<p> Please enter date and time to make unavailable: </p>
+				
               
     <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
@@ -226,17 +232,25 @@ session_start();
         });
     </script>
                         <br>
-                        Date: <input id="txtDate" name="txtDate" type="text" />
-                        <br>
-                        <br>
-                        
-              
+						
+						
+						  <div class="form-group">
+							<label><b>Date:</b></label>
+							<div class="input-group date">
+								<div class="input-group-addon">
+									<i class="fa fa-calendar"></i>
+									</div>
+									<input id="txtDate" class="form-control pull-right" name="txtDate" type="text" />
+							</div>
+							</div>
+
+          
  
               
-                        <div id="radio"></div>
+                        <div id="radio" ></div>
                         <br>
                         <br>
-                        <input type="submit" id="submit" />
+                        <input type="submit" id="submit" class="btn btn-success"/>
                     <div id="success" name="success"></div> 
                     
                      <script>
@@ -266,8 +280,13 @@ session_start();
                });
             </script>
 			
-                        
- 
+               </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->          
+ </div>   <!-- /.col -->
+ </div>
+     
       </div>
     
 	</section>
