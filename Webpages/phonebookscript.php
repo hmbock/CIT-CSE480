@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 $dataString = $_GET['dataString'];
 
-$sql = "SELECT F_Name, L_Name FROM Staff WHERE L_Name LIKE '%$dataString%'";
+$sql = "SELECT F_Name, L_Name FROM Staff WHERE L_Name LIKE '%$dataString%' OR Staff.F_Name LIKE '%$dataString%'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -23,6 +23,7 @@ if ($result->num_rows > 0) {
         <th> Last Name </th>
         <th> First Name </th>
         <th> Department</th>
+        <th> Office</th>
         <th> Phone Number </th>
 	<th> Email </th>
     </tr>
@@ -30,7 +31,7 @@ if ($result->num_rows > 0) {
 
 //$q = mysqli_real_escape_string($conn,$_POST['dataString']);    
 $searchfor = "Adv";	
-$sql = "SELECT Distinct Staff.L_Name, Staff.F_Name,Staff.Department_ID,Staff.Phone,Staff.staff_email, Department.Department FROM Staff INNER JOIN Department ON Staff.Department_ID = Department.Department_ID WHERE Staff.L_Name LIKE '%$dataString%' ORDER BY L_Name";
+$sql = "SELECT Distinct Staff.L_Name, Staff.F_Name,Staff.Department_ID,Staff.Phone,Staff.staff_email, Department.Department, Staff.office FROM Staff INNER JOIN Department ON Staff.Department_ID = Department.Department_ID WHERE Staff.L_Name LIKE '%$dataString%' OR Staff.F_Name LIKE '%$dataString%' ORDER BY L_Name";
 
 $result = $conn->query($sql);
     
@@ -40,6 +41,7 @@ $result = $conn->query($sql);
     echo "<td>" . $row["L_Name"] ."</td>";
     echo "<td>" . $row["F_Name"] ."</td>";
     echo "<td>" . $row["Department"] ."</td>";
+    echo "<td>" . $row["office"] ."</td>";
     echo "<td>" . $row["Phone"] ."</td>";
     echo "<td>" . $row["staff_email"] ."</td>";
     echo "</tr>";
