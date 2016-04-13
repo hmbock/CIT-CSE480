@@ -76,7 +76,7 @@ session_start();
           }
           
           table {
-            width: 100%;
+            width: 95%;
             border-collapse: collapse;
           }
   
@@ -227,6 +227,7 @@ session_start();
 
   $(document).ready(function(){
 
+  //$('#searchid').focus();
 
   var value = "";
   var trimVal = "";
@@ -267,6 +268,8 @@ session_start();
 		
 	}
 	if(value!='')
+ 
+ 
 		 $.ajax({
 			type: "GET",
 			url: "phonebookscript.php",
