@@ -56,8 +56,7 @@ session_start();
         
           h2 {
             text-align: center;
-            background-color: #3385ff;
-            color: white;
+            color: black;
             width: 30%;
             background-size: 30%;
           }
