@@ -17,7 +17,7 @@ session_start();
 		 
 		
 		  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		  <title>Betwixt Booking | Dashboard</title>
+		  <title>Betwixt Booking | Schedule Appointment</title>
 		  <!-- Tell the browser to be responsive to screen width -->
 		  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		  <!-- Bootstrap 3.3.5 -->
@@ -219,8 +219,14 @@ session_start();
 				
                 <section class="content">
 					<div class = "row">
+						<div class="col-md-6">					
+							<div class="box box-primary">
+								<div class="box-header with-border">
+									<h3 class="box-title"> Schedule an Appointment:</h3>
+								</div>
+								<div class="box-body">
+						
 					<form action="" method="POST" >
-                        <h2 style="display:inline-block;"> Schedule an Appointment </h2>
                         <p><b><u>To make a New appointment, fill the form below:</u></b></p>
                         
                             <div class="dropdown" id="app">
@@ -619,11 +625,16 @@ Title: <input name="title" id="title" type="text" />
 					
 					<p> Summer, Fall, Winter Registration starts March 1st!</p> 
 					 <p>	Walk-ins ONLY First Week of March. </p>
-                    <input type="submit" id="submit" />
+                    <input type="submit" id="submit" class="btn btn-primary btn-lg" />
                     <div id="success" name="success"></div>
-				</div>
+			
 				
                 </form>
+				
+			</div> <!--end box body-->
+			</div> <!-- end box box-success-->
+			</div> <!--end col-->
+			
 	
             <script>
                 $(document).ready(function($) {
