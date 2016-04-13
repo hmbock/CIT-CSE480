@@ -14,7 +14,7 @@ $servername = 'localhost';
 $username = $_SESSION['username'];
 
 
-$data = "SELECT F_Name, L_Name, staff_email FROM Staff WHERE staff_username='$username'";
+$data = "SELECT F_Name, L_Name, staff_email, office, Phone FROM Staff WHERE staff_username='$username'";
 
 $query = mysql_query($data);
 
@@ -31,6 +31,8 @@ $data2 = mysql_fetch_array($query);
                   $newFirstName = ($_POST['firstName']);
           				$newLastName= ($_POST['lastName']);
 				          $newEmail = ($_POST['email']);
+                  $newOffice = ($_POST['office']);
+                  $newPhone = ($_POST['phone']);
           				$newUsername= ($_POST['username']);
           				$username= $_SESSION['username'];
 
@@ -53,7 +55,8 @@ $data2 = mysql_fetch_array($query);
 		            $newlastName = mysql_escape_string($_POST['lastName']); // Set variable for the username
                 $newEmail = mysql_escape_string($_POST['email']); // Set variable for the username
 		            $newUsername = mysql_escape_string($_POST['username']); // Set variable for the username
-
+                $newOffice =  mysql_escape_string($_POST['office']); 
+                $newPhone =  mysql_escape_string($_POST['phone']);
                 
                       if($search = mysql_query("SELECT F_Name, L_Name,staff_email FROM Staff WHERE staff_username='$username'")) 
                     {
@@ -64,8 +67,10 @@ $data2 = mysql_fetch_array($query);
                                 $updatedFirstName = ($newFirstName);
                                 $updatedLastName = ($newLastName);
                                 $updatedEmail = ($newEmail);
+                                $updatedOffice = ($newOffice);
+                                $updatedPhone = ($newPhone);
                                
-                                mysql_query("UPDATE Staff SET F_Name = '$updatedFirstName', L_Name = '$updatedLastName', staff_email = '$updatedEmail' WHERE staff_username='$username'");
+                                mysql_query("UPDATE Staff SET F_Name = '$updatedFirstName', L_Name = '$updatedLastName', staff_email = '$updatedEmail', office = '$updatedOffice', Phone = '$updatedPhone' WHERE staff_username='$username'");
                                 //header("location:http://www.secs.oakland.edu/~hmbock/updateInfo.php");
                                 header("location:http://www.secs.oakland.edu/~hmbock/staffManageAcct.php");     
                               } 
@@ -312,6 +317,12 @@ if(isset($_POST['delete'])) {
 											 
 												  <label for="email">Email:</label>
 												  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $data2[staff_email] ?>" maxlength="20" />
+                                                                                                                                   
+                          <label for="office">Office:</label>
+												  <input type="text" class="form-control" id="office" name="office" placeholder="Office" value="<?php echo $data2[office] ?>" maxlength="20" />
+                                                                                                                                     
+                          <label for="phone">Phone:</label>
+												  <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value="<?php echo $data2[Phone] ?>" maxlength="20" />
 								
 											<label for="username">Username:   <?php echo $_SESSION['username']; ?><strong></strong></label>
 												  
