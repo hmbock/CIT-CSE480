@@ -227,11 +227,11 @@ session_start();
 								<div class="box-body">
 						
 					<form action="" method="POST" >
-                        <p><b><u>To make a New appointment, fill the form below:</u></b></p>
+                   
                         
                             <div class="dropdown" id="app">
-                                <p>Where would you like to make an appointment?</p>
-                                  <select name="sel_type"class="dropbtn">
+                                <p><b>Where would you like to make an appointment?</b></p>
+                                  <select name="sel_type"class="form-control select2">
                                     <option value="0">Please select</option>
                                     <option value="aa">Academic Advising</option>
                                     <option value="pf">Professors</option>
@@ -240,8 +240,8 @@ session_start();
                             </div>
     
 							<div class="dropdown" id="pcd" style="display: block">
-									<p>Would you like to sort by person, class or date?</p>
-									<select id="pcddd" name="sel_pcd" class="dropbtn">
+									<p><b>Would you like to sort by person, class or date?</b></p>
+									<select id="pcddd" name="sel_pcd" class="form-control select2">
 										<option value="ps">Please select</option>
 										<option value="pn">Person</option>
 										<option value="cl">Class/Department</option>
@@ -250,8 +250,8 @@ session_start();
                             
                             <!-- if class is chosen: --->
 							<div class="dropdown" id="department" style="display: none">
-								<p>Select a department</p>
-								<select title="sel_dep" id="departmentdd" name="sel_dep" class="dropbtn">
+								<p><b>Select a department</b></p>
+								<select title="sel_dep" id="departmentdd" name="sel_dep" class="form-control select2">
 									<option value="">Please Select</option>
 								</select>
 							</div>
@@ -546,7 +546,7 @@ session_start();
 				</script>
                     <div class="dropdown" id="class" style="display: none">
                         <p>Select a class</p>
-                        <select title="class" id="classdd" class="dropbtn">
+                        <select title="class" id="classdd" class="form-control select2">
                             <option value="">Please Select</option>
                         </select>
                     </div>
@@ -555,7 +555,7 @@ session_start();
                     <!-- if PERSON is chosen: --->
                     <div class="dropdown" id="person" style="display: none">
                         <p>Select a person</p>
-                        <select name="person" title="persondd" id="persondd" class="dropbtn">
+                        <select name="person" title="persondd" id="persondd" class="form-control select2">
                             <option value="">Please Select</option>
                         </select>
                     </div>
@@ -600,10 +600,17 @@ session_start();
             });
         });
     </script>
-                        <br>
-                        Date: <input id="txtDate" name="txtDate" type="text" />
-                        <br>
-                        <br>
+                     
+
+					  <div class="form-group">
+							<label><b>Date:</b></label>
+							<div class="input-group date">
+								<div class="input-group-addon">
+									<i class="fa fa-calendar"></i>
+									</div>
+									<input id="txtDate" class="form-control pull-right" name="txtDate" type="text" />
+							</div>
+							</div>
                         
               
  
